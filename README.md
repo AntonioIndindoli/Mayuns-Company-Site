@@ -1,6 +1,6 @@
 # Game Development Hub
 
-> **MERN portfolio & blog for indie game projects – now *one‑click deployable* on Render.**
+> **MERN portfolio & blog**
 
 [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/AntonioIndindoli/CompanyWebsite_Production)
 
@@ -218,5 +218,3 @@ services:
 > Secrets **must not** be committed. Render’s *Environment → Add Secret Vars* UI keeps them safe.
 
 ---
-
-**Happy deploying & game‑making!**
