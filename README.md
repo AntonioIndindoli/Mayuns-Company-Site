@@ -39,8 +39,6 @@
 | **Frontend** | React (CRA v5)                   | Built to static files for prod |
 | **Hosting**  | **Render**                       | Free HTTPS, autoscaling        |
 
-> Legacy tools like PM2 / Caddy were replaced by Render’s managed runtime and CDN.
-
 ---
 
 ## Local Development
