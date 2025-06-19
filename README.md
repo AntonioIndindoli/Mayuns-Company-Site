@@ -12,11 +12,10 @@
 
   * [Prerequisites](#prerequisites)
   * [Run Locally](#run-locally)
-* [🚀 Deploying to Render](#-deploying-to-render)
+* [Deploying to Render](#-deploying-to-render)
 
   * [Option A – Single Express + Static](#optiona)
   * [Option B – Two Services (API + Static Site)](#optionb)
-  * [render.yaml (one‑click blueprint)](#renderyaml-oneclick-blueprint)
 * [Project Structure](#project-structure)
 * [Environment Variables](#environment-variables)
 
@@ -72,7 +71,7 @@ $ npm run dev                  # runs backend on :5000 & CRA on :3000
 
 ---
 
-## 🚀 Deploying to Render
+## Deploying to Render
 
 There are two common layouts; choose the one that matches your repo.
 
@@ -152,38 +151,6 @@ export const api = axios.create({
 After redeploying the front‑end with the correct variable, all requests will hit your Render API.
 
 **Result:** Two services, both auto‑redeploying on every push to `main`: the Static Site is cached globally for speed, while the Web Service scales the Node API independently.
-
-### <a name="renderyaml-oneclick-blueprint"></a>render.yaml (one-click blueprint)></a>render.yaml (one‑click blueprint)
-
-Commit this file at repo root to let visitors deploy with the ✨ button above.
-
-```yaml
-services:
-  - name: api
-    type: web
-    runtime: node
-    rootDir: backend
-    buildCommand: "npm install"
-    startCommand: "node server.js"
-    envVars:
-      - key: MONGODB_URI
-        sync: false        # filled in dashboard or from secret store
-      - key: TOKEN_SECRET
-        sync: false
-      - key: NODE_VERSION
-        value: "20.15.0"
-
-  - name: client
-    type: static
-    rootDir: frontend
-    buildCommand: "npm install && npm run build"
-    staticPublishPath: build
-    envVars:
-      - key: REACT_APP_API_URL
-        value: "https://api.onrender.com"
-```
-
-> **Tip:** If you add a Render‑provided MongoDB add‑on, the `MONGODB_URI` env var is created automatically.
 
 ---
 
