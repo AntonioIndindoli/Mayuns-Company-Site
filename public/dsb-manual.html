@@ -1,0 +1,337 @@
+<html>
+<head><title>Destructible Structure Builder Manual</title></head>
+<body style="white-space:pre-wrap; font-family: monospace;">
+# Destructible Structure Builder Manual  
+
+**Version**: 1.0.0
+**Compatibility**: Unity 2022.3 LTS
+# <a href="https://discord.gg/73GaMeP6JF">Discord Join Chat</a>
+---
+
+## Overview
+
+**Destructible Structure Builder** lets you assemble gameplay‑ready buildings that can splinter, crumble and collapse in real time. Day‑to‑day authoring happens inside the **Structure Manager** editor window. A toolbar of *Build Modes* provides quick scene gizmos for placing connections, members and walls, while runtime components drive stress propagation, pooling and event dispatch.
+**All building is performed inside the Unity Editor. The toolkit does not include runtime construction or editing features.**
+
+> **Tip:** Almost everything you do creates a single Unity Undo group, so Ctrl/Cmd+Z rolls back an entire action.
+
+### Top‑level Folders
+
+| Folder | Purpose |
+| --- | --- |
+| `Runtime/` | All MonoBehaviours that run in play mode (destruction logic, stress solver, pooling). |
+| `Editor/` | Custom windows & scene tools (`ManagerWindow`, `StructureBuildTool`, inspectors). |
+| `Materials/` `Textures/` `Effects/` | Demo assets for quick prototyping. |
+| `Samples/` | A mini-scene that demonstrates every build mode. |
+
+---
+
+## Feature Highlights
+
+* **Build Modes Toolbar** – eight discrete modes: **Create Structure**, **Structural Member Build**, **Grounded Toggle**, **Wall Build**, **Wall Edit**, **Apply Design**, **Apply Material**, **Delete**.
+* **Parametric Members** – beams and columns with user-defined length, thickness, texture scale and support capacity.
+* **Wall System** – grid-based walls (cubes, windows, triangular cut-outs) with per-cell health and **Design Rotation** buttons (↺ -90 / ↻ +90) for instant orientation.
+* **Design Presets** – author a wall once, save it as a `WallDesign` ScriptableObject, then re-apply – rotated – with one click.
+* **Stress Solver** – voxel members propagate damage with configurable min/max delay per structure.
+* **Destruction Effects Manager** – pools debris; lifetime, pool size and spawn-rate tweakable from the Manager window.
+* **Mesh Cache Utility** – persist generated meshes between play sessions to slash import time.
+* **Grounded Toggle** – mark load-bearing members green; non-grounded members flash yellow when hovered.
+* **Undo-Friendly Workflow** – every spawn, delete or property change is wrapped in a single Unity Undo group.
+
+---
+
+## Installation
+
+1. Download the `.unitypackage` from the Asset Store.
+2. In Unity select **Assets ▸ Import Package ▸ Custom Package…** and open the file.
+3. Press **Import** when the package dialog appears.
+
+---
+
+## Quick Start (≈ 90 seconds)
+
+1. Open **`Samples/DemoScene`** (or any empty scene).
+2. Choose **Tools ▸ Structure Manager** to open the main window.
+3. In **Build Settings Asset** press **Create BuildSettings Asset** and save it anywhere under Assets/.
+(The asset stores global defaults like member length, default materials, mesh-cache options, etc.)
+4. Set Build Mode to **Create Structure** and click once in the Scene view – a cyan cube appears (the first connection).
+5. Switch to **Structural Member Build**. Hover over the connection; cyan ghost beams appear. Click a ghost to spawn a member and an end-connection.
+6. Now choose **Wall Build**. Hover a member to preview a magenta ghost wall. Click to create it using the **Default Wall Design** from your Build Settings (or an empty grid if none set).
+7. (Optional) Use the ↺ -90 / ↻ +90 buttons to rotate the preview before placing more walls.
+8. Select **Wall Edit** ➜ sub-mode **Add Window**, and click any wall cell to punch a window. Use **Add Triangle** for corner cut-outs.
+9. Hit **Play**. Shoot or collide with the structure and watch pieces detach, crumble and spawn pooled debris gibs.
+
+## Prefabbing Structures
+
+If you want to turn a built structure into a prefab, the procedural meshes must be written to disk first.
+
+1. Open **Tools ▸ Structure Manager** and expand **Mesh Cache**.
+2. Tick **Enable Mesh Persistence** and choose a folder under Assets/ for the cached meshes.
+3. Select the structure in the scene and press **Rebuild Voxels** in its Inspector.
+
+The structure can now be saved as a prefab without losing its generated meshes.
+
+## Limitations
+
+- Building tools are only available in the Unity Editor.
+- There is no support for in-game construction or live editing of structures.
+- Destruction effects and stress simulation work at runtime, but new beams or walls cannot be spawned using these tools.
+
+---
+
+## Building Structures in Detail
+
+### Build Modes
+
+| Mode | Scene Gizmo Action |
+| --- | --- |
+| **Create Structure** | Click to place a cyan *Structural Connection* (root of a building). |
+| **Structural Member Build** | Hover a connection → cyan ghost members. Click to spawn a beam/column. |
+| **Grounded Toggle** | Click members to mark them green (immovable) or yellow (floating). |
+| **Wall Build** | Hover a member → magenta ghost wall. Click to spawn. |
+| **Wall Edit** | With a wall selected:<br>• **Delete Piece** (red)<br>• **Add Piece** (green)<br>• **Add Window** (blue)<br>• **Add Triangle** (cyan corner buttons) |
+| **Apply Material** | Pick a material in the Inspector, then click any member, connection or wall. |
+| **Apply Design** | Assign a `WallDesign` asset, optionally rotate it, then click a wall to replace its grid. |
+| **Delete** | Click a member, connection or wall; a red cube gizmo confirms deletion. |
+
+### Wall Design Rotation
+
+While in **Wall Build** or **Apply Design**, two buttons appear:
+
+* **↺ -90** – rotate the preview counter-clockwise.
+* **↻ +90** – rotate clockwise.
+
+Rotation is remembered until you reset the editor session.
+
+Hotkeys are also available:
+
+* Press **R** or **[** to rotate counter-clockwise.
+* Press **]** to rotate clockwise.
+
+Press **Esc** at any time to cancel the current build mode.
+
+### Saving Wall Designs
+
+1. In **Wall Edit** select the wall you want to capture.
+2. Press **Select…** beside *Current Folder* to choose a directory under Assets/ for design files.
+3. Enter a unique *Design Name* (warning message turns green when valid).
+4. Hit **Save Design** – a `.asset` file is created containing cell types, rows, columns and materials.
+
+---
+
+## Build Settings Reference
+
+The **Build Settings Asset** drives every default in the tool. Open it from **Structure Manager ▸ Build Settings**.
+
+| Group | Key Properties |
+| --- | --- |
+| **Structural Members** | *Length*, *Thickness*, *Texture Scale X/Y*, *Support Capacity*, **Disable Direction** (*Orthogonal*, *Diagonal*, *None*). |
+| **Walls** | *Thickness*, *Height*, *Width*, *Match Member Length*, *Is Centered*, *Allow Overlap*, *Default Wall Design*, *Column Cells*, *Row Cells*, *Texture Scale X/Y*. |
+| **Voxels** | *Voxel Mass*, *Voxel Health*. |
+| **Layers** | *Spawn Layer* for new structures and pieces. |
+| **Stress Propagation** | *Min Propagation Time*, *Max Propagation Time* (per-member random delay). |
+| **Mesh Cache** | Enable/disable persistence, choose cache folder, **Clean Unused Cached Meshes**. |
+| **Runtime Debris** | Create or select **DestructionEffectsManager**, adjust pool limits and lifetimes. |
+
+Changes are applied live and serialized with Undo.
+
+---
+
+## Scene Setup Tips
+
+* **DestructionEffectsManager**: open **Runtime Debris Settings** and click **Create DestructionEffectsManager in Scene** if none exists. Tweak pool sizes and lifetimes here.
+* **Physics**: keep *Fixed Timestep* ≤ 0.02 s for stable stress propagation.
+* **Mesh Cache**: enable persistence and periodically **Clean Unused Cached Meshes** after large refactors.
+* Disable **Auto Sync Transforms** (Project Settings ▸ Physics) for debris-heavy scenes.
+* When baking lightmaps, mark procedural pieces as *Static = false* to avoid long bake times.
+
+---
+
+## Runtime Scripting API
+
+<pre><code>using Mayuns.DSB;
+
+public class ExplosionTrigger : MonoBehaviour
+{
+    void OnEnable()
+    {
+        Destructible.onCrumble += HandleCrumble;
+        StructuralGroupManager.onLargeCollapse += HandleCollapse;
+        if (DestructionEffectsManager.Instance)
+            DestructionEffectsManager.Instance.onPieceCrumble.AddListener(HandlePieceCrumble);
+    }
+
+    void OnDisable()
+    {
+        Destructible.onCrumble -= HandleCrumble;
+        StructuralGroupManager.onLargeCollapse -= HandleCollapse;
+        if (DestructionEffectsManager.Instance)
+            DestructionEffectsManager.Instance.onPieceCrumble.RemoveListener(HandlePieceCrumble);
+    }
+
+    void HandleCrumble(Destructible d)
+    {
+        // award points, screen shake, etc.
+    }
+
+    void HandleCollapse(StructuralGroupManager group)
+    {
+        // bigger screen shake, dust FX, etc.
+    }
+
+    void HandlePieceCrumble(Material mat, Vector3 pos)
+    {
+        // spawn extra sparkle FX
+    }
+}
+</code></pre>
+
+---
+
+## Destruction Effects Manager
+
+The **DestructionEffectsManager** singleton lives in your scene and silently recycles every shard that flies off a structure. It also drives all crumble, stress and collapse effects, including particles and audio. Add one via **Structure Manager ▸ Runtime Debris Settings ▸ Create DestructionEffectsManager in Scene** (or drag in the prefab).
+
+| Group | Key Inspector Fields |
+| --- | --- |
+| **Pool Settings** | *Max Active Gibs* – hard cap on live debris; pieces spawned after the cap are immediately culled.<br>*Current Active Gibs* – read-only counter. <br>*Max Pool Size* – upper limit on **inactive** shells kept for reuse. |
+| **Small Debris Mass** | Global *Rigidbody.mass* applied to every **DebrisChunk** that pops off walls or members. |
+| **Gib Lifetimes (s)** | *Small* (chunks), *Medium* (detached walls/members) and *Large* (detached structural groups – **not pooled**) lifetimes before they are returned to the pool or destroyed. |
+| **Chunk Uncombine Throttle** | Limits fracturing spikes: *Max Uncombines Per Window* across *Uncombine Window Seconds*. The system calls `CanUncombineNow()` before splitting voxels. |
+| **Editor Settings** | *Hide Pooled Gibs In Hierarchy* – keeps the Hierarchy clean by hiding inactive shells. |
+| **Gib Layer** | Layer assigned to all spawned gibs. |
+| **Explosion Impulse** | Fine-tune debris flair: *Force Per Kg*, *Torque Per Kg*, *Force Jitter* (±%), *Explosion Radius*, *Upward Modifier*. Used by `ApplyRandomExplosion()` (called automatically on many debris types – but you can invoke it yourself). |
+| **Effect Settings** | Manage default sound clips, cooldowns and particle prefabs for crumble, stress and collapse events. Per-material overrides supported. |
+The manager also fires `onPieceCrumble`, `onMemberStress`, `onLargeCollapse` and `onWindowShatter` events for custom code.
+
+### Workflow Quick-Tips
+
+* **Lifetime vs. Pool Size** – Set lifetimes low or pool size high depending on whether you want debris to linger (for realism) or despawn aggressively (for performance).
+* **Tuning Performance** – If you notice frame-drops just after a big collapse, lower *Max Active Gibs* or tighten the uncombine throttle.
+* **Manual Spawning** – Any script can grab a shell via `GetReusableGibShell(debrisData, pos, rot)` and then register it with `RegisterTimedGib()` for automatic cleanup.
+
+---
+
+## Damage & Destructible Workflow
+
+Objects that splinter in DSB all inherit from the **`Destructible`** abstract class and (usually) implement **`IDamageable`** through one of the concrete voxel chunk scripts.
+
+| Script / Type | Responsibilities |
+| --- | --- |
+| `IDamageable` | Single-method contract: `void TakeDamage(float damage)`. Anything—from a voxel to a boss character—can opt-in to DSB’s damage pipeline by implementing it. |
+| `Destructible` (abstract) | 1) Stores an array of **`DebrisData`** (pre-cut meshes + materials) generated at build-time via `CreateAndStoreDebrisData(cutCascades, isWindow)`. <br>2) Finds the scene **DestructionEffectsManager** in `Awake()`. <br>3) On `Crumble()` it spawns pooled debris shells, throttled by current gib load, then fires the **`onCrumble`** `UnityEvent` and destroys itself. |
+| `Chunk` | Runtime voxel that belongs to either a wall (*`wallManager`*) or a member (*`structuralMember`*). Implements **`TakeDamage`** by: <br>• Accumulating hits until thresholds are passed. <br>• Querying `effectsManager.CanUncombineNow()` to respect the **uncombine throttle**. <br>• Calling `wallManager.UncombineChunk()` or `DetachChunk()` when walls fracture, or <br>• Triggering `structuralMember.UncombineMember()` / `DestroyRandomMemberPiece()` on beams. |
+
+> **Heads-up:** If no **DestructionEffectsManager** is present, `Crumble()` still destroys the object, but no debris will spawn.
+
+---
+
+## Structural Group Inspector
+
+---
+
+### Wall Manager Internals
+
+The **WallManager** turns every placed wall into a lightweight grid of `WallPiece` voxels, then aggressively optimises it at edit-time so you get hundreds of pieces at runtime without bloating the hierarchy.
+
+* **Voxel Health & Mass** – inherited from **Build Settings** or overridden per-wall before build.
+* **Grid Arrays** – `wallGrid[x + y * columns]` stores references to every live `WallPiece`; holes are `null`.
+* **Chunking & Mesh Combine** – when you press *Play* (or call **Build Wall** in the editor) neighbouring voxels are merged into chunks (one mesh + one collider) and marked with a proxy `WallPiece` component so the integrity code still knows what lives where.
+* **Integrity Validation** – every time a voxel is destroyed or a structural load changes, `ValidateWallIntegrity()` queues a quick coroutine that:
+  1. Runs a multi-source BFS flood-fill from all edge cells (ignoring **windows** so arrows can punch holes!)
+  2. Detaches unsupported `Chunk`s into independent rigidbodies (medium-lifetime gibs).
+  3. Calls `SelfDestructCheck()` – if ≤ 1 voxel remains the whole wall object deletes itself.
+* **Edge Detection** – `UpdateEdgeStatusForGrid()` scans each voxel with a tiny `Physics.OverlapBox` to see if a *live* `StructuralMember` collider is nearby. Those voxels become *edge* cells that anchor load propagation.
+* **Windows vs. Solids** – windows use glass material, get a slimmer `BoxCollider`, allow flood-fill traversal, and shatter into localised debris with `PlayWindowShatterAt()`.
+
+> **Tip:** Call `InstantUncombine()` from an editor script when you need every voxel back as a separate object (e.g., for baking lightmaps).
+
+---
+
+### Structural Member Internals
+
+Beams and columns are procedurally voxelised into `memberDivisionsCount` slices (default = 5):
+
+| Phase | What Happens |
+| --- | --- |
+| **BuildMember()** | In the editor, removes old voxels, generates irregular cubes with slight Z jitter (or loads them from **Mesh Cache**), registers each with Undo, and hides the original mesh. |
+| **CombineMember()** | At runtime the slices are fused into one convex collider and proxy `Chunk` until damage occurs. |
+| **UncombineMember()** | Lazy-splits the member back into individual voxels the first time it takes damage, saving colliders up-front. |
+| **DestroyRandomMemberPiece()** | When overload exceeds capacity a random voxel is smashed, triggering `SplitMember()` logic below. |
+
+#### Splits & Detaches
+
+* **SplitMember()** – First voxel destroyed ➜ member is split at that index; tail pieces become a new `StructuralMember`, get their own `Rigidbody`, are added to the same `StructuralGroupManager`, and participate in load propagation.
+* **DetachUnconnectedPieces()** – Further damage walks left/right from the failure point and peels fully disconnected sections into `DetachedStructuralMember` gibs (medium lifetime).
+* **AdjustNeighboursAfterDestruction()** – Shrinks neighbour colliders to avoid ghost collisions after a slice disappears.
+
+All voxels are `MemberPiece` objects that implement `IDamageable`, so an explosion can simply ray-cast hit voxels and call `TakeDamage(damage)`.
+
+---
+
+When you select the **Structural Group Manager** component in the Inspector you’ll see a purpose-built editor that exposes the most important runtime dials:
+
+| Property | Purpose |
+| --- | --- |
+| **Global Member Support Capacity Adjustment** | Adds or subtracts this integer from every member’s **Support Capacity** once during initial load-propagation. Crank it up to make the entire structure sturdier in a single sweep. |
+| **Voxel Mass / Voxel Health** | Enter new numbers to instantly propagate mass or health to **all** members and walls in the group (Undo-friendly). |
+| **Effect Events** | Audio clips and particle prefabs are configured on the **DestructionEffectsManager**. Use its inspector for defaults or per-material overrides. |
+| **Total Active Pieces** | Live count of child objects that are currently active – handy for quick complexity checks. |
+| **Rebuild Voxels** button | Forces every member and wall to regenerate its mesh & colliders. Use after code tweaks or when something looks off. |
+
+### Stress Visualizer
+
+Toggle from **Tools ▸ DSB ▸ Visualize Stress Gizmos**. When enabled (run-time only) each Structural Group pre-computes load propagation and draws coloured gizmos so you can spot over-stressed beams dynamically in play mode.
+
+### Piece-level Debug Inspectors
+
+* **Member Piece** and **Wall Piece** components get custom inspectors that expose:
+
+  * *Accumulated Damage* – editable at runtime to simulate wear or force-fail a voxel.
+  * *Max/Current Health* read-outs pulled from the parent member or wall.
+
+These inspectors appear only when you select an individual voxel piece, so your usual hierarchy stays clutter-free.
+
+---
+
+## FAQ
+
+**Q:** *Why is my structure invisible when I place it in a prefab?*
+**A:** Enable Mesh Cache ▸ Enable Mesh Persistence through the **Structure Manager**, and select a folder to allow for prefabbing of structure.
+
+**Q:** *Why are my walls pink?*
+**A:** Assign a material in **Build Settings ▸ Wall Material** or use **Apply Material** mode.
+
+**Q:** *Pieces disappear when they hit the ground.*
+**A:** Increase *Max Active Gibs* in the DestructionEffectsManager – chunks beyond this limit are pooled immediately.
+
+**Q:** *Undo doesn’t restore everything.*
+**A:** Make sure you performed each action through the **Structure Manager**. Manual hierarchy edits bypass the tool’s grouped Undo.
+
+**Q:** *Diagonal ghost beams never appear.*
+**A:** In **Build Settings ▸ Disable Direction** set **None** or **Orthogonal**. The Diagonal option hides diagonal build-slots.
+
+---
+
+## Support
+
+Email [indindoliantonio@gmail.com](mailto:indindoliantonio@gmail.com)
+💬 Discord: <https://discord.gg/73GaMeP6JF>
+
+---
+
+## Changelog
+
+### 1.0.0 – 2025-06-13
+
+* Initial release: build-mode toolbar, parametric voxel members, wall grid authoring, design presets, stress solver, debris pooling & mesh cache.
+
+---
+
+## License
+
+Distributed under the standard Unity Asset Store EULA; see `LICENSE.md`.
+
+© 2025 Mayuns Technologies. All rights reserved.
+</body>
+</html>

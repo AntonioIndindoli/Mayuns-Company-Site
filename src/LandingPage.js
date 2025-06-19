@@ -7,6 +7,7 @@ import backrooms from "./images/backroomsGameImage.png";
 import copyright from "./images/copyright.png";
 import soon from "./images/Comingsoon.png";
 import album from "./images/nutpack.jpg";
+import placeholder from "./placeholder.png";
 
 const LandingPage = () => {
   return (
@@ -64,6 +65,13 @@ const LandingPage = () => {
             caption="Explore The NutPack Album"
             link="/Album"
             description="A collection of fun, eclectic tracks. Also available on Spotify."
+          />
+
+          <Card
+            imageSrc={placeholder}
+            caption="DSB Manual"
+            link="/structure-builder"
+            description="Learn how to create destructible structures."
           />
 
           <Card
