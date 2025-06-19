@@ -181,3 +181,15 @@ After redeploying the front‑end with the correct variable, all requests will h
 > Secrets **must not** be committed. Render’s *Environment → Add Secret Vars* UI keeps them safe.
 
 ---
+
+## Unity WebGL Demo
+
+The React app includes a route at `/unity-demo` that loads a Unity WebGL build from `public/unity_build/index.html`.
+
+To add your own Unity project:
+
+1. Build your game in Unity with the **WebGL** target.
+2. Copy the generated files (typically the `Build/` folder, `TemplateData/` folder, and `index.html`) into `public/unity_build/` replacing the placeholder file.
+3. Start the React server (`npm start`) and navigate to `http://localhost:3000/unity-demo` to play the game.
+
+Deployments will serve the same route for anyone visiting `/unity-demo`.
