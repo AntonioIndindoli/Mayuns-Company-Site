@@ -57,14 +57,19 @@
 $ git clone https://github.com/yourusername/gamedev-company-website.git
 $ cd gamedev-company-website
 
-# 2. Install deps
-$ npm install                  # installs root + workspaces
+# 2. Install dependencies
+$ npm install            # front-end (React)
+$ cd backend && npm install  # backend (Express)
+$ cd ..
 
 # 3. Environment
-$ cp .env.example .env         # edit values
+# create a `.env` file with DB_URL, TOKEN_SECRET and PORT variables
 
-# 4. Dev mode (concurrently)
-$ npm run dev                  # runs backend on :5000 & CRA on :3000
+# 4. Start the app
+# Terminal 1 - backend API
+$ cd backend && npm run dev
+# Terminal 2 - React client
+$ npm start
 ```
 
 ---
