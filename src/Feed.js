@@ -9,28 +9,32 @@ import ProfilePic from "./ProfilePic";
 import ShowMore from "react-show-more-button/dist/module";
 
 export default function Feed({ selectedThread }) {
-    const [data, setData] = useState([]);
-    const [threadName, setThreadName] = useState(""); // State to store the thread name
-  
-    useEffect(() => {
-        if (!selectedThread){
-            selectedThread = '6603a122a6a831e355fde43d';
-        }
-        let postUrl = `${process.env.REACT_APP_API_URL}/posts/thread/${selectedThread}`;
-        let threadUrl = `${process.env.REACT_APP_API_URL}/thread/${selectedThread}`; // Adjust according to your actual API
-  
-        // Fetch posts by thread
-        axios.get(postUrl)
-          .then((res) => setData(res.data.posts.slice(0, 10))) // Adjust based on your API response
-          .catch(console.error);
-  
-        // Fetch thread name
-        axios.get(threadUrl)
-          .then((res) => {
-            setThreadName(res.data.name); // Adjust based on your actual API response structure
-          })
-          .catch(console.error);
-    }, [selectedThread]); // Re-fetch posts when selectedThread changes
+  const [data, setData] = useState([]);
+  const [threadName, setThreadName] = useState(""); // State to store the thread name
+
+  useEffect(() => {
+    if (!selectedThread) {
+      selectedThread = '6603a122a6a831e355fde43d';
+    }
+    let postUrl = `${process.env.REACT_APP_API_URL}/posts/thread/${selectedThread}`;
+    let threadUrl = `${process.env.REACT_APP_API_URL}/thread/${selectedThread}`; // Adjust according to your actual API
+
+    // Fetch posts by thread
+    axios.get(postUrl)
+      .then((res) => {
+        const posts = res.data?.posts ?? [];
+        setData(posts.slice(0, 10));
+      })
+      .catch(console.error);
+
+
+    // Fetch thread name
+    axios.get(threadUrl)
+      .then((res) => {
+        setThreadName(res.data.name); // Adjust based on your actual API response structure
+      })
+      .catch(console.error);
+  }, [selectedThread]); // Re-fetch posts when selectedThread changes
 
   if (data.length > 0) {
     return (
@@ -40,7 +44,7 @@ export default function Feed({ selectedThread }) {
             <div className="post-header">
               <div className="post-title-date">
                 <a className="Post-text-title">
-                  #{threadName} 
+                  #{threadName}
                 </a>
               </div>
             </div>

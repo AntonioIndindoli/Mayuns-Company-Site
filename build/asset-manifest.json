@@ -1,9 +1,10 @@
 {
   "files": {
-    "main.css": "/static/css/main.df1ddd31.css",
-    "main.js": "/static/js/main.c3aff44d.js",
+    "main.css": "/static/css/main.1ba4c628.css",
+    "main.js": "/static/js/main.c75d34ca.js",
     "static/media/nutpack.jpg": "/static/media/nutpack.edc3ce1e082ff316f8be.jpg",
-    "static/media/HomeLogo.png": "/static/media/HomeLogo.670a2eca75980a342950.png",
+    "static/media/DSB_Screenshot2.png": "/static/media/DSB_Screenshot2.4e60b15dabcdb78adf2d.png",
+    "static/media/HomeLogo.png": "/static/media/HomeLogo.fcd3b7c5f4f0574c444c.png",
     "static/media/backroomsGameImage.png": "/static/media/backroomsGameImage.15f08a8ab4b30d11c05f.png",
     "static/media/copyright.png": "/static/media/copyright.22674b119843afb82fd9.png",
     "static/media/logo.png": "/static/media/logo.e081601f20a221b4e6d9.png",
@@ -11,11 +12,11 @@
     "static/media/Comingsoon.png": "/static/media/Comingsoon.2a7af70433b9cf35ffe7.png",
     "static/media/placeholder.png": "/static/media/placeholder.08cf6624304dadc88aa0.png",
     "index.html": "/index.html",
-    "main.df1ddd31.css.map": "/static/css/main.df1ddd31.css.map",
-    "main.c3aff44d.js.map": "/static/js/main.c3aff44d.js.map"
+    "main.1ba4c628.css.map": "/static/css/main.1ba4c628.css.map",
+    "main.c75d34ca.js.map": "/static/js/main.c75d34ca.js.map"
   },
   "entrypoints": [
-    "static/css/main.df1ddd31.css",
-    "static/js/main.c3aff44d.js"
+    "static/css/main.1ba4c628.css",
+    "static/js/main.c75d34ca.js"
   ]
 }

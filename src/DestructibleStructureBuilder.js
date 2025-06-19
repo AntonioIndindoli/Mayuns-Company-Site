@@ -2,7 +2,7 @@ import React from "react";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 
-const StructureBuilder = () => {
+const DestructibleStructureBuilder = () => {
   return (
     <div className="LandingPage01" style={{ width: "100%", background: "white" }}>
       <Header />
@@ -36,4 +36,4 @@ const StructureBuilder = () => {
   );
 };
 
-export default StructureBuilder;
+export default DestructibleStructureBuilder;

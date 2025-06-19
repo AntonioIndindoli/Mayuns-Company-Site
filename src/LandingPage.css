@@ -96,11 +96,11 @@
 }
 /* Add this to your styles.css file */
 .Home-Message {
-  font-size: 50px; /* Adjust size as needed */
+  font-size: 70px; /* Adjust size as needed */
   color: black;
   text-align: center;
   font-weight: 700; /* Bold */
-  margin-top: 100px; /* Adjust margin as needed */
+  margin-top: 170px; /* Adjust margin as needed */
   z-index: 1;
 }
 
@@ -183,7 +183,7 @@
 
 .box-center-image {
   position: absolute;
-  top: calc(20vh);
+  top: calc(10vh);
   left: 0;
   right: 0;
   display: flex;
@@ -201,7 +201,7 @@
 
 .main-image {
   max-width: 100%;
-  max-height: 30vh; /* or any other value that suits your design */
+  max-height: 50vh; /* or any other value that suits your design */
   min-height: 120px;
   width: auto;
   height: auto;
@@ -293,7 +293,7 @@
   margin: 0 auto; /* Center the divider within its container */
 }
 
-@media (max-width: 700px) {
+@media (max-width: 750px) {
   .header-bar {
     width: 90%;
     max-width: 800px;
@@ -334,8 +334,8 @@
   }
 
   .Home-Message {
-    font-size: 30px; /* Adjusted size for mobile */
-    margin-top: 10px; /* Adjust margin as needed */
+    font-size: 40px; /* Adjusted size for mobile */
+    margin-top: 30px; /* Adjust margin as needed */
   }
 
   .Home-Projects {
@@ -349,7 +349,7 @@
 
   .box-center-image {
     position: absolute;
-    top: calc(15vh + 40px);
+    top: calc(5vh + 40px);
     left: 0;
     right: 0;
     display: flex;
@@ -366,7 +366,7 @@
   
   .main-image {
     max-width: 100%;
-    max-height: 20vh; /* or any other value that suits your design */
+    max-height: 30vh; /* or any other value that suits your design */
     width: auto;
     height: auto;
     z-index: 1;
@@ -409,7 +409,7 @@
 
   .Home-Message {
     font-size: 40px; /* Adjusted size for mobile */
-    margin-top: 10px; /* Adjust margin as needed */
+    margin-top: 120px; /* Adjust margin as needed */
   }
 
   .Home-Projects {
@@ -440,7 +440,7 @@
   
   .main-image {
     max-width: 100%;
-    max-height: 10vh; /* or any other value that suits your design */
+    max-height: 55vh; /* or any other value that suits your design */
     width: auto;
     height: auto;
     z-index: 1;

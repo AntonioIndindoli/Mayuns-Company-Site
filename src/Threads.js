@@ -9,7 +9,7 @@ export default function Threads({ onSelectThread }) {
   useEffect(() => {
     axios
       .get(`${process.env.REACT_APP_API_URL}/threads`)
-      .then((res) => setData(res.data.threads))
+      .then((res) => setData(res.data?.threads ?? []))
       .catch(console.error);
   }, []);
 
@@ -44,10 +44,10 @@ export default function Threads({ onSelectThread }) {
         </button>
       ) : (
         // Show input field and submit button when in creating mode
-        <div            style={{
-            width: "100%",
+        <div style={{
+          width: "100%",
 
-          }}>
+        }}>
           <input
             className="thread-list-text-input"
             type="text"

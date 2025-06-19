@@ -7,6 +7,7 @@ import backrooms from "./images/backroomsGameImage.png";
 import copyright from "./images/copyright.png";
 import soon from "./images/Comingsoon.png";
 import album from "./images/nutpack.jpg";
+import DSB_Screenshot from "./images/DSB_Screenshot2.png";
 import placeholder from "./placeholder.png";
 
 const LandingPage = () => {
@@ -54,6 +55,13 @@ const LandingPage = () => {
           />
 
           <Card
+            imageSrc={DSB_Screenshot}
+            caption="D.S.B. for Unity"
+            link="/destructible-structure-builder"
+            description="Unity editor toolkit for collapsible structures. Avaliable on the official Unity Asset Store."
+          />
+          
+          <Card
             imageSrc={copyright}
             caption="Play in Browser"
             link="https://victorious-rock-0e8ecde10.3.azurestaticapps.net/"
@@ -65,13 +73,6 @@ const LandingPage = () => {
             caption="Explore The NutPack Album"
             link="/Album"
             description="A collection of fun, eclectic tracks. Also available on Spotify."
-          />
-
-          <Card
-            imageSrc={placeholder}
-            caption="DSB Manual"
-            link="/structure-builder"
-            description="Learn how to create destructible structures."
           />
 
           <Card

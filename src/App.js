@@ -14,7 +14,7 @@ import PostComment from "./PostComment";
 import Comments from "./Comments";
 import MyProfile from "./MyProfile";
 import UnityDemo from "./UnityDemo";
-import StructureBuilder from "./StructureBuilder";
+import DestructibleStructureBuilder from "./DestructibleStructureBuilder";
 import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 //import ProtectedRoutes from "./ProtectedRoutes";
 //import { Routes, Route, Navigate, useLocation } from "react-router-dom";
@@ -51,7 +51,7 @@ function App() {
         <Route exact path="/free" element={<FreeComponent />} />
         <Route exact path="/userlist" element={<Members />}/>
         <Route exact path="/unity-demo" element={<UnityDemo />} />
-        <Route exact path="/structure-builder" element={<StructureBuilder />} />
+        <Route exact path="/destructible-structure-builder" element={<DestructibleStructureBuilder />} />
         <Route exact path="/auth" element={<ProtectedRoutes><AuthComponent /></ProtectedRoutes>} />
       </Routes>
     </Col >
