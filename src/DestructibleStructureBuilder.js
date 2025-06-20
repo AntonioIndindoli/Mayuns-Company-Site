@@ -84,7 +84,7 @@ const DestructibleStructureBuilder = () => {
           <li>Hover & click to stretch beams or columns from any connection.</li>
           <li>Add walls between beams; punch windows or corner cut‑outs with sub‑modes.</li>
           <li>Mark supports green (Grounded) so the solver knows what’s fixed.</li>
-          <li>Press Play and interact — shoot it, ram it, or just let gravity do the rest.</li>
+          <li>Press Play and interact. Shoot it, ram it, or just let gravity do the rest.</li>
         </ol>
         <p>Total time for your first crumbling shed: about 90&nbsp;seconds.</p>
 
@@ -114,8 +114,7 @@ const DestructibleStructureBuilder = () => {
         <p>
           We read every message and aim to reply within one business day.
           Small fixes and quality‑of‑life updates are planned throughout the 1.x cycle.
-          Let us know what you build — we’re excited to see things fall apart.
-        </p>
+        </p>f—
 
         <p>Add Destructible Structure Builder to your toolbox today and bring satisfying, believable destruction to your game with zero scripting overhead.</p>
       </section>
