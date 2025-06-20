@@ -56,7 +56,7 @@ export default function UserList() {
                             <a href={"/profile/" + user.name} className="Post-text-title">{user.name}</a>
                             <p className="Post-text">Joined on: {dateFormat(user.createdAt, "mmmm dS, yyyy")}</p>
                             {isAdmin ? (
-                                user.isVerified ? 'Verified' : (
+                                user.isVerified ? <p className="verification-status">{'Verified'}</p> : (
                                     <button onClick={() => verifyUser(user._id)} className="verify-user-button">
                                         Verify
                                     </button>
