@@ -19,16 +19,18 @@ const DestructibleStructureBuilder = () => {
           onClick={() => (window.location.href = "/unity-demo")}
           className="downloadButton"
         >
-          View Unity Demo
+          Play Demo In Browser Now
         </button>
-      </div>
 
-      <div style={{ width: "100%", minHeight: "80vh" }}>
-        <iframe
-          title="DSB Manual"
-          src="/dsb-manual.html"
-          style={{ width: "100%", height: "100%", border: "none" }}
-        />
+        {/* Discord Server Button */}
+        <a
+          href="https://discord.gg/73GaMeP6JF"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="downloadButton"
+        >
+          Join Discord
+        </a>
       </div>
 
       <Footer />
