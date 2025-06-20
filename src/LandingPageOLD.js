@@ -417,7 +417,7 @@ function LandingPage() {
             }}
           >
             <div
-              className="Forums"
+              className="Blog"
               style={{
                 color: "black",
                 fontSize: 20,
@@ -426,7 +426,7 @@ function LandingPage() {
                 wordWrap: "break-word",
               }}
             >
-              Forums
+              Blog
             </div>
             <div
               className="Register"

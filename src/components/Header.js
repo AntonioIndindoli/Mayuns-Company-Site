@@ -27,9 +27,9 @@ const Header = () => {
               className="nav-button"
               variant="primary"
               type="submit"
-              onClick={(e) => navigate("/forums")}
+              onClick={(e) => navigate("/blog")}
             >
-              Forums
+              Blog
             </button>
             {!token && (
               <>

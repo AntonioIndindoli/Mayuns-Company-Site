@@ -1,8 +1,9 @@
 {
   "files": {
-    "main.css": "/static/css/main.34762225.css",
-    "main.js": "/static/js/main.6428575c.js",
+    "main.css": "/static/css/main.ab401c01.css",
+    "main.js": "/static/js/main.dd018a1b.js",
     "static/media/nutpack.jpg": "/static/media/nutpack.edc3ce1e082ff316f8be.jpg",
+    "static/media/DSB_Screenshot1.png": "/static/media/DSB_Screenshot1.b94e3eb003ec79352532.png",
     "static/media/DSB_Screenshot2.png": "/static/media/DSB_Screenshot2.4e60b15dabcdb78adf2d.png",
     "static/media/HomeLogo.png": "/static/media/HomeLogo.1dc67d8580ff47809b44.png",
     "static/media/mayunays.netlogo.png": "/static/media/mayunays.netlogo.b0e23156ef16d628fa63.png",
@@ -12,11 +13,11 @@
     "static/media/Comingsoon.png": "/static/media/Comingsoon.2a7af70433b9cf35ffe7.png",
     "static/media/placeholder.png": "/static/media/placeholder.08cf6624304dadc88aa0.png",
     "index.html": "/index.html",
-    "main.34762225.css.map": "/static/css/main.34762225.css.map",
-    "main.6428575c.js.map": "/static/js/main.6428575c.js.map"
+    "main.ab401c01.css.map": "/static/css/main.ab401c01.css.map",
+    "main.dd018a1b.js.map": "/static/js/main.dd018a1b.js.map"
   },
   "entrypoints": [
-    "static/css/main.34762225.css",
-    "static/js/main.6428575c.js"
+    "static/css/main.ab401c01.css",
+    "static/js/main.dd018a1b.js"
   ]
 }

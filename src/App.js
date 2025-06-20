@@ -39,7 +39,7 @@ function App() {
     <Col className="App">
       <Routes>
       <Route exact path="/Album" element={<AlbumPage />} />
-        <Route exact path="/Forums" element={<Home />} />
+        <Route exact path="/Blog" element={<Home />} />
         <Route exact path="/" element={<LandingPage />} />
         <Route path="/profile/:user" element={<ProfileView/>} />
         <Route path="/PostComment/:postId" element={<PostComment/>} />
