@@ -136,33 +136,40 @@
   width: 100%;
   background-color: 282c34;
 }
-.feed-container1{
-  width: 200px; /* Adjust this value to change the column's width relative to its siblings */
-  background-color: #eaeaea;
-  padding-top: 10px;
+.feed-container-row {
+  padding-top: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: start;
+  gap: 10px;
+  margin: 0 auto;
+  width: 100%; /* Take full page width */
+  max-width: 1200px; /* Optional: limit max width */
 }
-.feed-container3 {
-  width: 300px; /* Adjust this value to change the column's width relative to its siblings */
+
+.feed-container-row2 {
+  display: flex;
+  width: 100%;
+  flex-wrap: nowrap;
+}
+
+.feed-container1 {
+  flex: 1;
   background-color: #eaeaea;
   padding-top: 10px;
 }
 
 .feed-container2 {
-  max-width: 400px; /* This gives the feed container more space, making it more prominent */
+  flex: 2;
+  background-color: #f5f5f5;
 }
 
-.feed-container-row {
-  padding-top: 120px;
-  display: flex;
-  justify-content: center; /* Center the columns horizontally */
-  align-items: start; /* Align items from the start vertically */
-  gap: 10px; /* Optional: adds space between columns */
-  margin: 0 auto; /* Center the row container in the middle of the page */
-  max-width: 900px; /* Adjust based on your preference */
+.feed-container3 {
+  flex: 1;
+  background-color: #eaeaea;
+  padding: 10px;
 }
-.feed-container-row2 {
-  flex-wrap: nowrap;
-}
+
 
 .button-bar {
   margin-left: 0px;
@@ -376,7 +383,7 @@
   width: 100%;
   padding: 20px 20px 0px 20px;
   background: #f1f1f1;
-  margin-top: 10px;
+  margin-top: 1px;
 }
 
 .Post-img {
@@ -633,7 +640,7 @@
 
 @media (max-width: 800px) {
   .group-feed {
-    padding: 0px 15px 0px 60px;
+    padding: 0px 0px 0px 0px;
     min-width: 100vw;
   }
 
