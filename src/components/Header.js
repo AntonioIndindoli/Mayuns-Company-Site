@@ -20,7 +20,7 @@ const Header = () => {
             className="MayunsGames-button"
             onClick={() => navigate("/")}
           >
-            <img src={logo} className="logo-image"/>
+            <img src={logo} className="logo-image" />
           </button>
           <div className="header-items-bar">
             <button
@@ -69,7 +69,7 @@ const Header = () => {
                 >
                   Logout
                 </button>
-                
+
               </>
             )}
           </div>
