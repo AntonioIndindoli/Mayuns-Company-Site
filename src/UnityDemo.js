@@ -1,18 +1,28 @@
-import React from 'react';
-
-// This component embeds the Unity WebGL build using an iframe.
-// Place your Unity WebGL build inside public/unity_build and ensure
-// the build's index.html is at public/unity_build/index.html.
-
+import React from "react";
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import "./UnityDemo.css";
+/**
+ * Responsive full-page wrapper for the WebGL build.
+ */
 const UnityDemo = () => {
   return (
-    <div style={{ width: '100%', height: '100%', minHeight: '80vh' }}>
-      <iframe
-        title="Unity WebGL Demo"
-        src="/unity_build/index.html"
-        style={{ width: '100%', height: '100%', border: 'none' }}
-        allowFullScreen
-      />
+    <div className="page-wrapper">
+      {/* site header */}
+      <Header />
+
+      {/* main section grows/shrinks so footer stays at the bottom */}
+      <main className="unity-frame-wrapper">
+        <iframe
+          title="Unity WebGL Demo"
+          src="/unity_build/index.html"
+          className="unity-frame"
+          allowFullScreen
+        />
+      </main>
+
+      {/* site footer */}
+      <Footer />
     </div>
   );
 };

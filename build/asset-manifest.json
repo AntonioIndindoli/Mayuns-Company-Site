@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.ab401c01.css",
-    "main.js": "/static/js/main.dd018a1b.js",
+    "main.css": "/static/css/main.4f2678d8.css",
+    "main.js": "/static/js/main.d5f0fd11.js",
     "static/media/nutpack.jpg": "/static/media/nutpack.edc3ce1e082ff316f8be.jpg",
     "static/media/DSB_Screenshot1.png": "/static/media/DSB_Screenshot1.b94e3eb003ec79352532.png",
     "static/media/DSB_Screenshot2.png": "/static/media/DSB_Screenshot2.4e60b15dabcdb78adf2d.png",
@@ -13,11 +13,11 @@
     "static/media/Comingsoon.png": "/static/media/Comingsoon.2a7af70433b9cf35ffe7.png",
     "static/media/placeholder.png": "/static/media/placeholder.08cf6624304dadc88aa0.png",
     "index.html": "/index.html",
-    "main.ab401c01.css.map": "/static/css/main.ab401c01.css.map",
-    "main.dd018a1b.js.map": "/static/js/main.dd018a1b.js.map"
+    "main.4f2678d8.css.map": "/static/css/main.4f2678d8.css.map",
+    "main.d5f0fd11.js.map": "/static/js/main.d5f0fd11.js.map"
   },
   "entrypoints": [
-    "static/css/main.ab401c01.css",
-    "static/js/main.dd018a1b.js"
+    "static/css/main.4f2678d8.css",
+    "static/js/main.d5f0fd11.js"
   ]
 }

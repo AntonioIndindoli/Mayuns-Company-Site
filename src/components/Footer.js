@@ -7,7 +7,7 @@ const Footer = () => {
       <div className="footer-content">
         <p>© {new Date().getFullYear()} MayunsGames. Website created by Antonio Indindoli.</p>
         <div className="social-links">
-          <a target="_blank" rel="noopener noreferrer">Contact me at support@mayuns.com</a>
+          <a target="_blank" rel="noopener noreferrer">Contact us at support@mayuns.com</a>
         </div>
       </div>
     </footer>

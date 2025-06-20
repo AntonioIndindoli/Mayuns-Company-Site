@@ -1,5 +1,5 @@
 .logo-image {
-  max-height: 50px;
+  max-height: 58px;
   /* Adjust based on your header's height */
   max-width: 100%;
   /* Ensures it doesn't overflow its container */
@@ -18,7 +18,7 @@
 
   z-index: 10000;
   margin-top: 0px;
-  height: 70px;
+  height: 90px;
   background: #f1f1f1;
 
 }
@@ -58,7 +58,7 @@
 .header-bar-wrapper {
   position: fixed;
   width: 100%;
-  height: 70px;
+  height: 90px;
   background: #f1f1f1;
   z-index: 10000;
   top: 0px;
@@ -81,10 +81,7 @@
   font-size: 15px;
   font-weight: 700;
   word-wrap: break-word;
-  background-color: #015b8a;
-  padding-left: 7px;
-  padding-right: 7px;
-  padding-top: 0px;
+  background-color: #000000;
   border: #ffffff00;
   border-radius: 5px;
 }
@@ -363,7 +360,6 @@
 }
 
 .site-footer {
-  margin-top: 50px;
   width: 100%;
   background-color: #f1f1f1;
   padding: 20px 0;
@@ -402,11 +398,15 @@
 }
 
 @media (max-width: 750px) {
+.logo-image {
+  max-height: 50px;
+}
+
   .header-bar {
     width: 90%;
     max-width: 800px;
     margin: auto;
-    height: 70px;
+    height: 90px;
     background: #f1f1f1;
   }
 
@@ -427,7 +427,7 @@
 
   .header-bar-wrapper {
     width: 100%;
-    height: 70px;
+    height: 90px;
     background: #f1f1f1;
   }
 
@@ -498,7 +498,7 @@
     width: 90%;
     max-width: 800px;
     margin: auto;
-    height: 70px;
+    height: 90px;
     background: #f1f1f1;
   }
 
@@ -519,7 +519,7 @@
 
   .header-bar-wrapper {
     width: 100%;
-    height: 70px;
+    height: 90px;
     background: #f1f1f1;
   }
 

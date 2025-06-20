@@ -46,7 +46,6 @@ const DestructibleStructureBuilder = () => {
 
       {/* Package information section */}
       <section className="package-details" style={{ padding: "2rem 1rem", maxWidth: "900px", margin: "0 auto", lineHeight: 1.6 }}>
-        <h2>Destructible Structure Builder</h2>
 
         <h3>What is it?</h3>
         <p>
@@ -54,7 +53,7 @@ const DestructibleStructureBuilder = () => {
           Unity&nbsp;2022.3 LTS that lets you design, place and fine‑tune breakable
           buildings entirely inside the Unity Editor. Click to add beams, drag out
           walls, mark load‑bearing parts, hit Play… and watch your creation crack,
-          crumble and collapse in real time.
+          crumble and collapse realistically in real time.
         </p>
 
         <h3>Why you'll love it</h3>
@@ -113,12 +112,12 @@ const DestructibleStructureBuilder = () => {
 
         <h3>Support & roadmap</h3>
         <p>
-          We read every thread on the official forum and aim to reply within one business day.
+          We read every message and aim to reply within one business day.
           Small fixes and quality‑of‑life updates are planned throughout the 1.x cycle.
           Let us know what you build — we’re excited to see things fall apart.
         </p>
 
-        <p><strong>Build it. Break it. Repeat.</strong> Add Destructible Structure Builder to your toolbox today and bring satisfying, believable destruction to your game with zero scripting overhead.</p>
+        <p>Add Destructible Structure Builder to your toolbox today and bring satisfying, believable destruction to your game with zero scripting overhead.</p>
       </section>
 
       <Footer />

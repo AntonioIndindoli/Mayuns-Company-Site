@@ -1,0 +1,23 @@
+/* page skeleton */
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    /* take the full viewport height */
+}
+
+/* main content expands to fill the leftover space between header & footer */
+.unity-frame-wrapper {
+    flex: 1;
+    display: flex;
+}
+
+/* iframe inherits the wrapper size */
+.unity-frame {
+    width: 100%;
+    margin-top: 90px;
+    border: none;
+    /* Ensures the WebGL content is not cut off on mobile if you rotate */
+    max-width: 100%;
+    max-height: 100%;
+}
