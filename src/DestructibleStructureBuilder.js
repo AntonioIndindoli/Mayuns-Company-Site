@@ -86,7 +86,6 @@ const DestructibleStructureBuilder = () => {
           <li>Mark supports green (Grounded) so the solver knows what’s fixed.</li>
           <li>Press Play and interact. Shoot it, ram it, or just let gravity do the rest.</li>
         </ol>
-        <p>Total time for your first crumbling shed: about 90&nbsp;seconds.</p>
 
         <h3>What's in the package?</h3>
         <ul>
@@ -114,9 +113,7 @@ const DestructibleStructureBuilder = () => {
         <p>
           We read every message and aim to reply within one business day.
           Small fixes and quality‑of‑life updates are planned throughout the 1.x cycle.
-        </p>f—
-
-        <p>Add Destructible Structure Builder to your toolbox today and bring satisfying, believable destruction to your game with zero scripting overhead.</p>
+        </p>
       </section>
 
       <Footer />
