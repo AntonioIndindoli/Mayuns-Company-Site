@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/static/css/main.fc973662.css",
+    "main.css": "/static/css/main.4cf126f4.css",
     "main.js": "/static/js/main.e47a353b.js",
     "static/media/nutpack.jpg": "/static/media/nutpack.edc3ce1e082ff316f8be.jpg",
     "static/media/DSB_Screenshot1.png": "/static/media/DSB_Screenshot1.b94e3eb003ec79352532.png",
@@ -13,11 +13,11 @@
     "static/media/Comingsoon.png": "/static/media/Comingsoon.2a7af70433b9cf35ffe7.png",
     "static/media/placeholder.png": "/static/media/placeholder.08cf6624304dadc88aa0.png",
     "index.html": "/index.html",
-    "main.fc973662.css.map": "/static/css/main.fc973662.css.map",
+    "main.4cf126f4.css.map": "/static/css/main.4cf126f4.css.map",
     "main.e47a353b.js.map": "/static/js/main.e47a353b.js.map"
   },
   "entrypoints": [
-    "static/css/main.fc973662.css",
+    "static/css/main.4cf126f4.css",
     "static/js/main.e47a353b.js"
   ]
 }
