@@ -7,6 +7,14 @@ import post from './post.png';
 import Cookies from "universal-cookie";
 const cookies = new Cookies();
 
+function linkify(text) {
+    const urlRegex = /((https?:\/\/[^\s]+))/g;
+    return text.replace(urlRegex, (url) => {
+        const displayUrl = url.length > 50 ? url.slice(0, 47) + "..." : url;
+        return `<a href="${url}" target="_blank" rel="noopener noreferrer">${displayUrl}</a>`;
+    });
+}
+
 export default function Post() {
     var name = localStorage.getItem("USER");
     const [body, setText] = useState("");

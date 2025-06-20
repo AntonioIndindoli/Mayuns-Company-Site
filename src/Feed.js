@@ -8,6 +8,13 @@ import PostComment from "./PostComment";
 import ProfilePic from "./ProfilePic";
 import ShowMore from "react-show-more-button/dist/module";
 
+function linkify(text) {
+  const urlRegex = /((https?:\/\/[^\s<>"']+))/g;
+  return text.replace(urlRegex, (url) => {
+    return `<a href="${url}" target="_blank" rel="noopener noreferrer">${url}</a>`;
+  });
+}
+
 export default function Feed({ selectedThread }) {
   const [data, setData] = useState([]);
   const [threadName, setThreadName] = useState(""); // State to store the thread name
@@ -68,7 +75,7 @@ export default function Feed({ selectedThread }) {
               <article
                 className="Post-text"
                 dangerouslySetInnerHTML={{
-                  __html: DOMPurify.sanitize(post.body),
+                  __html: DOMPurify.sanitize(linkify(post.body)),
                 }}
               />
               {post.image && (
