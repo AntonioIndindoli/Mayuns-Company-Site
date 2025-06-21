@@ -5,6 +5,7 @@ import AlbumPage from "./AlbumPage";
 import About from "./About";
 import Extras from "./Extras";
 import UnityDemo from "./UnityDemo";
+import DestructibleStructureBuilder from "./DestructibleStructureBuilder";
 import { Routes, Route } from "react-router-dom";
 import './App.css';
 
@@ -19,6 +20,7 @@ function App() {
         <Route exact path="/about" element={<About />} />
         <Route exact path="/extras" element={<Extras />} />
         <Route exact path="/unity-demo" element={<UnityDemo />} />
+        <Route exact path="/destructible-structure-builder" element={<DestructibleStructureBuilder />} />
       </Routes>
     </Col >
   );
