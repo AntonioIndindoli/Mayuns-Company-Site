@@ -7,36 +7,36 @@
 ## Table of Contents
 
 * [Features](#features)
-* [Tech Stack](#tech-stack)
+* [Tech Stack](#tech-stack)
 * [Local Development](#local-development)
 
   * [Prerequisites](#prerequisites)
   * [Run Locally](#run-locally)
 * [Deploying to Render](#-deploying-to-render)
 
-  * [Option A – Single Express + Static](#optiona)
-  * [Option B – Two Services (API + Static Site)](#optionb)
-* [Project Structure](#project-structure)
-* [Environment Variables](#environment-variables)
+  * [Option A – Single Express + Static](#optiona)
+  * [Option B – Two Services (API + Static Site)](#optionb)
+* [Project Structure](#project-structure)
+* [Environment Variables](#environment-variables)
 
 ---
 
 ## Features
 
-* **Showcase Projects** – highlight releases such as *The Backrooms: Unseen Tapes*.
+* **Showcase Projects** – highlight releases such as *The Backrooms: Unseen Tapes*.
 * **Blog** – share dev logs and release notes.
 * **Role‑playing Web Game** – engage visitors with an interactive mini‑game.
 * **Responsive Design** – mobile‑first, looks great on any screen.
 
 ---
 
-## Tech Stack
+## Tech Stack
 
 | Layer        | Choice                           | Notes                          |
 | ------------ | -------------------------------- | ------------------------------ |
 | **Database** | MongoDB (Atlas or Render Add‑On) |                                |
-| **Backend**  | Express + Node.js (≥ 18 LTS)     | JWT auth, REST API             |
-| **Frontend** | React (CRA v5)                   | Built to static files for prod |
+| **Backend**  | Express + Node.js (≥ 18 LTS)     | JWT auth, REST API             |
+| **Frontend** | React (CRA v5)                   | Built to static files for prod |
 | **Hosting**  | **Render**                       | Free HTTPS, autoscaling        |
 
 ---
@@ -45,12 +45,12 @@
 
 ### Prerequisites
 
-* **Node.js** 18 LTS (or 20).
+* **Node.js** 18 LTS (or 20).
 * **npm** (comes with Node) or **pnpm**.
 * **MongoDB** local *or* Atlas URI.
 * **Git**.
 
-### Run Locally
+### Run Locally
 
 ```bash
 # 1. Clone
@@ -58,17 +58,9 @@ $ git clone https://github.com/yourusername/gamedev-company-website.git
 $ cd gamedev-company-website
 
 # 2. Install dependencies
-$ npm install            # front-end (React)
-$ cd backend && npm install  # backend (Express)
-$ cd ..
+$ npm install
 
-# 3. Environment
-# create a `.env` file with DB_URL, TOKEN_SECRET and PORT variables
-
-# 4. Start the app
-# Terminal 1 - backend API
-$ cd backend && npm run dev
-# Terminal 2 - React client
+# 3. Start the app
 $ npm start
 ```
 
@@ -78,7 +70,7 @@ $ npm start
 
 There are two common layouts; choose the one that matches your repo.
 
-### <a name="optiona"></a>Option A – Single Express + Static
+### <a name="optiona"></a>Option A – Single Express + Static
 
 If your **backend serves the built React files**, keep everything in **one Web Service**.
 
@@ -157,7 +149,7 @@ After redeploying the front‑end with the correct variable, all requests will h
 
 ---
 
-## Project Structure
+## Project Structure
 
 ```
 .
@@ -174,7 +166,7 @@ After redeploying the front‑end with the correct variable, all requests will h
 
 ---
 
-## Environment Variables
+## Environment Variables
 
 | Key                 | Purpose                  | Example                                               |
 | ------------------- | ------------------------ | ----------------------------------------------------- |
@@ -183,7 +175,7 @@ After redeploying the front‑end with the correct variable, all requests will h
 | `REACT_APP_API_URL` | Front‑end → API base URL | `https://api.onrender.com`                            |
 | `NODE_VERSION`      | Node runtime version     | `20.15.0`                                             |
 
-> Secrets **must not** be committed. Render’s *Environment → Add Secret Vars* UI keeps them safe.
+> Secrets **must not** be committed. Render’s *Environment → Add Secret Vars* UI keeps them safe.
 
 ---
 
