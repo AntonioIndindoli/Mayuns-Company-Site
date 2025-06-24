@@ -47,14 +47,14 @@ const DestructibleStructureBuilder = () => {
       <section class="package-details"
         style="padding:2rem 1rem;max-width:900px;margin:0 auto;line-height:1.6">
 
-        <h2>Why&nbsp;DSB?</h2>
+        <h2>Why DSB?</h2>
         <ul>
           <li><strong>One-click construction workflow</strong> – place connections, pull beams, stamp walls, rotate designs, punch windows, all from a single toolbar.</li>
-          <li><strong>Parametric voxel members</strong> – set length, thickness, texture scale and support capacity per beam or globally via Build&nbsp;Settings.</li>
+          <li><strong>Parametric voxel members</strong> – set length, thickness, texture scale and support capacity per beam or globally via Build Settings.</li>
           <li><strong>Grid-based, design-savvy walls</strong> – save any wall as a reusable <em>WallDesign</em> asset and re-apply with rotation in seconds.</li>
           <li><strong>Real-time stress solver</strong> – adjustable propagation delays let you dial in anything from creaking timbers to instant collapses.</li>
           <li><strong>Pooled debris &amp; effects</strong> – Destruction Effects Manager recycles shards, audio sources and particles for zero-GC bursts.</li>
-          <li><strong>Mesh&nbsp;Cache</strong> – persist generated meshes so prefabs stay lightweight and scene loads stay fast.</li>
+          <li><strong>Mesh Cache</strong> – persist generated meshes so prefabs stay lightweight and scene loads stay fast.</li>
           <li><strong>Undo-friendly</strong> – every edit is wrapped in a single Unity Undo group, so iteration feels native.</li>
         </ul>
 
@@ -67,7 +67,7 @@ const DestructibleStructureBuilder = () => {
             <tr><td><code>Runtime/</code></td><td>Stress solver, pooling, destructible components (C# source).</td></tr>
             <tr><td><code>Editor/</code></td><td>Structure Manager window, scene tools, custom inspectors.</td></tr>
             <tr><td><code>Samples/</code></td><td>Fully-scripted demo scene showcasing every build mode.</td></tr>
-            <tr><td>Materials&nbsp;· Textures&nbsp;· Effects</td><td>Stylised assets ready for URP, HDRP and Built-in RP.</td></tr>
+            <tr><td>Materials · Textures · Effects</td><td>Stylised assets ready for URP, HDRP and Built-in RP.</td></tr>
             <tr><td><code>Documentation/</code></td><td>60-page HTML/Markdown manual (same as the online docs).</td></tr>
           </tbody>
         </table>
@@ -79,7 +79,7 @@ const DestructibleStructureBuilder = () => {
           <li>Assembly Definitions: <code>Mayuns.DSB.Runtime</code>, <code>Mayuns.DSB.Editor</code>, <code>Mayuns.DSB.Demo</code></li>
         </ul>
 
-        <h2>Quick Start (≈ 90&nbsp;s)</h2>
+        <h2>Quick Start (≈ 90 s)</h2>
         <ol>
           <li>Import the <code>.unitypackage</code>.</li>
           <li>Open <code>Samples/DemoScene</code>.</li>
@@ -109,7 +109,7 @@ const DestructibleStructureBuilder = () => {
         </ul>
         <p>Please include Unity version, DSB version, target platform and any relevant logs.</p>
 
-        <p style="margin-top:2rem;font-size:0.9rem">© 2025&nbsp;Mayuns Technologies. Distributed under the Unity Asset Store EULA.</p>
+        <p style="margin-top:2rem;font-size:0.9rem">© 2025 Mayuns Technologies. Distributed under the Unity Asset Store EULA.</p>
       </section>
 
       <Footer />
