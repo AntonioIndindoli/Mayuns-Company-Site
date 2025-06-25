@@ -44,7 +44,6 @@ const DestructibleStructureBuilder = () => {
 
       </div>
 
-      {/* ────────── Package details ────────── */}
       <section
         className="package-details"
         style={{
@@ -138,7 +137,6 @@ const DestructibleStructureBuilder = () => {
           © 2025&nbsp;Mayuns Technologies. Distributed under the Unity Asset Store EULA.
         </p>
       </section>
-      {/* ────────────────────────────────────── */}
 
       <Footer />
     </div>
