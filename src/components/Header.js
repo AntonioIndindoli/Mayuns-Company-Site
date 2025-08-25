@@ -24,13 +24,6 @@ const Header = () => {
               >
                 About
               </button>
-              <button
-                className="nav-button"
-                type="button"
-                onClick={() => navigate("/extras")}
-              >
-                Extras
-              </button>
             </div>
         </header>
       </div>
