@@ -1,15 +1,13 @@
 import React from "react";
 import Header from "./components/Header";
 import Card from "./components/Card";
-import logo from "./images/HomeLogo.png";
 import Hero3D from "./components/Hero3D";
 import Footer from "./components/Footer";
 import backrooms from "./images/backroomsGameImage.png";
 import copyright from "./images/copyright.png";
 import soon from "./images/Comingsoon.png";
-import album from "./images/nutpack.jpg";
 import DSB_Screenshot from "./images/DSB_Screenshot2.png";
-import placeholder from "./placeholder.png";
+import placeholder from "./images/PLACEHOLDER.png";
 
 const LandingPage = () => {
   return (
@@ -27,7 +25,7 @@ const LandingPage = () => {
 
       <div className="box-center-image">
         <div className="center-image">
-          <Hero3D fallbackImg={logo} className="hero3d" />
+          <Hero3D fallbackImg={placeholder} className="hero3d" />
         </div>
       </div>
 

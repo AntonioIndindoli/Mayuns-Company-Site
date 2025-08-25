@@ -1,11 +1,6 @@
 import React from "react";
 import Header from "./components/Header";
-import Card from "./components/Card";
-import logo from "./images/HomeLogo.png";
 import Footer from "./components/Footer";
-import backrooms from "./images/backroomsGameImage.png";
-import copyright from "./images/copyright.png";
-import soon from "./images/Comingsoon.png";
 import album from "./images/nutpack.jpg";
 
 const AlbumPage = () => {
