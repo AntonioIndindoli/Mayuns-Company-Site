@@ -1,7 +1,27 @@
 import React, { Suspense, useRef, useEffect } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Environment, PresentationControls, useGLTF, Bounds, Center } from "@react-three/drei";
-import { OrbitControls } from "@react-three/drei";
+import { Environment, PresentationControls, useGLTF, Bounds, Center,  Html, useProgress  } from "@react-three/drei";
+
+function Loader({ poster }) {
+    const { progress } = useProgress();
+    return (
+        <div style={{ width: "100%", height: "100%", position: "relative" }}>
+            {poster && (
+                <img
+                    src={poster}
+                    alt=""
+                    style={{ width: "100%", height: "100%", objectFit: "contain" }}
+                />
+            )}
+            <div style={{
+                position: "absolute", inset: 0, display: "grid", placeItems: "center",
+                fontSize: 12, fontFamily: "system-ui, sans-serif", opacity: 0.8
+            }}>
+                Loading {Math.round(progress)}%
+            </div>
+        </div>
+    );
+}
 
 function Model(props) {
     const ref = useRef();
@@ -9,7 +29,7 @@ function Model(props) {
     useEffect(() => {
         scene.traverse((o) => {
             if (o.isMesh) {
-                o.castShadow = true;
+                o.castShadow = false;
                 o.receiveShadow = false; // no ground anyway
                 // if your model has transparent parts, ensure its materials have transparent=true
                 // o.material.transparent = true; // only if needed
@@ -24,16 +44,12 @@ export default function Hero3D({ fallbackImg, className = "hero3d" }) {
     return (
         <div className={className}>
             <div className="frame">
-                <Suspense
-                    fallback={
-                        <div ></div>
-                    }
-                >
+                <Suspense fallback={<Loader poster={fallbackImg} />}>
                     <Canvas
                         camera={{ fov: 40 }}
                         dpr={[1, 1.5]}
                         shadows
-                        gl={{ antialias: true, alpha: true }}             // <-- allow transparent canvas
+                        gl={{ alpha: true, antialias: false, powerPreference: "high-performance" }}
                         onCreated={({ gl, scene }) => {
                             gl.setClearColor(0x000000, 0);                  // <-- alpha = 0
                             scene.background = null;                        // <-- no scene background
@@ -54,7 +70,7 @@ export default function Hero3D({ fallbackImg, className = "hero3d" }) {
                             azimuth={[-Infinity, Infinity]}
                         >
                             <Center>
-                                <group scale={[.75, .75, .75]}>   {/* bigger jar */}
+                                <group scale={[.7, .7, .7]}>   {/* bigger jar */}
                                     <Model />
                                 </group>
                             </Center>
@@ -69,3 +85,4 @@ export default function Hero3D({ fallbackImg, className = "hero3d" }) {
         </div>
     );
 }
+useGLTF.preload("/models/home_logo.glb");
