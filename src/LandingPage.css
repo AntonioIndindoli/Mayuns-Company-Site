@@ -120,6 +120,18 @@
   z-index: 1;
 }
 
+.About-Message {
+  font-size: 50px;
+  /* Adjust size as needed */
+  color: black;
+  text-align: center;
+  font-weight: 700;
+  /* Bold */
+  margin-top: 100px;
+  /* Adjust margin as needed */
+  z-index: 1;
+}
+
 .Home-Message-Subtext {
   font-size: 16px;
   /* Adjust size as needed */
@@ -574,7 +586,26 @@
   }
 }
 
+.hero3d {
+  width: min(92vw, 960px);
+  margin: 20px;
+  background: transparent;
+}
 
+/* inner box sets the height via aspect-ratio */
+.hero3d .frame {
+  width: 100%;
+  aspect-ratio: 16 / 9;   /* change to 21/9, 4/3, etc. if you like */
+  background: transparent;
+}
+
+/* ensure the canvas actually fills its box */
+.hero3d canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  background: transparent;
+}
 
 /* General Card Styling */
 .card-div {

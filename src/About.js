@@ -8,14 +8,10 @@ const About = () => {
     <div className="LandingPage01" style={{ width: "100%", background: "white" }}>
       <Header />
 
-      <div className="hero-banner">
-        <img src={logo} alt="About us" className="hero-img" />
-      </div>
-
-      <div className="DSB-Home-Message">About Us</div>
+      <div className="About-Message">About Us</div>
       <div className="center-divider"></div>
       <div className="Home-Message-Subtext-nonItalic">
-        Exploring playful technology and interactive experiments.
+        Building games and production-grade tools for creators.
       </div>
 
       <section
@@ -29,9 +25,8 @@ const About = () => {
       >
         <h2>Who We Are</h2>
         <p>
-          MayunsGames is a small team of developers building prototypes,
-          tooling, and creative demos. We enjoy experimenting and sharing our
-          work with the community.
+          <strong>Mayuns Technologies</strong> is a small, focused game development studio
+          and software tools provider. 
         </p>
 
         <h2>What We Build</h2>

@@ -2,6 +2,7 @@ import React from "react";
 import Header from "./components/Header";
 import Card from "./components/Card";
 import logo from "./images/HomeLogo.png";
+import Hero3D from "./components/Hero3D";
 import Footer from "./components/Footer";
 import backrooms from "./images/backroomsGameImage.png";
 import copyright from "./images/copyright.png";
@@ -26,7 +27,7 @@ const LandingPage = () => {
 
       <div className="box-center-image">
         <div className="center-image">
-          <img src={logo} alt="Main Image" className="main-image" />
+          <Hero3D fallbackImg={logo} className="hero3d" />
         </div>
       </div>
 
@@ -60,7 +61,7 @@ const LandingPage = () => {
             link="/destructible-structure-builder"
             description="Unity editor toolkit for collapsible structures. Avaliable on the official Unity Asset Store."
           />
-          
+
           <Card
             imageSrc={copyright}
             caption="Play in Browser"
