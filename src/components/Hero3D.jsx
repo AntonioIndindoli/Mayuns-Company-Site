@@ -54,7 +54,7 @@ export default function Hero3D({ fallbackImg, className = "hero3d" }) {
                             gl.setClearColor(0x000000, 0);                  // <-- alpha = 0
                             scene.background = null;                        // <-- no scene background
                         }}
-                        style={{ background: "transparent" }}             // <-- ensure CSS is transparent
+                        style={{ background: "transparent", touchAction: "none" }}             // <-- ensure CSS is transparent
                     >
                         {/* no <color attach="background" .../> here */}
                         <ambientLight intensity={0.6} />
@@ -64,8 +64,9 @@ export default function Hero3D({ fallbackImg, className = "hero3d" }) {
                         <PresentationControls
                             global
                             snap={false}
-                            config={{ mass: 2, tension: 120, friction: 35 }}
+                            config={{ mass: 1.2, tension: 160, friction: 35 }}
                             rotation={[0, 0, 0]}
+                            speed={2}
                             polar={[-Math.PI / 8, Math.PI / 8]}
                             azimuth={[-Infinity, Infinity]}
                         >
