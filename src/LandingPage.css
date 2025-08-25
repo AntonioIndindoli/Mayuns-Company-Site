@@ -23,6 +23,33 @@
 
 }
 
+.hero3d {
+  width: min(92vw, 960px);
+  max-height: 55vh;
+  margin: 0px;
+  background: transparent;
+}
+
+/* inner box sets the height via aspect-ratio */
+.hero3d .frame {
+  width: 100%;
+  max-height: 50vh;
+  aspect-ratio: 4 / 3;
+  /* change to 21/9, 4/3, etc. if you like */
+  background: transparent;
+  touch-action: none;
+  /* crucial for mobile! */
+  overscroll-behavior: contain;
+}
+
+/* ensure the canvas actually fills its box */
+.hero3d canvas {
+  display: block;
+  width: 100% !important;
+  height: 100% !important;
+  background: transparent;
+}
+
 .header-items-bar {
   display: flex;
   gap: 30px;
@@ -103,7 +130,7 @@
   text-align: center;
   font-weight: 700;
   /* Bold */
-  margin-top: 170px;
+  margin-top: 140px;
   /* Adjust margin as needed */
   z-index: 1;
 }
@@ -190,18 +217,23 @@
   /* stays responsive but never exceeds 450 px */
   height: clamp(200px, 50vh, 600px);
   position: relative;
-  overflow: hidden;   /* hides cropped parts */
+  overflow: hidden;
+  /* hides cropped parts */
 }
 
 /* 2 — image stretches & centres */
 .hero-img {
-  position: absolute; /* lets it fill the banner */
-  inset: 0;           /* shorthand for top/right/bottom/left: 0 */
+  position: absolute;
+  /* lets it fill the banner */
+  inset: 0;
+  /* shorthand for top/right/bottom/left: 0 */
   width: 100%;
   height: 100%;
-  object-fit: cover;  /* zoom / crop so no letter-boxing */
+  object-fit: cover;
+  /* zoom / crop so no letter-boxing */
   object-position: center;
-  display: block;     /* removes default inline-img gap */
+  display: block;
+  /* removes default inline-img gap */
 }
 
 .pageLinkButton {
@@ -410,9 +442,33 @@
 }
 
 @media (max-width: 750px) {
-.logo-image {
-  max-height: 50px;
-}
+  .logo-image {
+    max-height: 50px;
+  }
+
+  .background-gradient {
+    margin-top: 70px;
+    /* Adjust margin as needed */
+    height: 30vh;
+    /* Adjusting height to account for header 
+
+  background: linear-gradient(to top, #ffffff 0%, #2e90b1 100%);*/
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    /* This makes the child (your image) align at the bottom */
+    min-height: 150px;
+  }
+
+  .background-gradient-color {
+    width: 100%;
+    height: 30vh;
+    position: absolute;
+    top: 70px;
+    background: linear-gradient(to top, #ffffff 0%, #2e90b1 100%);
+    z-index: 0;
+    min-height: 150px;
+  }
 
   .header-bar {
     width: 90%;
@@ -462,7 +518,7 @@
   .Home-Message {
     font-size: 40px;
     /* Adjusted size for mobile */
-    margin-top: 30px;
+    margin-top: 0px;
     /* Adjust margin as needed */
   }
 
@@ -503,9 +559,20 @@
     height: auto;
     z-index: 1;
   }
+
+  .hero3d .frame {
+    width: 100%;
+    max-height: 50vw;
+    aspect-ratio: 4 / 3;
+    /* change to 21/9, 4/3, etc. if you like */
+    background: transparent;
+    touch-action: none;
+    /* crucial for mobile! */
+    overscroll-behavior: contain;
+  }
 }
 
-@media (orientation: landscape) and (max-height: 500px) {
+@media (orientation: landscape) and (max-height: 700px) {
   .header-bar {
     width: 90%;
     max-width: 800px;
@@ -584,30 +651,20 @@
     height: auto;
     z-index: 1;
   }
+
+  .hero3d .frame {
+    width: 100%;
+    max-height: 30vh;
+    aspect-ratio: 4 / 3;
+    /* change to 21/9, 4/3, etc. if you like */
+    background: transparent;
+    touch-action: none;
+    /* crucial for mobile! */
+    overscroll-behavior: contain;
+  }
 }
 
-.hero3d {
-  width: min(92vw, 960px);
-  margin: 20px;
-  background: transparent;
-}
 
-/* inner box sets the height via aspect-ratio */
-.hero3d .frame {
-  width: 100%;
-  aspect-ratio: 16 / 9;   /* change to 21/9, 4/3, etc. if you like */
-  background: transparent;
-  touch-action: none;          /* crucial for mobile! */
-  overscroll-behavior: contain;
-}
-
-/* ensure the canvas actually fills its box */
-.hero3d canvas {
-  display: block;
-  width: 100% !important;
-  height: 100% !important;
-  background: transparent;
-}
 
 /* General Card Styling */
 .card-div {
