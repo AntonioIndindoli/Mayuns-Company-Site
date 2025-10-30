@@ -11,19 +11,14 @@ const Header = () => {
       <div className="header-bar">
         <header className="header-items">
           <button
-            className="MayunsGames-button"
+            className="nav-button"
+                type="button"
             onClick={() => navigate("/")}
           >
-            <img src={logo} className="logo-image" />
+            Mayuns.com
           </button>
             <div className="header-items-bar">
-              <button
-                className="nav-button"
-                type="button"
-                onClick={() => navigate("/about")}
-              >
-                About
-              </button>
+
             </div>
         </header>
       </div>
