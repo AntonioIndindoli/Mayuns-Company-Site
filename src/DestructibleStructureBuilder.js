@@ -15,23 +15,10 @@ const DestructibleStructureBuilder = () => {
       <div className="DSB-Home-Message">Destructible Structure Builder</div>
       <div className="center-divider"></div>
       <div className="Home-Message-Subtext-nonItalic">
-        Unity editor toolkit for collapsible structures
+        Unity editor toolkit for collapsible structures. Pending Asset Store approval.
       </div>
 
       <div className="button-container">
-        <button
-          onClick={() => (window.location.href = "/unity-demo")}
-          className="pageLinkButton"
-        >
-          Play Demo (In-Browser)
-        </button>
-
-        <button
-          onClick={() => (window.location.href = "/unity-demo")}
-          className="pageLinkButton"
-        >
-          Download From Asset Store
-        </button>
 
         <button
           href="https://discord.gg/73GaMeP6JF"
