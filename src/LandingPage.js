@@ -18,7 +18,6 @@ const LandingPage = () => {
         background: "white",
       }}
     >
-      <Header />
 
       <div className="background-gradient-color"></div>
       <div className="background-gradient"></div>
