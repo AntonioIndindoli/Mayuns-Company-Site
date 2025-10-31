@@ -15,25 +15,7 @@ const DestructibleStructureBuilder = () => {
       <div className="DSB-Home-Message">Destructible Structure Builder</div>
       <div className="center-divider"></div>
       <div className="Home-Message-Subtext-nonItalic">
-        Unity editor toolkit for collapsible structures. 
-      </div>
-
-      <div className="button-container">
-
-        <button
-          href="https://discord.gg/73GaMeP6JF"
-          className="pageLinkButton"
-        >
-          Join Discord
-        </button>
-
-        <button
-          href="https://mayuns.com/destructible-structure-builder"
-          className="pageLinkButton"
-        >
-          Pending Asset Store approval
-        </button>
-
+        Unity editor toolkit for collapsible structures. Pending Asset Store approval.
       </div>
 
       <section
