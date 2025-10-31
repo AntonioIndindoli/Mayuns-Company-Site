@@ -145,6 +145,17 @@ const DestructibleStructureBuilder = () => {
         </ul>
         <p>Please include Unity version, DSB version, target platform, and any logs.</p>
 
+        <p>
+          <a
+            href="/Manual.pdf"
+            target="_blank"
+            rel="noopener noreferrer"
+            style={{ fontWeight: 600 }}
+          >
+            View the full manual (PDF)
+          </a>
+        </p>
+
         <p style={{ marginTop: "2rem", fontSize: "0.9rem" }}>
           © 2025&nbsp;Antonio Indindoli (Mayuns Technologies). Distributed under the Unity Asset Store EULA.
         </p>
