@@ -5,7 +5,12 @@ const Footer = () => {
   return (
     <footer className="site-footer">
       <div className="footer-content">
-        <p>© {new Date().getFullYear()} MayunsGames. Website created by Antonio Indindoli.</p>
+        <p>
+          © {new Date().getFullYear()} MayunsGames. Website created by{" "}
+          <a href="https://antonioindindoli.com" target="_blank" rel="noopener noreferrer">
+            Antonio Indindoli
+          </a>.
+        </p>
         <div className="social-links">
           <a target="_blank" rel="noopener noreferrer">Contact us at support@mayuns.com</a>
         </div>
