@@ -15,7 +15,7 @@ const DestructibleStructureBuilder = () => {
       <div className="DSB-Home-Message">Destructible Structure Builder</div>
       <div className="center-divider"></div>
       <div className="Home-Message-Subtext-nonItalic">
-        Unity editor toolkit for collapsible structures. Pending Asset Store approval.
+        Unity Editor toolkit for collapsible, destructible structures. Pending Asset Store approval.
       </div>
 
       <section
@@ -27,88 +27,126 @@ const DestructibleStructureBuilder = () => {
           lineHeight: 1.6,
         }}
       >
-        <h2>Why&nbsp;DSB?</h2>
+        <h2>Overview</h2>
+        <p>
+          <strong>Destructible Structure Builder (DSB)</strong> is a Unity® Editor toolkit
+          for assembling gameplay-ready buildings that splinter, crumble, and collapse
+          in real time. All construction happens inside the Unity Editor; at runtime,
+          DSB handles stress propagation, debris pooling, and destruction effects.
+        </p>
+        <p>
+          <em>Important:</em> DSB does not provide in-game building or editing
+          capabilities.
+        </p>
+
+        <h2>Feature Highlights</h2>
         <ul>
-          <li><strong>One-click construction workflow</strong> – place connections, pull beams, stamp walls, rotate designs, punch windows, all from a single toolbar.</li>
-          <li><strong>Parametric voxel members</strong> – set length, thickness, texture scale and support capacity per beam or globally via Build&nbsp;Settings.</li>
-          <li><strong>Grid-based, design-savvy walls</strong> – save any wall as a reusable <em>WallDesign</em> asset and re-apply with rotation in seconds.</li>
-          <li><strong>Real-time stress solver</strong> – adjustable propagation delays let you dial in anything from creaking timbers to instant collapses.</li>
-          <li><strong>Pooled debris &amp; effects</strong> – Destruction Effects Manager recycles shards, audio sources and particles for zero-GC bursts.</li>
-          <li><strong>Mesh&nbsp;Cache</strong> – persist generated meshes so prefabs stay lightweight and scene loads stay fast.</li>
-          <li><strong>Undo-friendly</strong> – every edit is wrapped in a single Unity Undo group, so iteration feels native.</li>
+          <li><strong>Graph-based Stress Solver</strong> – finds paths to ground and propagates load for realistic collapse.</li>
+          <li><strong>Voxel-based Damage</strong> – per-voxel health and fracture behaviour.</li>
+          <li><strong>Chunk Merging & Splitting</strong> – dynamic performance optimization during damage.</li>
+          <li><strong>Build Modes Toolbar</strong> – create structures using visual, mode-based editing.</li>
+          <li><strong>Wall Designer</strong> – cell-based grid system with live rotation and presets.</li>
+          <li><strong>Profile-driven Effects</strong> – plug-and-play particle/audio profiles with pooling.</li>
+          <li><strong>Mesh Cache</strong> – persist generated meshes for instant prefab loading.</li>
+          <li><strong>Full Unity Undo Support</strong> – every operation wrapped in a single Undo group.</li>
         </ul>
 
-        <h2>Inside the Package</h2>
+        <h2>Package Contents</h2>
         <table>
           <thead>
             <tr>
               <th>Folder</th>
-              <th>Highlights</th>
+              <th>Contents</th>
             </tr>
           </thead>
           <tbody>
             <tr>
-              <td><code>Runtime/</code></td>
-              <td>Stress solver, pooling, destructible components (C# source).</td>
+              <td><code>Scripts/Runtime/</code></td>
+              <td>Destruction logic, stress solver, pooling (C# source).</td>
             </tr>
             <tr>
-              <td><code>Editor/</code></td>
-              <td>Structure Manager window, scene tools, custom inspectors.</td>
+              <td><code>Scripts/Editor/</code></td>
+              <td>Structure Manager window, Build Modes UI, custom inspectors.</td>
             </tr>
             <tr>
-              <td><code>Samples/</code></td>
-              <td>Fully-scripted demo scene showcasing every build mode.</td>
+              <td><code>Samples/Demo/</code></td>
+              <td>Fully-scripted sample scene with destructible buildings.</td>
             </tr>
             <tr>
-              <td>Materials&nbsp;· Textures&nbsp;· Effects</td>
-              <td>Stylised assets ready for URP, HDRP and Built-in RP.</td>
+              <td>Assets: Materials · Textures · Audio · Particles</td>
+              <td>Stylized assets for Built-in, URP, and HDRP pipelines.</td>
             </tr>
             <tr>
               <td><code>Documentation/</code></td>
-              <td>60-page HTML/Markdown manual (same as the online docs).</td>
+              <td>HTML/Markdown manual (60 pages, same as online docs).</td>
             </tr>
           </tbody>
         </table>
 
-        <h2>Requirements</h2>
-        <ul>
-          <li>Unity 2022.3 LTS or newer</li>
-          <li>Supports Built-in, URP and HDRP</li>
-          <li>Assembly Definitions: <code>Mayuns.DSB.Runtime</code>, <code>Mayuns.DSB.Editor</code>, <code>Mayuns.DSB.Demo</code></li>
-        </ul>
-
-        <h2>Quick&nbsp;Start&nbsp;(≈ 90 s)</h2>
+        <h2>Installation</h2>
         <ol>
-          <li>Import the <code>.unitypackage</code>.</li>
-          <li>Open <code>Samples/DemoScene</code>.</li>
-          <li>Launch <strong>Tools ▸ Structure Manager</strong> and click <strong>Create BuildSettings Asset</strong>.</li>
-          <li>Use <strong>Create Structure</strong>, <strong>Structural Member Build</strong> and <strong>Wall Build</strong> modes to sketch a frame.</li>
-          <li>Press <strong>Play</strong>. Collide, explode or shoot your structure to watch it fracture in real time.</li>
+          <li>Download and import the <code>.unitypackage</code>.</li>
+          <li>For URP/HDRP, upgrade materials via <em>Edit → Render Pipeline → Upgrade Project Materials</em>.</li>
+          <li>(Optional) Install <code>com.unity.ai.navigation</code> for navigation utilities.</li>
         </ol>
-        <p>The full workflow, hot-keys and extensibility notes are covered in the included manual.</p>
 
-        <h2>Performance Tips</h2>
+        <h2>Requirements & Compatibility</h2>
         <ul>
-          <li>Keep wall grids to ≤ 10 × 10 cells for best runtime throughput.</li>
-          <li>Balance debris-pool size against gib lifetimes: long-lived chunks need larger pools.</li>
-          <li>Run <strong>Mesh Cache ▸ Clean Unused Cached Meshes</strong> after major refactors to reclaim disk space.</li>
+          <li>Unity 2022.3 LTS or 2021.3 LTS (Unity 6 not yet supported)</li>
+          <li>Supports Built-in, URP, and HDRP render pipelines</li>
+          <li>Assemblies: <code>Mayuns.DSB</code>, <code>Mayuns.DSB.Editor</code>, <code>Mayuns.DSB.Demo</code>, <code>Mayuns.DSB.Navigation</code></li>
         </ul>
 
         <h2>Limitations</h2>
         <ul>
-          <li>Editor-only authoring; the toolkit does not provide in-game building.</li>
-          <li>No built-in multiplayer or netcode support (structures sync like any other Unity GameObject).</li>
+          <li>Editor-only authoring — no in-game construction.</li>
+          <li>No built-in multiplayer/netcode.</li>
+          <li>Non-uniform scaling not supported (uniform scale required).</li>
+          <li>WebGL builds not supported.</li>
         </ul>
+
+        <h2>Quick Start</h2>
+        <ol>
+          <li>Open a new scene and launch <strong>Tools → Destructible Structure Builder</strong>.</li>
+          <li>Create a <strong>BuildSettings Asset</strong> under <code>Assets/</code>.</li>
+          <li>Add a <strong>Destruction Effects Manager</strong> and assign included <em>Effects Library</em>.</li>
+          <li>Use <em>Create Structure</em>, <em>Grid Member Build</em>, and <em>Wall Build</em> to design your structure.</li>
+          <li>Press <strong>Play</strong> and interact to see real-time destruction and pooled effects.</li>
+        </ol>
+
+        <h2>Performance & Best Practices</h2>
+        <ul>
+          <li>Balance debris pool size and lifetimes for optimal memory use.</li>
+          <li>Keep wall grids ≤ 10×10 cells.</li>
+          <li>Exclude debris-to-debris collisions in the physics matrix.</li>
+          <li>Use <strong>Validate Cache</strong> or clear unused mesh cache folders periodically.</li>
+        </ul>
+
+        <h2>Destruction Effects Manager</h2>
+        <p>
+          Centralized system for pooled debris, audio, and particle effects. Supports
+          global <em>EffectsLibrary</em> and per-material overrides via <em>MaterialEffectsLibrary</em>.
+          Includes controls for debris lifetime, pool size, collision-based damage, and
+          persistent rubble piles.
+        </p>
+
+        <h2>Extensibility</h2>
+        <p>
+          Hook into <code>DestructionSignals</code> (PieceCrumble, LargeCollapse, DebrisImpact, etc.)
+          to drive custom gameplay logic or VFX/SFX. Example scripts provided in
+          <code>Samples/Demo/</code>.
+        </p>
 
         <h2>Support</h2>
         <ul>
           <li>Email: <a href="mailto:support@mayuns.com">support@mayuns.com</a></li>
           <li>Discord: <a href="https://discord.gg/73GaMeP6JF" target="_blank" rel="noopener noreferrer">https://discord.gg/73GaMeP6JF</a></li>
+          <li>Website: <a href="https://mayuns.com" target="_blank" rel="noopener noreferrer">https://mayuns.com</a></li>
         </ul>
-        <p>Please include Unity version, DSB version, target platform and any relevant logs.</p>
+        <p>Please include Unity version, DSB version, target platform, and any logs.</p>
 
         <p style={{ marginTop: "2rem", fontSize: "0.9rem" }}>
-          © 2025&nbsp;Mayuns Technologies. Distributed under the Unity Asset Store EULA.
+          © 2025&nbsp;Antonio Indindoli (Mayuns Technologies). Distributed under the Unity Asset Store EULA.
         </p>
       </section>
 
