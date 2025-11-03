@@ -141,7 +141,6 @@ const DestructibleStructureBuilder = () => {
         <ul>
           <li>Email: <a href="mailto:support@mayuns.com">support@mayuns.com</a></li>
           <li>Discord: <a href="https://discord.gg/73GaMeP6JF" target="_blank" rel="noopener noreferrer">https://discord.gg/73GaMeP6JF</a></li>
-          <li>Website: <a href="https://mayuns.com" target="_blank" rel="noopener noreferrer">https://mayuns.com</a></li>
         </ul>
         <p>Please include Unity version, DSB version, target platform, and any logs.</p>
 
