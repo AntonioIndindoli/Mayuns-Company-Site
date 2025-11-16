@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import heroShot from "./images/DSB_Screenshot1.png";
+import heroShot from "./images/DSB_Hero.png";
 import galleryShotOne from "./images/DSB_WallEditor.png";
 import galleryShotTwo from "./images/DSB_Stress.png";
 import galleryShotThree from "./images/DSB_Caching.png";
@@ -79,12 +79,16 @@ const galleryShots = [
 ];
 
 const DestructibleStructureBuilder = () => {
+  const heroBackgroundStyle = {
+    backgroundImage: `linear-gradient(110deg, rgba(2, 6, 10, 0.95) 0%, rgba(0, 0, 0, 0.9) 10%, rgba(10, 27, 49, 0.4) 100%, rgba(15, 31, 51, 0) 100%), url(${heroShot})`,
+  };
+
   return (
     <div className="LandingPage01 dsb-page">
       <Header />
 
       <main className="dsb-content">
-        <section className="dsb-hero">
+        <section className="dsb-hero" style={heroBackgroundStyle}>
           <div className="dsb-hero-copy">
             <p className="dsb-label">Unity Editor Toolkit</p>
             <h1>Destructible Structure Builder</h1>
@@ -107,9 +111,7 @@ const DestructibleStructureBuilder = () => {
               ))}
             </ul>
           </div>
-          <div className="dsb-hero-visual">
-            <img src={heroShot} alt="DSB hero view" />
-          </div>
+
         </section>
 
         <section className="dsb-overview" id="overview">
