@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -133,33 +133,64 @@ const ManualSection = ({ id, title, children }) => (
 );
 
 const DSBManual = () => {
+  const [isTocOpen, setIsTocOpen] = useState(false);
+
+  const toggleToc = () => setIsTocOpen((open) => !open);
+  const handleTocItemClick = () => setIsTocOpen(false);
+
+  const tocToggle = (
+    <button
+      type="button"
+      className={`dsb-toc-toggle ${isTocOpen ? "is-open" : ""}`}
+      onClick={toggleToc}
+      aria-expanded={isTocOpen}
+      aria-controls="dsb-manual-toc"
+    >
+      <span className="dsb-toc-icon" aria-hidden="true">
+        <span />
+        <span />
+        <span />
+      </span>
+      <span className="dsb-toc-label">Contents</span>
+    </button>
+  );
+
   return (
     <div className="LandingPage01 dsb-page">
-      <Header />
-      <main className="dsb-manual">
-        <section className="dsb-manual-hero">
-          <p className="dsb-label">Destructible Structure Builder</p>
-          <h1>Online Manual</h1>
-          <p>
-            Version 1.0.0 &nbsp;•&nbsp; Compatibility: Unity 2022.3 LTS, 2021.3 LTS, 6.0 LTS
-          </p>
-          <div style={{ marginTop: "1.5rem" }}>
-            <Link className="dsb-button secondary" to="/destructible-structure-builder">
-              ← Back to product overview
-            </Link>
+      <Header leftAddon={tocToggle} />
+      <main className={`dsb-manual-layout ${isTocOpen ? "toc-open" : ""}`}>
+        <nav
+          className={`dsb-manual-sidebar ${isTocOpen ? "open" : ""}`}
+          aria-label="Manual Table of Contents"
+        >
+          <div className="dsb-manual-toc-header">
+            <h2>Table of Contents</h2>
+            <button type="button" className="dsb-toc-close" onClick={() => setIsTocOpen(false)}>
+              Close
+            </button>
           </div>
-        </section>
-
-        <nav className="dsb-manual-section">
-          <h2>Table of Contents</h2>
-          <div className="dsb-manual-toc">
+          <div className="dsb-manual-toc" id="dsb-manual-toc">
             {toc.map((item) => (
-              <a key={item.id} href={`#${item.id}`}>
+              <a key={item.id} href={`#${item.id}`} onClick={handleTocItemClick}>
                 {item.label}
               </a>
             ))}
           </div>
         </nav>
+        <div className={`dsb-toc-overlay ${isTocOpen ? "visible" : ""}`} onClick={() => setIsTocOpen(false)} />
+        <div className="dsb-manual">
+          <section className="dsb-manual-hero">
+            <p className="dsb-label">Destructible Structure Builder</p>
+            <h1>Online Manual</h1>
+            <p>
+              Version 1.0.0 &nbsp;•&nbsp; Compatibility: Unity 2022.3 LTS, 2021.3 LTS, 6.0 LTS
+            </p>
+            <div style={{ marginTop: "1.5rem" }}>
+              <Link className="dsb-button secondary" to="/destructible-structure-builder">
+                ← Back to product overview
+              </Link>
+            </div>
+          </section>
 
         <ManualSection id="overview" title="Overview">
           <p>
@@ -546,6 +577,7 @@ public class DsbEventBridge : MonoBehaviour
           </p>
           <p>Unity is a trademark of Unity Technologies; all other trademarks belong to their respective owners.</p>
         </ManualSection>
+        </div>
       </main>
       <Footer />
     </div>

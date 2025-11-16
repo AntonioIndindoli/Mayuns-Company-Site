@@ -155,6 +155,12 @@
   z-index: 1;
 }
 
+.header-left-stack {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
 /* Add this to your styles.css file */
 .Home-Message {
   font-size: 20px;
