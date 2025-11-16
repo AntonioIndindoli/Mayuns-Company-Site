@@ -3,8 +3,9 @@ import { Link } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import heroShot from "./images/DSB_Screenshot1.png";
-import galleryShotTwo from "./images/DSB_Screenshot2.png";
-import galleryShotThree from "./images/PLACEHOLDER.png";
+import galleryShotOne from "./images/DSB_WallEditor.png";
+import galleryShotTwo from "./images/DSB_Stress.png";
+import galleryShotThree from "./images/DSB_Caching.png";
 import "./DestructibleStructureBuilder.css";
 
 const summaryCards = [
@@ -34,12 +35,12 @@ const keyStats = [
   { label: "Version", value: "1.0.0" },
   { label: "Unity", value: "2022.3 LTS, 2021.3 LTS, 6.0 LTS" },
   { label: "Render Pipelines", value: "Built-in, URP, HDRP" },
-  { label: "Status", value: "Pending Unity Asset Store approval" },
+  { label: "Status", value: "Pending Store approval" },
 ];
 
 const highlightLists = [
   {
-    title: "Fast authoring",
+    title: "Fast authoring in the Unity Editor",
     bullets: [
       "Wall Designer with live rotation, triangle cut-outs, and per-cell health",
       "Design presets as ScriptableObjects you can reuse scene-to-scene",
@@ -47,7 +48,7 @@ const highlightLists = [
     ],
   },
   {
-    title: "Robust runtime",
+    title: "Performant and Easy to Implement",
     bullets: [
       "Stress, pooling, mesh cache, and navigation utilities ship in the box",
       "Events like PieceCrumble, LargeCollapse, and DebrisImpact let you layer bespoke gameplay",
@@ -58,7 +59,7 @@ const highlightLists = [
 
 const galleryShots = [
   {
-    src: heroShot,
+    src: galleryShotOne,
     title: "Voxel-authored walls",
     caption:
       "Author windows, cut-outs, and per-cell health budgets directly on the wall grid.",
@@ -93,12 +94,9 @@ const DestructibleStructureBuilder = () => {
               solving so chunks detach, crumble, and collapse believably at runtime.
             </p>
             <div className="dsb-hero-actions">
-              <Link className="dsb-button primary" to="/destructible-structure-builder/manual">
+              <Link className="dsb-button secondary" to="/destructible-structure-builder/manual">
                 Read the Online Manual
               </Link>
-              <a className="dsb-button secondary" href="#gallery">
-                View Gallery
-              </a>
             </div>
             <ul className="dsb-key-stats">
               {keyStats.map((stat) => (
@@ -145,29 +143,6 @@ const DestructibleStructureBuilder = () => {
           </div>
         </section>
 
-        <section className="dsb-gallery" id="gallery">
-          <div className="dsb-gallery-headline">
-            <p className="dsb-label">Gallery</p>
-            <h2>From blockout to breakage</h2>
-            <p>
-              Preview in-editor overlays, stress diagnostics, and runtime chaos. The
-              gallery below highlights everyday workflows and debug moments you will
-              rely on while building destruction-ready structures.
-            </p>
-          </div>
-          <div className="dsb-gallery-grid">
-            {galleryShots.map((shot) => (
-              <figure key={shot.title}>
-                <img src={shot.src} alt={shot.title} />
-                <figcaption>
-                  <strong>{shot.title}</strong>
-                  <span>{shot.caption}</span>
-                </figcaption>
-              </figure>
-            ))}
-          </div>
-        </section>
-
         <section className="dsb-feature-columns">
           <article>
             <p className="dsb-label">Editor Workflow</p>
@@ -191,17 +166,21 @@ const DestructibleStructureBuilder = () => {
           </article>
         </section>
 
-        <section className="dsb-cta">
-          <div>
-            <h2>Full Documentation Available</h2>
-            <p>
-              The full online manual covers installation, requirements, editor tips,
-              runtime scripting, extensibility, troubleshooting, and licensing.
-            </p>
+        <section className="dsb-gallery" id="gallery">
+          <div className="dsb-gallery-headline">
+            <p className="dsb-label">Gallery</p>
           </div>
-          <Link className="dsb-button primary" to="/destructible-structure-builder/manual">
-            Explore the Manual
-          </Link>
+          <div className="dsb-gallery-grid">
+            {galleryShots.map((shot) => (
+              <figure key={shot.title}>
+                <img src={shot.src} alt={shot.title} />
+                <figcaption>
+                  <strong>{shot.title}</strong>
+                  <span>{shot.caption}</span>
+                </figcaption>
+              </figure>
+            ))}
+          </div>
         </section>
       </main>
 

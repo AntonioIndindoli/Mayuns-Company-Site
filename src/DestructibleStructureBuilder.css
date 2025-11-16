@@ -16,7 +16,7 @@
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 2rem;
     align-items: center;
-    background: #0b1f33;
+    background: #3c5a79;
     color: #fff;
     border-radius: 24px;
     padding: 3rem;
@@ -63,14 +63,14 @@
 }
 
 .dsb-button.primary {
-    background: linear-gradient(120deg, #5cc8ff, #35a8ff);
-    color: #0b1f33;
-    box-shadow: 0 10px 25px rgba(92, 200, 255, 0.5);
+    background: linear-gradient(120deg, #75afce, #5ca1d6);
+    color: #000000be;
+    box-shadow: 0 10px 25px rgba(76, 145, 182, 0.5);
 }
 
 .dsb-button.secondary {
-    background: transparent;
-    border-color: rgba(255, 255, 255, 0.5);
+    background: linear-gradient(120deg, #75afce7c, #5ca1d650);
+    border-color: rgba(255, 255, 255, 0.137);
     color: #fff;
 }
 
@@ -81,7 +81,7 @@
 
 .dsb-key-stats {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     gap: 1rem;
     list-style: none;
     padding: 0;
@@ -103,7 +103,7 @@
 }
 
 .dsb-key-stats strong {
-    font-size: 0.95rem;
+    font-size: 0.7rem;
     color: #fff;
 }
 
@@ -227,7 +227,7 @@
 }
 
 .dsb-cta {
-    background: #0b1f33;
+    background: #3c5a79;
     color: #fff;
     border-radius: 24px;
     padding: 2.5rem;
@@ -252,12 +252,12 @@
 }
 
 .dsb-manual-hero {
-    background: linear-gradient(120deg, #0b1f33, #113b6d);
+    background: #37424e;
     color: #fff;
     border-radius: 24px;
     padding: 2.5rem;
     box-shadow: 0 25px 40px rgba(11, 31, 51, 0.4);
-margin-top: 70px;
+    margin-top: 70px;
 }
 
 .dsb-manual-toc {
@@ -287,6 +287,7 @@ margin-top: 70px;
     border-radius: 18px;
     padding: 1.75rem;
     box-shadow: 0 12px 25px rgba(15, 23, 42, 0.05);
+    color: rgb(6, 18, 39);
 }
 
 .dsb-manual-section h2,
