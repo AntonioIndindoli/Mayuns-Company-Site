@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -133,59 +133,81 @@ const ManualSection = ({ id, title, children }) => (
 );
 
 const DSBManual = () => {
+  const [isTocOpen, setIsTocOpen] = useState(false);
+
+  const toggleToc = () => setIsTocOpen((prev) => !prev);
+  const closeToc = () => setIsTocOpen(false);
+
   return (
     <div className="LandingPage01 dsb-page">
-      <Header />
-      <main className="dsb-manual">
-        <section className="dsb-manual-hero">
-          <p className="dsb-label">Destructible Structure Builder</p>
-          <h1>Online Manual</h1>
-          <p>
-            Version 1.0.0 &nbsp;•&nbsp; Compatibility: Unity 2022.3 LTS, 2021.3 LTS, 6.0 LTS
-          </p>
-          <div style={{ marginTop: "1.5rem" }}>
-            <Link className="dsb-button secondary" to="/destructible-structure-builder">
-              ← Back to product overview
-            </Link>
+      <Header
+        leftSlot={
+          <button
+            type="button"
+            className={`dsb-toc-toggle ${isTocOpen ? "active" : ""}`}
+            onClick={toggleToc}
+            aria-expanded={isTocOpen}
+            aria-controls="dsb-manual-sidebar"
+          >
+            ☰ Manual Menu
+          </button>
+        }
+      />
+      <div className={`dsb-manual-shell ${isTocOpen ? "toc-open" : ""}`}>
+        <aside id="dsb-manual-sidebar" className="dsb-manual-sidebar">
+          <div className="dsb-manual-toc-header">
+            <h2>Table of Contents</h2>
+            <button type="button" className="dsb-toc-close" onClick={closeToc}>
+              Close
+            </button>
           </div>
-        </section>
-
-        <nav className="dsb-manual-section">
-          <h2>Table of Contents</h2>
           <div className="dsb-manual-toc">
             {toc.map((item) => (
-              <a key={item.id} href={`#${item.id}`}>
+              <a key={item.id} href={`#${item.id}`} onClick={closeToc}>
                 {item.label}
               </a>
             ))}
           </div>
-        </nav>
+        </aside>
+        <main className="dsb-manual">
+          <section className="dsb-manual-hero">
+            <p className="dsb-label">Destructible Structure Builder</p>
+            <h1>Online Manual</h1>
+            <p>
+              Version 1.0.0 &nbsp;•&nbsp; Compatibility: Unity 2022.3 LTS, 2021.3 LTS, 6.0 LTS
+            </p>
+            <div style={{ marginTop: "1.5rem" }}>
+              <Link className="dsb-button secondary" to="/destructible-structure-builder">
+                ← Back to product overview
+              </Link>
+            </div>
+          </section>
 
-        <ManualSection id="overview" title="Overview">
-          <p>
-            <strong>Destructible Structure Builder (DSB)</strong> is a Unity Editor toolkit for assembling gameplay-ready buildings that can splinter, crumble, and collapse in real time. Author everything in the DSB window using Build Modes for connections, members, walls, and stairs. Runtime components handle stress propagation, pooling, debris, and event dispatch.
-          </p>
-          <p>
-            <em>Important:</em> All construction happens in the Unity Editor. The toolkit does not include any in-game building or runtime editing tools.
-          </p>
-        </ManualSection>
+          <ManualSection id="overview" title="Overview">
+            <p>
+              <strong>Destructible Structure Builder (DSB)</strong> is a Unity Editor toolkit for assembling gameplay-ready buildings that can splinter, crumble, and collapse in real time. Author everything in the DSB window using Build Modes for connections, members, walls, and stairs. Runtime components handle stress propagation, pooling, debris, and event dispatch.
+            </p>
+            <p>
+              <em>Important:</em> All construction happens in the Unity Editor. The toolkit does not include any in-game building or runtime editing tools.
+            </p>
+          </ManualSection>
 
-        <ManualSection id="feature-highlights" title="Feature Highlights">
-          <ul>
-            <li><strong>Stress Solver:</strong> Graph-based solver that finds shortest paths to ground, isolates unsupported chunks, and propagates structural load.</li>
-            <li><strong>Voxel-based Damage:</strong> Structures use voxels that detach individually on impact.</li>
-            <li><strong>Chunk Merging & Splitting:</strong> Voxels merge for performance and split dynamically when damaged.</li>
-            <li><strong>Build Modes Toolbar:</strong> Visual modes for nodes, beams, walls, stairs, and more.</li>
-            <li><strong>Wall Designer:</strong> Grid-based editor with cubes, windows, triangle cutouts, per-cell health, and live rotation.</li>
-            <li><strong>Design Presets:</strong> Save any wall as a WallDesign ScriptableObject and re-apply instantly.</li>
-            <li><strong>Object Pooling:</strong> Pooled debris with adjustable lifetime, pool size, and spawn rate.</li>
-            <li><strong>Profile-driven effects:</strong> EffectsLibrary defaults plus MaterialEffectsLibrary overrides.</li>
-            <li><strong>Mesh Cache:</strong> Persist generated meshes between sessions for safe prefabs.</li>
-            <li><strong>Full Unity Undo support:</strong> Each action is wrapped in a single Undo group.</li>
-          </ul>
-        </ManualSection>
+          <ManualSection id="feature-highlights" title="Feature Highlights">
+            <ul>
+              <li><strong>Stress Solver:</strong> Graph-based solver that finds shortest paths to ground, isolates unsupported chunks, and propagates structural load.</li>
+              <li><strong>Voxel-based Damage:</strong> Structures use voxels that detach individually on impact.</li>
+              <li><strong>Chunk Merging & Splitting:</strong> Voxels merge for performance and split dynamically when damaged.</li>
+              <li><strong>Build Modes Toolbar:</strong> Visual modes for nodes, beams, walls, stairs, and more.</li>
+              <li><strong>Wall Designer:</strong> Grid-based editor with cubes, windows, triangle cutouts, per-cell health, and live rotation.</li>
+              <li><strong>Design Presets:</strong> Save any wall as a WallDesign ScriptableObject and re-apply instantly.</li>
+              <li><strong>Object Pooling:</strong> Pooled debris with adjustable lifetime, pool size, and spawn rate.</li>
+              <li><strong>Profile-driven effects:</strong> EffectsLibrary defaults plus MaterialEffectsLibrary overrides.</li>
+              <li><strong>Mesh Cache:</strong> Persist generated meshes between sessions for safe prefabs.</li>
+              <li><strong>Full Unity Undo support:</strong> Each action is wrapped in a single Undo group.</li>
+            </ul>
+          </ManualSection>
 
-        <ManualSection id="package-contents" title="Package Contents">
+          <ManualSection id="package-contents" title="Package Contents">
           <div className="dsb-table-wrapper">
             <table>
             <thead>
@@ -540,13 +562,19 @@ public class DsbEventBridge : MonoBehaviour
           <p>Website: <a href="https://mayuns.com" target="_blank" rel="noreferrer">https://mayuns.com</a></p>
         </ManualSection>
 
-        <ManualSection id="license" title="License">
-          <p>
-            Runtime and editor scripts ship under the Unity Asset Store EULA. All bundled textures, meshes, audio clips, particle presets, materials, and demo scenes were authored by Antonio Indindoli (Mayuns Technologies) and may be used in shipped projects without extra licensing or attribution requirements.
-          </p>
-          <p>Unity is a trademark of Unity Technologies; all other trademarks belong to their respective owners.</p>
-        </ManualSection>
-      </main>
+          <ManualSection id="license" title="License">
+            <p>
+              Runtime and editor scripts ship under the Unity Asset Store EULA. All bundled textures, meshes, audio clips, particle presets, materials, and demo scenes were authored by Antonio Indindoli (Mayuns Technologies) and may be used in shipped projects without extra licensing or attribution requirements.
+            </p>
+            <p>Unity is a trademark of Unity Technologies; all other trademarks belong to their respective owners.</p>
+          </ManualSection>
+        </main>
+        <div
+          className={`dsb-manual-overlay ${isTocOpen ? "visible" : ""}`}
+          onClick={closeToc}
+          aria-hidden="true"
+        />
+      </div>
       <Footer />
     </div>
   );
