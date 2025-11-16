@@ -10,76 +10,70 @@ import DSB_Screenshot from "./images/DSB_Screenshot2.png";
 import placeholder from "./images/PLACEHOLDER.png";
 
 const LandingPage = () => {
-  return (
-    <div
-      className="LandingPage01"
-      style={{
-        width: "100%",
-        background: "white",
-      }}
-    >
-      <Header />
+    return (
+        <div
+            className="LandingPage01"
+            style={{
+                width: "100%",
+                background: "white",
+            }}
+        >
+            <Header />
 
-      <div className="background-gradient-color"></div>
-      <div className="background-gradient"></div>
+            <div className="background-gradient-color"></div>
+            <div className="background-gradient"></div>
 
-      <div className="box-center-image">
-        <div className="center-image">
-          <Hero3D fallbackImg={placeholder} className="hero3d" />
+            <div className="box-center-image">
+                <div className="center-image">
+                    <Hero3D fallbackImg={placeholder} className="hero3d" />
+                </div>
+            </div>
+
+            <div className="Home-Message-Subtext">
+                Crafted with love.
+            </div>
+            <div className="Home-Message">____________</div>
+            <div className="box-center-image"></div>
+
+
+            <div className="home-projects-and-cards">
+                <div className="Home-Projects-Div">
+                </div>
+                <div className="home-cards">
+                    <Card
+                        imageSrc={backrooms}
+                        caption="Available on Steam Now"
+                        link="https://store.steampowered.com/app/2816710/The_Backrooms_Unseen_Tapes/"
+                        description="A survival horror experience in the eerie, endless hallways of The Backrooms."
+                    />
+
+                    <Card
+                        imageSrc={DSB_Screenshot}
+                        caption="D.S.B. for Unity"
+                        link="/destructible-structure-builder"
+                        description="Unity editor toolkit for collapsible structures. Avaliable on the official Unity Asset Store."
+                    />
+
+                    <Card
+                        imageSrc={copyright}
+                        caption="Play in Browser"
+                        link="https://victorious-rock-0e8ecde10.3.azurestaticapps.net/"
+                        description="A quirky RPG where you explore and meet pop culture icons, battling them in strategic showdowns with one another."
+                    />
+
+                    <Card
+                        imageSrc={soon}
+                        caption="Release TBD"
+                        link="/"
+                        description="Exciting new projects in development. Stay tuned!"
+                    />
+
+                </div>
+            </div>
+
+            <Footer />
         </div>
-      </div>
-
-      <div className="Home-Message">Crafted with love.</div>
-      <div className="Home-Message-Subtext">
-        We do not produce or sell mayonnaise
-      </div>
-      <div className="box-center-image"></div>
-
-
-      <div className="home-projects-and-cards">
-        <div className="Home-Projects-Div">
-
-          <div className="Home-Projects">Our Projects</div>
-          <div className="center-divider"></div>
-          <div className="Home-Projects-Subtext">
-            Including completed and in progress works
-          </div>
-        </div>
-        <div className="home-cards">
-          <Card
-            imageSrc={backrooms}
-            caption="Available on Steam Now"
-            link="https://store.steampowered.com/app/2816710/The_Backrooms_Unseen_Tapes/"
-            description="A survival horror experience in the eerie, endless hallways of The Backrooms."
-          />
-
-          <Card
-            imageSrc={DSB_Screenshot}
-            caption="D.S.B. for Unity"
-            link="/destructible-structure-builder"
-            description="Unity editor toolkit for collapsible structures. Avaliable on the official Unity Asset Store."
-          />
-
-          <Card
-            imageSrc={copyright}
-            caption="Play in Browser"
-            link="https://victorious-rock-0e8ecde10.3.azurestaticapps.net/"
-            description="A quirky RPG where you explore and meet pop culture icons, battling them in strategic showdowns with one another."
-          />
-
-          <Card
-            imageSrc={soon}
-            caption="Release TBD"
-            link="/"
-            description="Exciting new projects in development. Stay tuned!"
-          />
-
-        </div>
-      </div>
-
-      <Footer />
-    </div>
-  );
+    );
 };
 
 export default LandingPage;

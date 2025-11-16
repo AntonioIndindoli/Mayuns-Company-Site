@@ -25,7 +25,7 @@
 
 .hero3d {
   width: min(92vw, 960px);
-  max-height: 55vh;
+  max-height: 70vh;
   margin: 0px;
   background: transparent;
 }
@@ -33,7 +33,7 @@
 /* inner box sets the height via aspect-ratio */
 .hero3d .frame {
   width: 100%;
-  max-height: 50vh;
+  max-height: 70vh;
   aspect-ratio: 4 / 3;
   /* change to 21/9, 4/3, etc. if you like */
   background: transparent;
@@ -124,13 +124,12 @@
 
 /* Add this to your styles.css file */
 .Home-Message {
-  font-size: 70px;
+  font-size: 10px;
   /* Adjust size as needed */
   color: black;
   text-align: center;
   font-weight: 700;
-  /* Bold */
-  margin-top: 140px;
+
   /* Adjust margin as needed */
   z-index: 1;
 }
@@ -515,13 +514,6 @@
     /* Smaller font size for mobile */
   }
 
-  .Home-Message {
-    font-size: 40px;
-    /* Adjusted size for mobile */
-    margin-top: 0px;
-    /* Adjust margin as needed */
-  }
-
   .Home-Projects {
     font-size: 30px;
     /* Adjusted size for mobile */
@@ -562,8 +554,8 @@
 
   .hero3d .frame {
     width: 100%;
-    max-height: 50vw;
-    aspect-ratio: 4 / 3;
+    max-height: 65vw;
+    aspect-ratio: 3 / 3;
     /* change to 21/9, 4/3, etc. if you like */
     background: transparent;
     touch-action: none;
@@ -607,13 +599,6 @@
     height: 100%;
   }
 
-  .Home-Message {
-    font-size: 40px;
-    /* Adjusted size for mobile */
-    margin-top: 120px;
-    /* Adjust margin as needed */
-  }
-
   .Home-Projects {
     font-size: 30px;
     /* Adjusted size for mobile */
@@ -654,7 +639,7 @@
 
   .hero3d .frame {
     width: 100%;
-    max-height: 30vh;
+    max-height: 30vw;
     aspect-ratio: 4 / 3;
     /* change to 21/9, 4/3, etc. if you like */
     background: transparent;
