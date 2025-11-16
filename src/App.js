@@ -5,28 +5,31 @@ import DestructibleStructureBuilder from "./DestructibleStructureBuilder";
 import DSBManual from "./DSBManual";
 import { Col } from "react-bootstrap";
 import "./App.css";
+import ScrollToTop from "./components/ScrollToTop";
+
 
 function App() {
-  const location = useLocation();
+    const location = useLocation();
 
-  useEffect(() => {
-    window.scrollTo({ top: 0, behavior: "auto" });
-  }, [location.pathname]);
-  return (
-    <Col className="App">
-      <Routes>
-        <Route path="/" element={<LandingPage />} />
-        <Route
-          path="/destructible-structure-builder"
-          element={<DestructibleStructureBuilder />}
-        />
-        <Route
-          path="/destructible-structure-builder/manual"
-          element={<DSBManual />}
-        />
-      </Routes>
-    </Col>
-  );
+    useEffect(() => {
+        window.scrollTo({ top: 0, behavior: "auto" });
+    }, [location.pathname]);
+    return (
+        <Col className="App">
+            <ScrollToTop />
+            <Routes>
+                <Route path="/" element={<LandingPage />} />
+                <Route
+                    path="/destructible-structure-builder"
+                    element={<DestructibleStructureBuilder />}
+                />
+                <Route
+                    path="/destructible-structure-builder/manual"
+                    element={<DSBManual />}
+                />
+            </Routes>
+        </Col>
+    );
 }
 
 export default App;
