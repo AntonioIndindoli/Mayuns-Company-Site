@@ -28,7 +28,7 @@
   position: relative;
   width: 100%;
   overflow: hidden;
-  padding: clamp(7rem, 16vh, 11rem) 0 clamp(3rem, 10vh, 6rem);
+  padding: clamp(7rem, 16vh, 11rem) 0 0;
 }
 
 .hero-section > *:not(.background-gradient):not(.background-gradient-color) {
@@ -69,7 +69,7 @@
 
 .hero-copy .Home-Message,
 .hero-copy .Home-Message-Subtext {
-  margin: 0.35rem 0;
+
 }
 
 .header-items-bar {
@@ -146,11 +146,11 @@
 
 /* Add this to your styles.css file */
 .Home-Message {
-  font-size: 10px;
+  font-size: 20px;
   /* Adjust size as needed */
   color: black;
   text-align: center;
-  font-weight: 700;
+  font-weight: 400;
 
   /* Adjust margin as needed */
   z-index: 1;
@@ -185,10 +185,8 @@
   /* Adjust size as needed */
   color: grey;
   text-align: center;
-  margin-top: 10px;
   /* Adjust margin as needed */
   z-index: 1;
-  font-style: italic;
 }
 
 .Home-Message-Subtext-nonItalic {
@@ -196,7 +194,6 @@
   /* Adjust size as needed */
   color: grey;
   text-align: center;
-  margin-top: 10px;
   /* Adjust margin as needed */
   z-index: 1;
 }
@@ -206,7 +203,6 @@
   /* Adjust size as needed */
   color: rgb(41, 41, 41);
   text-align: center;
-  margin-top: 10px;
   /* Adjust margin as needed */
   z-index: 1;
 }
@@ -377,7 +373,7 @@
   /* Allows cards to wrap on smaller screens */
   gap: 10px;
   /* Space between cards */
-  padding: 10px 0;
+  padding: 0px 10px;
   /* Top and bottom padding without affecting the horizontal */
   z-index: 1;
 }
@@ -464,7 +460,7 @@
   }
 
   .hero-section {
-    padding: clamp(5rem, 22vh, 7rem) 0 clamp(2rem, 9vh, 4rem);
+    padding: clamp(5rem, 22vh, 7rem) 0 0;
   }
 
   .box-center-image {
@@ -583,7 +579,7 @@
   }
 
   .hero-section {
-    padding: clamp(6rem, 18vh, 8rem) 0 clamp(2.5rem, 6vh, 4rem);
+    padding: clamp(6rem, 18vh, 8rem) 0 0;
   }
 
   .box-center-image {

@@ -31,10 +31,10 @@ const LandingPage = () => {
                 </div>
 
                 <div className="hero-copy">
-                    <div className="Home-Message-Subtext">
-                        Crafted with love.
+                    <div className="Home-Message">________________________________________</div>
+                    <div className="Home-Message">
+                        Our Products
                     </div>
-                    <div className="Home-Message">____________</div>
                 </div>
             </section>
 
