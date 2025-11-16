@@ -186,7 +186,8 @@ const DSBManual = () => {
         </ManualSection>
 
         <ManualSection id="package-contents" title="Package Contents">
-          <table>
+          <div className="dsb-table-wrapper">
+            <table>
             <thead>
               <tr>
                 <th>Folder</th>
@@ -201,7 +202,8 @@ const DSBManual = () => {
                 </tr>
               ))}
             </tbody>
-          </table>
+            </table>
+          </div>
           <h3>Asset Licensing & Third-party Content</h3>
           <ul>
             <li>All shipped assets (textures, materials, meshes, audio, particles, prefabs, demo scenes) are author-created and free to use in your games.</li>
@@ -221,7 +223,8 @@ const DSBManual = () => {
         </ManualSection>
 
         <ManualSection id="requirements" title="Requirements and Compatibility">
-          <table>
+          <div className="dsb-table-wrapper">
+            <table>
             <tbody>
               {requirements.map((row) => (
                 <tr key={row.category}>
@@ -230,7 +233,8 @@ const DSBManual = () => {
                 </tr>
               ))}
             </tbody>
-          </table>
+            </table>
+          </div>
         </ManualSection>
 
         <ManualSection id="limitations" title="Limitations">
@@ -266,7 +270,8 @@ const DSBManual = () => {
         </ManualSection>
 
         <ManualSection id="performance" title="Performance and Best Practices">
-          <table>
+          <div className="dsb-table-wrapper">
+            <table>
             <thead>
               <tr>
                 <th>Area</th>
@@ -281,7 +286,8 @@ const DSBManual = () => {
                 </tr>
               ))}
             </tbody>
-          </table>
+            </table>
+          </div>
         </ManualSection>
 
         <ManualSection id="mesh-cache" title="Mesh Cache Management">
@@ -310,7 +316,8 @@ const DSBManual = () => {
 
         <ManualSection id="editor-workflow" title="Editor Workflow">
           <h3 id="build-modes-toolbar">Build Modes Toolbar</h3>
-          <table>
+          <div className="dsb-table-wrapper">
+            <table>
             <thead>
               <tr>
                 <th>Mode</th>
@@ -325,7 +332,8 @@ const DSBManual = () => {
                 </tr>
               ))}
             </tbody>
-          </table>
+            </table>
+          </div>
           <h3 id="build-overlay">Build Overlay</h3>
           <p>
             Each build mode exposes a Scene-view overlay with Rotate and Cancel controls, snap toggle (<strong>C</strong>), and axis locks (arrow keys). Wall/Stair modes include Edge Alignment and Endpoint/Midpoint snapping toggles (hotkey <strong>M</strong>).
@@ -348,7 +356,8 @@ const DSBManual = () => {
             <li>Name the design and press Save Design.</li>
           </ol>
           <h3 id="hotkeys">Hotkeys</h3>
-          <table>
+          <div className="dsb-table-wrapper">
+            <table>
             <thead>
               <tr>
                 <th>Default Key</th>
@@ -363,7 +372,8 @@ const DSBManual = () => {
                 </tr>
               ))}
             </tbody>
-          </table>
+            </table>
+          </div>
           <h3 id="prefab">Prefab a Structure</h3>
           <ol>
             <li>Select the Structural Group Manager root.</li>
@@ -455,7 +465,8 @@ if (hit.collider.TryGetComponent<IDamageable>(out var dmg))
             DestructionEffectsManager exposes hooks for gameplay logic and custom effects via DestructionSignals and profile tuning. Adjust pool sizes, lifetimes, and overrides at runtime.
           </p>
           <h3>Events — Quick Reference</h3>
-          <table>
+          <div className="dsb-table-wrapper">
+            <table>
             <thead>
               <tr>
                 <th>Event</th>
@@ -470,7 +481,8 @@ if (hit.collider.TryGetComponent<IDamageable>(out var dmg))
                 </tr>
               ))}
             </tbody>
-          </table>
+            </table>
+          </div>
           <h3>Runtime Scripting Example</h3>
           <pre>
             <code>{`using Mayuns.DSB;
