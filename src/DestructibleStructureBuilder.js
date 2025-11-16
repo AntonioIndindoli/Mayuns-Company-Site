@@ -39,7 +39,7 @@ const keyStats = [
 
 const highlightLists = [
   {
-    title: "Built for creative teams",
+    title: "Fast authoring",
     bullets: [
       "Wall Designer with live rotation, triangle cut-outs, and per-cell health",
       "Design presets as ScriptableObjects you can reuse scene-to-scene",
@@ -47,7 +47,7 @@ const highlightLists = [
     ],
   },
   {
-    title: "Confident runtime",
+    title: "Robust runtime",
     bullets: [
       "Stress, pooling, mesh cache, and navigation utilities ship in the box",
       "Events like PieceCrumble, LargeCollapse, and DebrisImpact let you layer bespoke gameplay",
@@ -114,29 +114,21 @@ const DestructibleStructureBuilder = () => {
           </div>
         </section>
 
-        <section className="dsb-summary-grid">
-          {summaryCards.map((card) => (
-            <article key={card.title} className="dsb-summary-card">
-              <h3>{card.title}</h3>
-              <p>{card.body}</p>
-            </article>
-          ))}
-        </section>
-
         <section className="dsb-overview" id="overview">
           <div>
             <p className="dsb-label">Overview</p>
-            <h2>Author once, destroy forever</h2>
             <p>
-              Build nodes, members, and walls with an intuitive toolbar that mirrors
-              how level artists think. Every edit is Undo-friendly, caches to disk,
-              and can be turned into prefabs without worrying about missing meshes
-              or broken references.
+            Destructible Structure Builder (DSB) is a Unity Editor toolkit for authoring gameplay-ready buildings 
+            that can splinter, crumble, and collapse dynamically in real time. You build everything inside the 
+            dedicated DSB window using an intuitive toolbar to place connections, members, and walls.
             </p>
             <p>
-              At runtime, Destructible Structure Builder orchestrates stress
-              propagation, pooling, debris lifetimes, and event dispatch so you can
-              focus on gameplay instead of boilerplate systems engineering.
+              At its core lies a graph-based Stress Solver that calculates load paths, identifies overstressed members, 
+            and simulates realistic collapses as supports give way. Each structure is voxel-based, enabling per-cell damage, 
+            localized breakage, and debris emission. When the game runs, DSB’s runtime components handle everything that happens 
+            after impact. The Destruction Effects Manager controls pooling, debris, audio, and particle effects, while stress 
+            and collision systems propagate forces through the structure to determine which sections detach or crumble. 
+            Mesh chunking, pooled particle systems, and configurable lifetimes keep performance predictable even during large-scale collapses.
             </p>
           </div>
           <div className="dsb-highlight-lists">
@@ -179,7 +171,7 @@ const DestructibleStructureBuilder = () => {
         <section className="dsb-feature-columns">
           <article>
             <p className="dsb-label">Editor Workflow</p>
-            <h3>Build modes that match how you think</h3>
+            <h3>No External Tooling Required</h3>
             <ul>
               <li>Create, grid, and free-member modes share a single overlay with snap & axis locks.</li>
               <li>Wall Build paints magenta ghosts for width/height drags plus Wall Design presets.</li>
@@ -201,7 +193,7 @@ const DestructibleStructureBuilder = () => {
 
         <section className="dsb-cta">
           <div>
-            <h2>Ready for the deep dive?</h2>
+            <h2>Full Documentation Available</h2>
             <p>
               The full online manual covers installation, requirements, editor tips,
               runtime scripting, extensibility, troubleshooting, and licensing.
