@@ -123,6 +123,17 @@
   word-wrap: break-word;
   background-color: #f1f1f1;
   border: #ffffff00;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+}
+
+.nav-button-logo {
+  height: 32px;
+  width: 32px;
+  object-fit: contain;
+  border-radius: 6px;
 }
 
 .nav-button-black {
