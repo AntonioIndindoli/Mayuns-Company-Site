@@ -270,13 +270,13 @@
 .dsb-manual-sidebar {
     position: fixed;
     top: 100px;
-    left: 0;
+    left: calc((100vw - min(1400px, 100vw)) / 2 + 1.5rem);
     width: 270px;
-    background: linear-gradient(180deg, #0b1f33, #152b46);
-    color: #fff;
-    border-radius: 0 18px 18px 0;
+    background: linear-gradient(180deg, #f1f1f1, #ffffff);
+    color: #201c1c;
+    border-radius: 18px 18px 18px 18px;
     padding: 1.25rem 1rem 1.5rem;
-    box-shadow: 0 18px 40px rgba(11, 31, 51, 0.35);
+    box-shadow: 0 18px 40px rgba(11, 31, 51, 0.192);
     max-height: calc(100vh - 120px);
     overflow-y: auto;
     transform: translateX(0);
@@ -294,13 +294,13 @@
 
 .dsb-manual-toc-header h2 {
     margin: 0;
-    color: #fff;
+    color: #232b31;
     font-size: 1.05rem;
 }
 
 .dsb-toc-close {
     background: rgba(255, 255, 255, 0.08);
-    color: #fff;
+    color: #1f1717;
     border: 1px solid rgba(255, 255, 255, 0.25);
     border-radius: 8px;
     padding: 0.25rem 0.65rem;
@@ -324,7 +324,7 @@
     padding: 0.55rem 0.75rem;
     border-radius: 10px;
     background: transparent;
-    color: #e6edff;
+    color: #474747;
     text-decoration: none;
     font-weight: 600;
     font-size: 0.9rem;
@@ -333,10 +333,11 @@
 
 .dsb-manual-toc a:hover {
     background: rgba(255, 255, 255, 0.08);
-    color: #fff;
+    color: #00aeff;
 }
 
 .dsb-manual-section {
+    scroll-margin-top: 100px;
     background: #fff;
     border-radius: 18px;
     padding: 1.75rem;
@@ -403,8 +404,8 @@
     align-items: center;
     gap: 0.55rem;
     padding: 0.6rem 0.85rem;
-    background: #fff;
-    border: 1px solid #d8dde8;
+    background: #ffffff00;
+    border: 1px solid #d8dde800;
     border-radius: 12px;
     font-weight: 700;
     color: #0b1f33;
@@ -447,6 +448,10 @@
 @media (min-width: 1025px) {
     .dsb-manual-layout {
         padding-left: 320px;
+    }
+
+    .dsb-toc-toggle {
+        display: none;
     }
 
     .dsb-toc-overlay {

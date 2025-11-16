@@ -151,7 +151,6 @@ const DSBManual = () => {
         <span />
         <span />
       </span>
-      <span className="dsb-toc-label">Contents</span>
     </button>
   );
 
