@@ -20,20 +20,23 @@ const LandingPage = () => {
         >
             <Header />
 
-            <div className="background-gradient-color"></div>
-            <div className="background-gradient"></div>
+            <section className="hero-section">
+                <div className="background-gradient-color" aria-hidden="true"></div>
+                <div className="background-gradient" aria-hidden="true"></div>
 
-            <div className="box-center-image">
-                <div className="center-image">
-                    <Hero3D fallbackImg={placeholder} className="hero3d" />
+                <div className="box-center-image">
+                    <div className="center-image">
+                        <Hero3D fallbackImg={placeholder} className="hero3d" />
+                    </div>
                 </div>
-            </div>
 
-            <div className="Home-Message-Subtext">
-                Crafted with love.
-            </div>
-            <div className="Home-Message">____________</div>
-            <div className="box-center-image"></div>
+                <div className="hero-copy">
+                    <div className="Home-Message-Subtext">
+                        Crafted with love.
+                    </div>
+                    <div className="Home-Message">____________</div>
+                </div>
+            </section>
 
 
             <div className="home-projects-and-cards">

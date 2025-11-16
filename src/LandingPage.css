@@ -23,17 +23,28 @@
 
 }
 
+
+.hero-section {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  padding: clamp(7rem, 16vh, 11rem) 0 clamp(3rem, 10vh, 6rem);
+}
+
+.hero-section > *:not(.background-gradient):not(.background-gradient-color) {
+  position: relative;
+}
+
 .hero3d {
-  width: min(92vw, 960px);
-  max-height: 70vh;
-  margin: 0px;
+  width: 100%;
+  margin: 0;
   background: transparent;
 }
 
 /* inner box sets the height via aspect-ratio */
 .hero3d .frame {
   width: 100%;
-  max-height: 70vh;
+  max-height: min(70vh, 720px);
   aspect-ratio: 4 / 3;
   /* change to 21/9, 4/3, etc. if you like */
   background: transparent;
@@ -48,6 +59,17 @@
   width: 100% !important;
   height: 100% !important;
   background: transparent;
+}
+
+.hero-copy {
+  text-align: center;
+  margin-top: clamp(1.5rem, 3vh, 2.5rem);
+  z-index: 1;
+}
+
+.hero-copy .Home-Message,
+.hero-copy .Home-Message-Subtext {
+  margin: 0.35rem 0;
 }
 
 .header-items-bar {
@@ -274,39 +296,33 @@
   z-index: 1;
 }
 
-.background-gradient {
-  margin-top: 70px;
-  /* Adjust margin as needed */
-  height: calc(50vh - 150px);
-  /* Adjusting height to account for header 
+.background-gradient,
+.background-gradient-color {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  pointer-events: none;
+}
 
-  background: linear-gradient(to top, #ffffff 0%, #2e90b1 100%);*/
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  /* This makes the child (your image) align at the bottom */
-  min-height: 150px;
+.background-gradient {
+  background: linear-gradient(180deg, rgba(46, 144, 177, 0.55) 0%, rgba(255, 255, 255, 0) 65%);
+  opacity: 0.85;
 }
 
 .background-gradient-color {
-  width: 100%;
-  height: calc(50vh - 150px);
-  position: absolute;
-  top: 70px;
   background: linear-gradient(to top, #ffffff 0%, #2e90b1 100%);
   z-index: 0;
-  min-height: 150px;
 }
 
 .box-center-image {
-  position: absolute;
-  top: calc(10vh);
-  left: 0;
-  right: 0;
+  position: relative;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: flex-end;
-  /* This makes the child (your image) align at the bottom */
+  padding: 0 1.5rem;
   z-index: 1;
 }
 
@@ -319,6 +335,8 @@
 .center-image {
   /* If you need to adjust the position further, consider using margin or padding here. */
   z-index: 1;
+  width: min(92vw, 960px);
+  margin: 0 auto;
 }
 
 .background-image {
@@ -445,28 +463,16 @@
     max-height: 50px;
   }
 
-  .background-gradient {
-    margin-top: 70px;
-    /* Adjust margin as needed */
-    height: 30vh;
-    /* Adjusting height to account for header 
-
-  background: linear-gradient(to top, #ffffff 0%, #2e90b1 100%);*/
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    /* This makes the child (your image) align at the bottom */
-    min-height: 150px;
+  .hero-section {
+    padding: clamp(5rem, 22vh, 7rem) 0 clamp(2rem, 9vh, 4rem);
   }
 
-  .background-gradient-color {
-    width: 100%;
-    height: 30vh;
-    position: absolute;
-    top: 70px;
-    background: linear-gradient(to top, #ffffff 0%, #2e90b1 100%);
-    z-index: 0;
-    min-height: 150px;
+  .box-center-image {
+    padding: 0 1rem;
+  }
+
+  .center-image {
+    width: min(96vw, 520px);
   }
 
   .header-bar {
@@ -525,42 +531,8 @@
     /* Consistently adjusting subtexts and related headings */
   }
 
-  .box-center-image {
-    position: absolute;
-    top: calc(5vh + 40px);
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    /* This makes the child (your image) align at the bottom */
-    z-index: 1;
-  }
-
-  /* Adjusted .center-image class for the main image */
-  .center-image {
-    /* If you need to adjust the position further, consider using margin or padding here. */
-    z-index: 1;
-  }
-
-  .main-image {
-    max-width: 100%;
-    max-height: 30vh;
-    /* or any other value that suits your design */
-    width: auto;
-    height: auto;
-    z-index: 1;
-  }
-
   .hero3d .frame {
-    width: 100%;
-    max-height: 65vw;
-    aspect-ratio: 3 / 3;
-    /* change to 21/9, 4/3, etc. if you like */
-    background: transparent;
-    touch-action: none;
-    /* crucial for mobile! */
-    overscroll-behavior: contain;
+    max-height: min(55vh, 520px);
   }
 }
 
@@ -610,42 +582,20 @@
     /* Consistently adjusting subtexts and related headings */
   }
 
+  .hero-section {
+    padding: clamp(6rem, 18vh, 8rem) 0 clamp(2.5rem, 6vh, 4rem);
+  }
+
   .box-center-image {
-    position: absolute;
-    top: calc(15vh + 40px);
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    /* This makes the child (your image) align at the bottom */
-    z-index: 1;
+    padding: 0 2rem;
   }
 
-  /* Adjusted .center-image class for the main image */
   .center-image {
-    /* If you need to adjust the position further, consider using margin or padding here. */
-    z-index: 1;
-  }
-
-  .main-image {
-    max-width: 100%;
-    max-height: 55vh;
-    /* or any other value that suits your design */
-    width: auto;
-    height: auto;
-    z-index: 1;
+    width: min(80vw, 820px);
   }
 
   .hero3d .frame {
-    width: 100%;
-    max-height: 30vw;
-    aspect-ratio: 4 / 3;
-    /* change to 21/9, 4/3, etc. if you like */
-    background: transparent;
-    touch-action: none;
-    /* crucial for mobile! */
-    overscroll-behavior: contain;
+    max-height: min(60vh, 540px);
   }
 }
 
