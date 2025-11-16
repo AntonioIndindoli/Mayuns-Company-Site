@@ -1,6 +1,5 @@
 import React from "react";
 import "../LandingPage.css";
-import logo from "../images/mayunays.netlogo.png";
 import { useNavigate } from "react-router-dom";
 
 const Header = () => {
@@ -12,9 +11,14 @@ const Header = () => {
         <header className="header-items">
           <button
             className="nav-button"
-                type="button"
+            type="button"
             onClick={() => navigate("/")}
           >
+            <img
+              src="/logo512.png"
+              alt="Mayuns logo"
+              className="nav-button-logo"
+            />
             Mayuns.com
           </button>
             <div className="header-items-bar">
