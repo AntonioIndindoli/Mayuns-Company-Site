@@ -45,7 +45,7 @@ const LandingPage = () => {
                 <div className="home-cards">
                     <Card
                         imageSrc={backrooms}
-                        caption="Available on Steam Now"
+                        caption="Available on Steam"
                         link="https://store.steampowered.com/app/2816710/The_Backrooms_Unseen_Tapes/"
                         description="A survival horror experience in the eerie, endless hallways of The Backrooms."
                     />

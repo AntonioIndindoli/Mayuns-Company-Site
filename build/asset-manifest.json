@@ -1,20 +1,22 @@
 {
   "files": {
-    "main.css": "/static/css/main.87bc880f.css",
-    "main.js": "/static/js/main.267b0722.js",
+    "main.css": "/static/css/main.716990ce.css",
+    "main.js": "/static/js/main.7577593a.js",
     "static/media/DSB_Screenshot2.png": "/static/media/DSB_Screenshot2.41db18c21d3d682c106d.png",
-    "static/media/DSB_Screenshot1.png": "/static/media/DSB_Screenshot1.3af454563a91c5e7c367.png",
-    "static/media/mayunays.netlogo.png": "/static/media/mayunays.netlogo.b0e23156ef16d628fa63.png",
+    "static/media/DSB_WallEditor.png": "/static/media/DSB_WallEditor.21ff51c6afa3ef73267d.png",
+    "static/media/DSB_Hero.png": "/static/media/DSB_Hero.8157bf4d82cabfb873d2.png",
+    "static/media/DSB_Stress.png": "/static/media/DSB_Stress.a2f693c13268699b20ad.png",
     "static/media/backroomsGameImage.png": "/static/media/backroomsGameImage.15f08a8ab4b30d11c05f.png",
     "static/media/PLACEHOLDER.png": "/static/media/PLACEHOLDER.a0ec4e55cd77ec9110dc.png",
     "static/media/copyright.png": "/static/media/copyright.22674b119843afb82fd9.png",
     "static/media/Comingsoon.png": "/static/media/Comingsoon.2a7af70433b9cf35ffe7.png",
+    "static/media/DSB_Caching.png": "/static/media/DSB_Caching.d95a1144bf92a58f6f00.png",
     "index.html": "/index.html",
-    "main.87bc880f.css.map": "/static/css/main.87bc880f.css.map",
-    "main.267b0722.js.map": "/static/js/main.267b0722.js.map"
+    "main.716990ce.css.map": "/static/css/main.716990ce.css.map",
+    "main.7577593a.js.map": "/static/js/main.7577593a.js.map"
   },
   "entrypoints": [
-    "static/css/main.87bc880f.css",
-    "static/js/main.267b0722.js"
+    "static/css/main.716990ce.css",
+    "static/js/main.7577593a.js"
   ]
 }
