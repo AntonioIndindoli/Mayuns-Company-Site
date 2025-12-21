@@ -138,6 +138,9 @@ const DestructibleStructureBuilder = () => {
                             solving so chunks detach, crumble, and collapse believably at runtime.
                         </p>
                         <div className="dsb-hero-actions">
+                            <Link className="dsb-button primary" to="/destructible-structure-builder/web-demo">
+                                Launch the Web Demo
+                            </Link>
                             <Link className="dsb-button secondary" to="/destructible-structure-builder/manual">
                                 Read the Online Manual
                             </Link>

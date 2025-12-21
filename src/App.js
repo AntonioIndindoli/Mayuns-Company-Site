@@ -3,6 +3,7 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import LandingPage from "./LandingPage";
 import DestructibleStructureBuilder from "./DestructibleStructureBuilder";
 import DSBManual from "./DSBManual";
+import DSBWebDemo from "./DSBWebDemo";
 import { Col } from "react-bootstrap";
 import "./App.css";
 import ScrollToTop from "./components/ScrollToTop";
@@ -22,6 +23,10 @@ function App() {
                 <Route
                     path="/destructible-structure-builder"
                     element={<DestructibleStructureBuilder />}
+                />
+                <Route
+                    path="/destructible-structure-builder/web-demo"
+                    element={<DSBWebDemo />}
                 />
                 <Route
                     path="/destructible-structure-builder/manual"
