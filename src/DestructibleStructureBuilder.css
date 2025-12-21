@@ -73,7 +73,7 @@
 .dsb-button.primary {
     background: linear-gradient(120deg, #75afce, #5ca1d6);
     color: #000000be;
-    box-shadow: 0 10px 25px rgba(76, 145, 182, 0.5);
+    box-shadow: 0 10px 15px rgba(76, 145, 182, 0.178);
 }
 
 .dsb-button.secondary {
