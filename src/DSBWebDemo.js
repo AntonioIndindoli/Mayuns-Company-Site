@@ -13,24 +13,13 @@ const DSBWebDemo = () => (
                     <p className="dsb-label">Interactive Preview</p>
                     <h1>DSB Web Demo</h1>
                     <p>
-                        Try a browser-based preview of the Destructible Structure Builder demo. Load
-                        the scene, trigger collapses, and explore stress overlays directly in your
-                        browser. For the best experience, try the standalone Unity editor package once
+                        Try a browser-based preview of the Destructible Structure Builder demo. For the best experience, try the standalone Unity editor package once
                         you are done experimenting.
                     </p>
                     <div className="dsb-hero-actions">
                         <Link className="dsb-button secondary" to="/destructible-structure-builder">
                             ← Back to product overview
                         </Link>
-                        <a
-                            className="dsb-button primary"
-                            href="/unity_build/index.html"
-                            target="_blank"
-                            rel="noreferrer"
-                        >
-                            Open demo in a new tab
-                        </a>
-
                     </div>
                 </div>
             </section>
@@ -43,6 +32,10 @@ const DSBWebDemo = () => (
                         allowFullScreen
                         loading="lazy"
                     />
+
+                </div>
+                <div className="dsb-controls">
+                    <p className="dsb-controls-text">Controls: WASD to move, Space to jump, Mouse to look, Left Click to shoot, Tab to access settings menu</p>
                 </div>
             </section>
         </main>

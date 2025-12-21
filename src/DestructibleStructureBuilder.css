@@ -418,13 +418,24 @@
     margin-top: 70px;
 }
 
+.dsb-controls {
+    margin: 0 auto;
+    align-items: center;
+    gap: 0.5rem;
+    
+}
+
+.dsb-controls-text {
+    color: rgba(0, 0, 0, 0.85);
+}
+
 .dsb-demo-hero h1 {
     margin: 0 0 0.5rem;
 }
 
 .dsb-demo-hero p {
     color: rgba(255, 255, 255, 0.88);
-    max-width: 700px;
+    max-width: 900px;
 }
 
 .dsb-demo-tips {
