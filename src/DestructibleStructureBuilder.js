@@ -141,9 +141,9 @@ const DestructibleStructureBuilder = () => {
                             <Link className="dsb-button primary" to="/destructible-structure-builder/web-demo">
                                 Launch the Web Demo
                             </Link>
-                            <Link className="dsb-button secondary" to="/destructible-structure-builder/manual">
-                                Read the Online Manual
-                            </Link>
+                            <a className="dsb-button secondary" href="/Manual.pdf" target="_blank" rel="noreferrer">
+                                Read the Manual (PDF)
+                            </a>
                         </div>
                         <ul className="dsb-key-stats">
                             {keyStats.map((stat) => (
