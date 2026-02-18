@@ -8,7 +8,7 @@ import stressPropagationShot from "./images/DSB Gallery/Stress Propagation_DSB.p
 import wallDesignShot from "./images/DSB Gallery/Wall Design System_DSB.png";
 import meshCacheShot from "./images/DSB Gallery/Mesh Cache Workflow_DSB.png";
 import "./DestructibleStructureBuilder.css";
-import { FiExternalLink, FiFileText , FiDownload } from "react-icons/fi";
+import { FiExternalLink, FiFileText, FiDownload } from "react-icons/fi";
 
 const keyStats = [
     { label: "Unity (LTS)", value: "6, 2022, 2021" },
@@ -56,6 +56,9 @@ const DestructibleStructureBuilder = () => {
                     <div className="dsb-hero-copy">
                         <p className="dsb-label">Unity Editor Toolkit</p>
                         <h1>Destructible Structure Builder</h1>
+                        <p>
+                            Unity Editor tool for creating buildings that break apart in real time. Use simple build modes to place beams, walls, and supports, then destroy during gameplay. Includes stress simulation, debris effects, and prefab support.
+                        </p>
                         <div className="dsb-hero-actions">
                             <Link className="dsb-button primary" to="/destructible-structure-builder">
                                 Asset Store  <FiExternalLink className="dsb-icon" />
@@ -66,7 +69,7 @@ const DestructibleStructureBuilder = () => {
                             </a>
 
                             <a className="dsb-button secondary" href="/Manual.pdf" target="_blank" rel="noreferrer">
-                                Manual  <FiFileText  className="dsb-icon" />
+                                Manual  <FiFileText className="dsb-icon" />
                             </a>
                         </div>
 
@@ -84,13 +87,6 @@ const DestructibleStructureBuilder = () => {
 
                 <section className="dsb-section">
                     <div className="dsb-container">
-                        <h2>Author Complex Structures Directly in the Unity Editor</h2>
-                        <p>
-                            Destructible Structure Builder provides a dedicated editor workflow for constructing
-                            stress-aware, voxel-driven buildings. All authoring is performed inside the Unity Editor —
-                            no runtime construction tools required.
-                        </p>
-
                         <div className="dsb-feature-grid">
                             {featureGalleryItems.map((feature) => (
                                 <figure className="dsb-feature" key={feature.title}>
