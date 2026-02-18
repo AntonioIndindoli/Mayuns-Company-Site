@@ -13,14 +13,51 @@
 }
 
 .dsb-description {
-    background-color: #ffffff;
-    color: #111111ad;
-    border: 1px solid #c8d8eb42;
-    border-radius: 10px;
-    padding: 1rem;
-    box-shadow: 0 20px 40px rgba(15, 23, 42, 0.1);
-    font-size: large;
-    font-weight: 600;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(150deg, #f8fbff 0%, #edf4ff 45%, #f5f9ff 100%);
+    color: #22364f;
+    border: 1px solid rgba(38, 58, 102, 0.295);
+    border-radius: 16px;
+    padding: 1.5rem;
+    box-shadow: 0 14px 34px rgba(15, 23, 42, 0.12);
+    font-size: 1rem;
+}
+
+.dsb-description::before {
+    content: "";
+    position: absolute;
+    top: -60px;
+    right: -60px;
+    width: 180px;
+    height: 180px;
+    border-radius: 999px;
+    background: radial-gradient(circle, rgba(133, 201, 235, 0.26) 0%, rgba(92, 200, 255, 0) 72%);
+    pointer-events: none;
+}
+
+.dsb-description::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(180deg, #82a3ff 0%, #242b94 100%);
+}
+
+.dsb-description-area {
+    position: relative;
+    z-index: 1;
+    max-width: 980px;
+}
+
+.dsb-description-area p {
+    margin: 0;
+    font-size: clamp(1rem, 1.3vw, 1.125rem);
+    line-height: 1.8;
+    color: #182044;
+    text-wrap: balance;
 }
 
 .dsb-hero {
@@ -193,10 +230,12 @@
     left: 0;
     right: 0;
     bottom: 0;
-    padding: 3rem 1rem 1rem 1rem;
-    background: linear-gradient(180deg, rgba(7, 16, 29, 0) 0%, rgba(7, 16, 29, 0.849) 42%, rgba(7, 16, 29, 0.993) 100%);
+    padding: 2rem 2rem 2rem 2rem;
+    background: rgba(38, 58, 102, 0.822);
     color: #eef6ff;
     pointer-events: none;
+    font-size: large;
+
 }
 
 .dsb-store-eyebrow {
@@ -269,13 +308,23 @@
 
 @media (max-width: 760px) {
     .dsb-store-thumbnail-row {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .dsb-thumbnail-button img {
+        height: 100%;
     }
 
     .dsb-gallery-nav {
         width: 2rem;
         height: 2rem;
     }
+
+    .dsb-store-feature-copy {
+        padding: 1rem 1rem 1rem 1rem;
+        font-size: small;
+    }
+
 }
 
 .dsb-summary-grid {

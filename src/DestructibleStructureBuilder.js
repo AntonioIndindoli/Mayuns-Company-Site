@@ -104,8 +104,9 @@ const DestructibleStructureBuilder = () => {
 
                 <section className="dsb-description">
                     <div className="dsb-description-area">
+                        <p className="dsb-label">BUILD & DESTROY</p>
                         <p>
-                            Unity Editor tool for creating buildings that break apart in real time. Use simple build modes to place beams, walls, and supports, then destroy during gameplay. Includes stress simulation, debris effects, and prefab support.
+                            DSB is a Unity Editor toolkit for creating structures which crumble and collapse believably at runtime. Use simple build modes to place beams, walls, and supports in editor-time scene view, then destroy during gameplay. Includes stress simulation, debris effects, and prefab support.
                         </p>
                     </div>
                 </section>
