@@ -116,6 +116,66 @@
     color: #fff;
 }
 
+
+.dsb-section {
+    background: #fff;
+    border-radius: 24px;
+    padding: 2.5rem;
+    box-shadow: 0 20px 35px rgba(15, 23, 42, 0.08);
+}
+
+.dsb-container h2 {
+    margin-top: 0;
+    color: #0b1f33;
+}
+
+.dsb-container > p {
+    color: rgba(63, 63, 63, 0.8);
+    margin-bottom: 1.5rem;
+    max-width: 900px;
+}
+
+.dsb-feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1.25rem;
+}
+
+.dsb-feature {
+    margin: 0;
+    background: #f8fbff;
+    border: 1px solid #e5edf7;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 12px 25px rgba(15, 23, 42, 0.08);
+}
+
+.dsb-feature img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+}
+
+.dsb-feature figcaption {
+    font-size: 0.8rem;
+    color: #4a617c;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: 0.9rem 1rem 0;
+}
+
+.dsb-feature h3 {
+    margin: 0.35rem 1rem 0.5rem;
+    color: #0b1f33;
+    font-size: 1.1rem;
+}
+
+.dsb-feature p {
+    margin: 0 1rem 1rem;
+    color: rgba(63, 63, 63, 0.82);
+    line-height: 1.5;
+}
+
 .dsb-summary-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
