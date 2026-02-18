@@ -76,9 +76,6 @@ const DestructibleStructureBuilder = () => {
                     <div className="dsb-hero-copy">
                         <p className="dsb-label">Unity Editor Toolkit</p>
                         <h1>Destructible Structure Builder</h1>
-                        <p>
-                            Unity Editor tool for creating buildings that break apart in real time. Use simple build modes to place beams, walls, and supports, then destroy during gameplay. Includes stress simulation, debris effects, and prefab support.
-                        </p>
                         <div className="dsb-hero-actions">
                             <Link className="dsb-button primary" to="/destructible-structure-builder">
                                 Asset Store  <FiExternalLink className="dsb-icon" />
@@ -102,6 +99,14 @@ const DestructibleStructureBuilder = () => {
                             ))}
                         </ul>
 
+                    </div>
+                </section>
+
+                <section className="dsb-description">
+                    <div className="dsb-description-area">
+                        <p>
+                            Unity Editor tool for creating buildings that break apart in real time. Use simple build modes to place beams, walls, and supports, then destroy during gameplay. Includes stress simulation, debris effects, and prefab support.
+                        </p>
                     </div>
                 </section>
 
@@ -138,7 +143,6 @@ const DestructibleStructureBuilder = () => {
                                         role="tab"
                                     >
                                         <img src={feature.image} alt={feature.title} />
-                                        <span>{feature.title}</span>
                                     </button>
                                 ))}
                             </div>
