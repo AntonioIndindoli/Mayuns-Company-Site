@@ -20,25 +20,21 @@ const featureGalleryItems = [
         title: "Build Modes",
         description: "Create structures using Grid, Free, Wall, Stair, and Slope build tools with live ghost previews and snapping.",
         image: buildModesShot,
-        caption: "Build Modes",
     },
     {
         title: "Stress Propagation",
         description: "Grounded connections propagate structural support. Overstressed members fail dynamically.",
         image: stressPropagationShot,
-        caption: "Stress Propagation",
     },
     {
         title: "Wall Design System",
         description: "Custom grid-based wall layouts with editable cell types and design reuse.",
         image: wallDesignShot,
-        caption: "Wall Design System",
     },
     {
         title: "Mesh Cache Workflow",
         description: "Generated meshes are cached for fast prefab creation and reliable scene reopening.",
         image: meshCacheShot,
-        caption: "Mesh Cache Workflow",
     },
 ];
 
@@ -85,13 +81,12 @@ const DestructibleStructureBuilder = () => {
                     </div>
                 </section>
 
-                <section className="dsb-section">
+                <section>
                     <div className="dsb-container">
                         <div className="dsb-feature-grid">
                             {featureGalleryItems.map((feature) => (
                                 <figure className="dsb-feature" key={feature.title}>
                                     <img src={feature.image} alt={feature.caption} />
-                                    <figcaption>{feature.caption}</figcaption>
                                     <h3>{feature.title}</h3>
                                     <p>{feature.description}</p>
                                 </figure>
