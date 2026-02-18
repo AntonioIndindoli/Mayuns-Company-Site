@@ -121,7 +121,6 @@ const DestructibleStructureBuilder = () => {
                             </div>
 
                             <div className="dsb-store-feature-copy">
-                                <p className="dsb-store-eyebrow">Feature Preview</p>
                                 <h3>{activeFeature.title}</h3>
                                 <p>{activeFeature.description}</p>
                             </div>
