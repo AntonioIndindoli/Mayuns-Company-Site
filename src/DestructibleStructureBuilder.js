@@ -64,7 +64,7 @@ const DestructibleStructureBuilder = () => {
     };
 
     const heroBackgroundStyle = {
-        backgroundImage: `linear-gradient(110deg, rgba(2, 6, 10, 0.95) 0%, rgba(0, 0, 0, 0.9) 10%, rgba(10, 27, 49, 0.4) 100%, rgba(15, 31, 51, 0) 100%), url(${heroShot})`,
+        backgroundImage: `linear-gradient(110deg, rgba(2, 6, 10, 1) 0%, rgba(0, 0, 0, .95) 20%, rgba(10, 27, 49, 0.4) 100%, rgba(0, 0, 0, 0) 100%), url(${heroShot})`,
     };
 
     return (
@@ -104,7 +104,7 @@ const DestructibleStructureBuilder = () => {
 
                 <section className="dsb-description">
                     <div className="dsb-description-area">
-                        <p className="dsb-label">BUILD & DESTROY</p>
+                        <p className="dsb-description-label">BUILD & DESTROY</p>
                         <p>
                             DSB is a Unity Editor toolkit for creating structures which crumble and collapse believably at runtime. Use simple build modes to place beams, walls, and supports in editor-time scene view, then destroy during gameplay. Includes stress simulation, debris effects, and prefab support.
                         </p>

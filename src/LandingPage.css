@@ -407,7 +407,7 @@
   /* Padding inside each card */
   background-color: #f9f9f9;
   /* Light background color, adjust as needed */
-  width: 250px;
+  width: 300px;
   /* Adjust based on your content size */
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
   /* Optional: adds a subtle shadow */
@@ -424,7 +424,7 @@
   /* Makes the image responsive within the card */
   height: auto;
   /* Maintains aspect ratio */
-  max-height: 280px;
+  max-height: 350px;
   /* Limits the image height, adjust as needed */
   object-fit: cover;
   /* Ensures the image covers the area, may crop */
