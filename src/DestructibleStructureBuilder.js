@@ -1,4 +1,4 @@
-import React, { useMemo, useState } from "react";
+import React, { useEffect, useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -40,6 +40,7 @@ const featureGalleryItems = [
 
 const DestructibleStructureBuilder = () => {
     const [activeImageIndex, setActiveImageIndex] = useState(0);
+    const [isAutoScrollPaused, setIsAutoScrollPaused] = useState(false);
 
     const activeFeature = useMemo(() => featureGalleryItems[activeImageIndex], [activeImageIndex]);
 
@@ -62,6 +63,26 @@ const DestructibleStructureBuilder = () => {
             return previousIndex + 1;
         });
     };
+
+    useEffect(() => {
+        if (isAutoScrollPaused) {
+            return undefined;
+        }
+
+        const autoScrollInterval = window.setInterval(() => {
+            setActiveImageIndex((previousIndex) => {
+                if (previousIndex === featureGalleryItems.length - 1) {
+                    return 0;
+                }
+
+                return previousIndex + 1;
+            });
+        }, 5000);
+
+        return () => {
+            window.clearInterval(autoScrollInterval);
+        };
+    }, [isAutoScrollPaused]);
 
     const heroBackgroundStyle = {
         backgroundImage: `linear-gradient(110deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, .85) 30%, rgba(0, 0, 0, 0.6) 70%, rgba(0, 0, 0, 0) 100%), url(${heroShot})`,
@@ -113,7 +134,12 @@ const DestructibleStructureBuilder = () => {
 
                 <section>
                     <div className="dsb-container">
-                        <div className="dsb-store-gallery" aria-label="Feature image gallery">
+                        <div
+                            className="dsb-store-gallery"
+                            aria-label="Feature image gallery"
+                            onMouseEnter={() => setIsAutoScrollPaused(true)}
+                            onMouseLeave={() => setIsAutoScrollPaused(false)}
+                        >
                             <div className="dsb-store-main-preview">
                                 <button type="button" className="dsb-gallery-nav previous" onClick={showPreviousImage} aria-label="Show previous screenshot">
                                     <FiChevronLeft />
