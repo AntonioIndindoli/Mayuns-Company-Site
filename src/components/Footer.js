@@ -12,7 +12,7 @@ const Footer = () => {
           </a>.
         </p>
         <div className="social-links">
-          <a target="_blank" rel="noopener noreferrer">Contact us at support@mayuns.com</a>
+          <p>Contact us at support@mayuns.com</p>
         </div>
       </div>
     </footer>
