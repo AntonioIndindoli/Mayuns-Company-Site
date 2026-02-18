@@ -115,15 +115,16 @@ const DestructibleStructureBuilder = () => {
 
                                 <img src={activeFeature.image} alt={activeFeature.title} className="dsb-store-main-image" />
 
+                                <div className="dsb-store-feature-copy">
+                                    <h3>{activeFeature.title}</h3>
+                                    <p>{activeFeature.description}</p>
+                                </div>
+
                                 <button type="button" className="dsb-gallery-nav next" onClick={showNextImage} aria-label="Show next screenshot">
                                     <FiChevronRight />
                                 </button>
                             </div>
 
-                            <div className="dsb-store-feature-copy">
-                                <h3>{activeFeature.title}</h3>
-                                <p>{activeFeature.description}</p>
-                            </div>
 
                             <div className="dsb-store-thumbnail-row" role="tablist" aria-label="Feature thumbnails">
                                 {featureGalleryItems.map((feature, index) => (
