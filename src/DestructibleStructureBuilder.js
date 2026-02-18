@@ -64,7 +64,7 @@ const DestructibleStructureBuilder = () => {
     };
 
     const heroBackgroundStyle = {
-        backgroundImage: `linear-gradient(110deg, rgba(2, 6, 10, 1) 0%, rgba(0, 0, 0, .95) 20%, rgba(10, 27, 49, 0.4) 100%, rgba(0, 0, 0, 0) 100%), url(${heroShot})`,
+        backgroundImage: `linear-gradient(110deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, .85) 30%, rgba(0, 0, 0, 0.6) 70%, rgba(0, 0, 0, 0) 100%), url(${heroShot})`,
     };
 
     return (
