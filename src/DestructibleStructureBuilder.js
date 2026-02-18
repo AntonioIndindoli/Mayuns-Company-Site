@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useMemo, useState } from "react";
 import { Link } from "react-router-dom";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -8,7 +8,7 @@ import stressPropagationShot from "./images/DSB Gallery/Stress Propagation_DSB.p
 import wallDesignShot from "./images/DSB Gallery/Wall Design System_DSB.png";
 import meshCacheShot from "./images/DSB Gallery/Mesh Cache Workflow_DSB.png";
 import "./DestructibleStructureBuilder.css";
-import { FiExternalLink, FiFileText, FiDownload } from "react-icons/fi";
+import { FiExternalLink, FiFileText, FiDownload, FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 const keyStats = [
     { label: "Unity (LTS)", value: "6, 2022, 2021" },
@@ -39,6 +39,30 @@ const featureGalleryItems = [
 ];
 
 const DestructibleStructureBuilder = () => {
+    const [activeImageIndex, setActiveImageIndex] = useState(0);
+
+    const activeFeature = useMemo(() => featureGalleryItems[activeImageIndex], [activeImageIndex]);
+
+    const showPreviousImage = () => {
+        setActiveImageIndex((previousIndex) => {
+            if (previousIndex === 0) {
+                return featureGalleryItems.length - 1;
+            }
+
+            return previousIndex - 1;
+        });
+    };
+
+    const showNextImage = () => {
+        setActiveImageIndex((previousIndex) => {
+            if (previousIndex === featureGalleryItems.length - 1) {
+                return 0;
+            }
+
+            return previousIndex + 1;
+        });
+    };
+
     const heroBackgroundStyle = {
         backgroundImage: `linear-gradient(110deg, rgba(2, 6, 10, 0.95) 0%, rgba(0, 0, 0, 0.9) 10%, rgba(10, 27, 49, 0.4) 100%, rgba(15, 31, 51, 0) 100%), url(${heroShot})`,
     };
@@ -83,14 +107,41 @@ const DestructibleStructureBuilder = () => {
 
                 <section>
                     <div className="dsb-container">
-                        <div className="dsb-feature-grid">
-                            {featureGalleryItems.map((feature) => (
-                                <figure className="dsb-feature" key={feature.title}>
-                                    <img src={feature.image} alt={feature.caption} />
-                                    <h3>{feature.title}</h3>
-                                    <p>{feature.description}</p>
-                                </figure>
-                            ))}
+                        <div className="dsb-store-gallery" aria-label="Feature image gallery">
+                            <div className="dsb-store-main-preview">
+                                <button type="button" className="dsb-gallery-nav previous" onClick={showPreviousImage} aria-label="Show previous screenshot">
+                                    <FiChevronLeft />
+                                </button>
+
+                                <img src={activeFeature.image} alt={activeFeature.title} className="dsb-store-main-image" />
+
+                                <button type="button" className="dsb-gallery-nav next" onClick={showNextImage} aria-label="Show next screenshot">
+                                    <FiChevronRight />
+                                </button>
+                            </div>
+
+                            <div className="dsb-store-feature-copy">
+                                <p className="dsb-store-eyebrow">Feature Preview</p>
+                                <h3>{activeFeature.title}</h3>
+                                <p>{activeFeature.description}</p>
+                            </div>
+
+                            <div className="dsb-store-thumbnail-row" role="tablist" aria-label="Feature thumbnails">
+                                {featureGalleryItems.map((feature, index) => (
+                                    <button
+                                        type="button"
+                                        key={feature.title}
+                                        className={`dsb-thumbnail-button ${index === activeImageIndex ? "is-active" : ""}`}
+                                        onClick={() => setActiveImageIndex(index)}
+                                        aria-label={`View ${feature.title}`}
+                                        aria-selected={index === activeImageIndex}
+                                        role="tab"
+                                    >
+                                        <img src={feature.image} alt={feature.title} />
+                                        <span>{feature.title}</span>
+                                    </button>
+                                ))}
+                            </div>
                         </div>
                     </div>
                 </section>
