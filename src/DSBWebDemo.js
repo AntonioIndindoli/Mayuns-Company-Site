@@ -9,18 +9,12 @@ const DSBWebDemo = () => (
         <Header />
         <main className="dsb-demo-content">
             <section className="dsb-demo-hero">
-                <div>
-                    <p className="dsb-label">Interactive Preview</p>
-                    <h1>DSB Web Demo</h1>
-                    <p>
-                        Try a browser-based preview of the Destructible Structure Builder demo. For the best experience, try the standalone Unity editor package once
-                        you are done experimenting.
-                    </p>
-                    <div className="dsb-hero-actions">
-                        <Link className="dsb-button secondary" to="/destructible-structure-builder">
-                            ← Back to product overview
-                        </Link>
-                    </div>
+                <p className="dsb-label">Interactive Preview</p>
+                <h1>Destructible Structure Builder Web Demo</h1>
+                <div className="dsb-hero-actions">
+                    <Link className="dsb-button secondary" to="/destructible-structure-builder">
+                        ← Back to product overview
+                    </Link>
                 </div>
             </section>
 

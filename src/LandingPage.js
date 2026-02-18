@@ -3,10 +3,10 @@ import Header from "./components/Header";
 import Card from "./components/Card";
 import Hero3D from "./components/Hero3D";
 import Footer from "./components/Footer";
-import backrooms from "./images/backroomsGameImage.png";
-import copyright from "./images/copyright.png";
-import soon from "./images/Comingsoon.png";
-import DSB_Screenshot from "./images/DSB_Screenshot2.png";
+import backrooms from "./images/LandingPageCard_backrooms.png";
+import copyright from "./images/LandingPageCard_copyright.png";
+import soon from "./images/LandingPageCard_Comingsoon.png";
+import DSB_Screenshot from "./images/LandingPageCard_DSB.png";
 import placeholder from "./images/PLACEHOLDER.png";
 
 const LandingPage = () => {
@@ -52,23 +52,16 @@ const LandingPage = () => {
 
                     <Card
                         imageSrc={DSB_Screenshot}
-                        caption="D.S.B. for Unity"
+                        caption="Available on Asset Store"
                         link="/destructible-structure-builder"
-                        description="Unity editor toolkit for collapsible structures. Avaliable on the official Unity Asset Store."
+                        description="Unity editor toolkit for building structures that can splinter, crumble and collapse believeable at run time."
                     />
 
                     <Card
                         imageSrc={copyright}
-                        caption="Play in Browser"
+                        caption="Play Now"
                         link="https://victorious-rock-0e8ecde10.3.azurestaticapps.net/"
-                        description="A quirky RPG where you explore and meet pop culture icons, battling them in strategic showdowns with one another."
-                    />
-
-                    <Card
-                        imageSrc={soon}
-                        caption="Release TBD"
-                        link="/"
-                        description="Exciting new projects in development. Stay tuned!"
+                        description="An in-browser RPG where you explore and meet pop culture icons, battling them in strategic showdowns with one another."
                     />
 
                 </div>
