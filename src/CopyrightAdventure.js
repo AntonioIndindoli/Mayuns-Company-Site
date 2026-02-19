@@ -10,25 +10,8 @@ const keyStats = [
 
 const featureGalleryItems = [
     {
-        title: "Iconic Encounters",
-        description: "Meet recognizable personalities and challenge them in tactical showdowns.",
-        image: copyrightHero,
-    },
-    {
-        title: "Progressive Story Paths",
-        description: "Travel through connected zones and progress your story through battles and dialogue.",
-        image: placeholderImage,
-    },
-    {
-        title: "Turn-Based Battles",
-        description: "Build your strategy and outplay opponents with smart move selection.",
-        image: copyrightHero,
-    },
-    {
-        title: "Play Instantly",
-        description: "No install required—jump into the adventure directly in your browser.",
-        image: placeholderImage,
-    },
+
+    }
 ];
 
 const CopyrightAdventure = () => (

@@ -33,16 +33,16 @@ const featureGalleryItems = [
 
 const BackroomsUnseenTapes = () => (
     <ProductShowcasePage
-        label="Indie Horror Game"
+        label="Survival Horror"
         title="The Backrooms: Unseen Tapes"
         descriptionLabel="DESCEND INTO THE UNKNOWN"
-        description="A first-person survival horror experience set in eerie, seemingly endless liminal spaces. Search for exits, uncover fragments of the story, and survive what waits in the dark."
+        description="A first-person survival horror experience set in eerie, seemingly endless liminal spaces. Search for exits and evade what waits in the dark."
         heroImage={backroomsHero}
         keyStats={keyStats}
         actions={[
             {
                 text: "Steam Store",
-                href: "https://store.steampowered.com/app/2816710/The_Backrooms_Unseen_Tapes/",
+                href: "https://store.steampowered.com/app/",
                 variant: "primary",
                 type: "anchor",
             },
