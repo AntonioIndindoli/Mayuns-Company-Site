@@ -13,10 +13,6 @@ const LandingPage = () => {
     return (
         <div
             className="LandingPage01"
-            style={{
-                width: "100%",
-                background: "white",
-            }}
         >
             <Header />
 

@@ -1,6 +1,8 @@
 import React, { Suspense, useRef, useEffect } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Environment, PresentationControls, useGLTF, Bounds, Center,  Html, useProgress  } from "@react-three/drei";
+import { Environment, PresentationControls, useGLTF, Bounds, Center, Html, useProgress } from "@react-three/drei";
+import { EffectComposer, Bloom, SSAO } from "@react-three/postprocessing";
+import * as THREE from "three";
 
 function Loader({ poster }) {
     const { progress } = useProgress();
@@ -26,17 +28,47 @@ function Loader({ poster }) {
 function Model(props) {
     const ref = useRef();
     const { scene } = useGLTF("/models/home_logo.glb");
+
+    const resetRotation = () => {
+        if (ref.current) {
+            ref.current.rotation.set(0, 0, 0);
+        }
+    };
+
     useEffect(() => {
         scene.traverse((o) => {
             if (o.isMesh) {
-                o.castShadow = false;
-                o.receiveShadow = false; // no ground anyway
-                // if your model has transparent parts, ensure its materials have transparent=true
-                // o.material.transparent = true; // only if needed
+                o.castShadow = true
+                o.receiveShadow = true
             }
         });
+
+        resetRotation();
+
+        const handleVisibilityChange = () => {
+            if (!document.hidden) {
+                resetRotation();
+            }
+        };
+
+        window.addEventListener("pageshow", resetRotation);
+        document.addEventListener("visibilitychange", handleVisibilityChange);
+
+        return () => {
+            window.removeEventListener("pageshow", resetRotation);
+            document.removeEventListener("visibilitychange", handleVisibilityChange);
+        };
     }, [scene]);
-    useFrame((_, d) => { if (ref.current) ref.current.rotation.y += d * 0.1; });
+
+    useFrame((state) => {
+        if (!ref.current) return
+
+        const t = state.clock.getElapsedTime()
+
+        const amplitude = 0.1
+        const speed = 0.4
+        ref.current.rotation.y = Math.sin(t * speed) * amplitude
+    });
     return <primitive ref={ref} object={scene} {...props} />;
 }
 
@@ -49,26 +81,39 @@ export default function Hero3D({ fallbackImg, className = "hero3d" }) {
                         camera={{ fov: 40 }}
                         dpr={[1, 1.5]}
                         shadows
-                        gl={{ alpha: true, antialias: false, powerPreference: "high-performance" }}
+                        gl={{ alpha: true, antialias: true }}
                         onCreated={({ gl, scene }) => {
-                            gl.setClearColor(0x000000, 0);                  // <-- alpha = 0
-                            scene.background = null;                        // <-- no scene background
+                            gl.setClearColor(0x000000, 0)
+                            gl.physicallyCorrectLights = true
+                            gl.outputColorSpace = THREE.SRGBColorSpace
+                            gl.toneMapping = THREE.ACESFilmicToneMapping
+                            gl.toneMappingExposure = 1.1
+                            scene.background = null
                         }}
                         style={{ background: "transparent", touchAction: "none" }}             // <-- ensure CSS is transparent
                     >
-                        {/* no <color attach="background" .../> here */}
-                        <ambientLight intensity={0.6} />
-                        <directionalLight position={[3, 3, 3]} intensity={1.2} castShadow />
+                        <directionalLight
+                            position={[5, 6, 5]}
+                            intensity={1}
+                            castShadow
+                            shadow-mapSize-width={2048}
+                            shadow-mapSize-height={2048}
+                            shadow-bias={-0.0001}
+                        />
 
+                        <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -1.65, 0]} receiveShadow>
+                            <planeGeometry args={[100, 100]} />
+                            <shadowMaterial opacity={0.1} />
+                        </mesh>
 
                         <PresentationControls
                             global
-                            snap={false}
-                            config={{ mass: 1.2, tension: 160, friction: 35 }}
+                            snap
+                            config={{ mass: 1.5, tension: 200, friction: 30 }}
                             rotation={[0, 0, 0]}
-                            speed={2}
-                            polar={[-Math.PI / 8, Math.PI / 8]}
-                            azimuth={[-Infinity, Infinity]}
+                            speed={0.5}
+                            polar={[-Math.PI / 3, Math.PI / 3]}
+                            azimuth={[-Math.PI, Math.PI]}
                         >
                             <Center>
                                 <group scale={[.7, .7, .7]}>   {/* bigger jar */}
@@ -78,7 +123,7 @@ export default function Hero3D({ fallbackImg, className = "hero3d" }) {
                         </PresentationControls>
 
 
-                        <Environment preset="city" />  {/* lights only; no background */}
+                        <Environment preset="sunset" />  {/* lights only; no background */}
                         {/* Removed <ContactShadows /> so nothing except the model renders */}
                     </Canvas>
                 </Suspense>

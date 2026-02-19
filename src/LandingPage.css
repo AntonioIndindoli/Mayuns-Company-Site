@@ -1,710 +1,653 @@
+.LandingPage01 {
+    width: "100%";
+    background: linear-gradient(180deg, rgb(18, 48, 102), #0c0f11);
+}
+
 .logo-image {
-  max-height: 58px;
-  /* Adjust based on your header's height */
-  max-width: 100%;
-  /* Ensures it doesn't overflow its container */
-  /* Centers the image in its container */
-  display: block;
-  padding-right: 10px;
+    max-height: 58px;
+    /* Adjust based on your header's height */
+    max-width: 100%;
+    /* Ensures it doesn't overflow its container */
+    /* Centers the image in its container */
+    display: block;
+    padding-right: 10px;
 }
 
 .header-bar {
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  width: 70%;
-  max-width: 1600px;
-  margin: auto;
-
-  z-index: 10000;
-  margin-top: 0px;
-  height: 90px;
-  background: #252525;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 70%;
+    max-width: 1600px;
+    margin: auto;
+    z-index: 10000;
+    margin-top: 0px;
+    height: 90px;
+    background: #252525;
 
 }
-
 
 .hero-section {
-  position: relative;
-  width: 100%;
-  overflow: hidden;
-  padding: clamp(7rem, 16vh, 11rem) 0 0;
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    padding: clamp(7rem, 16vh, 11rem) 0 0;
 }
 
-.hero-section > *:not(.background-gradient):not(.background-gradient-color) {
-  position: relative;
+.hero-section>*:not(.background-gradient):not(.background-gradient-color) {
+    position: relative;
+}
+
+.background-gradient-color {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(180deg, rgb(32, 84, 179), #00000000);
 }
 
 .hero3d {
-  width: 100%;
-  margin: 0;
-  background: transparent;
+    width: 100%;
+    margin: 0;
+    background: transparent;
 }
 
 /* inner box sets the height via aspect-ratio */
 .hero3d .frame {
-  width: 100%;
-  max-height: min(70vh, 720px);
-  aspect-ratio: 4 / 3;
-  /* change to 21/9, 4/3, etc. if you like */
-  background: transparent;
-  touch-action: none;
-  /* crucial for mobile! */
-  overscroll-behavior: contain;
+    width: 100%;
+    max-height: min(70vh, 720px);
+    aspect-ratio: 4 / 3;
+    /* change to 21/9, 4/3, etc. if you like */
+    background: transparent;
+    touch-action: none;
+    /* crucial for mobile! */
+    overscroll-behavior: contain;
 }
 
 /* ensure the canvas actually fills its box */
 .hero3d canvas {
-  display: block;
-  width: 100% !important;
-  height: 100% !important;
-  background: transparent;
+    display: block;
+    width: 100% !important;
+    height: 100% !important;
+    background: transparent;
 }
 
 .hero-copy {
-  text-align: center;
-  margin-top: clamp(1.5rem, 3vh, 2.5rem);
-  z-index: 1;
-}
-
-.hero-copy .Home-Message,
-.hero-copy .Home-Message-Subtext {
-
+    text-align: center;
+    z-index: 1;
 }
 
 .header-items-bar {
-  display: flex;
-  gap: 30px;
-  align-items: center;
+    display: flex;
+    gap: 30px;
+    align-items: center;
 }
 
 .MayunsGames-button {
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  text-align: center;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    text-align: center;
 }
 
 /* Styling for the MAYUNS part of the button */
 .MayunsGames-mayuns {
-  color: #00193e;
-  font-size: 24px;
-  font-weight: 1000;
-  line-height: 23.76px;
-  word-wrap: break-word;
+    color: #00193e;
+    font-size: 24px;
+    font-weight: 1000;
+    line-height: 23.76px;
+    word-wrap: break-word;
 }
 
 /* Styling for the GAMES part of the button */
 .MayunsGames-games {
-  color: #2ea5c2;
-  font-size: 24px;
-  font-weight: 900;
-  line-height: 23.76px;
-  word-wrap: break-word;
+    color: #2ea5c2;
+    font-size: 24px;
+    font-weight: 900;
+    line-height: 23.76px;
+    word-wrap: break-word;
 }
 
 .header-bar-wrapper {
-  position: fixed;
-  width: 100%;
-  height: 90px;
-  background: #252525;
-  z-index: 10000;
-  top: 0px;
+    position: fixed;
+    width: 100%;
+    height: 90px;
+    background: #252525;
+    z-index: 10000;
+    top: 0px;
 
-  box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-  /* Optional: adds a subtle shadow */
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+    /* Optional: adds a subtle shadow */
 }
 
 .nav-button {
-  color: rgb(255, 255, 255);
-  font-size: 15px;
-  font-weight: 700;
-  word-wrap: break-word;
-  background-color: #252525;
-  border: #ffffff00;
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 8px 12px;
+    color: rgb(255, 255, 255);
+    font-size: 15px;
+    font-weight: 700;
+    word-wrap: break-word;
+    background-color: #252525;
+    border: #ffffff00;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
 }
 
 .nav-button-logo {
-  height: 32px;
-  width: 32px;
-  object-fit: contain;
-  border-radius: 6px;
+    height: 32px;
+    width: 32px;
+    object-fit: contain;
+    border-radius: 6px;
 }
 
 .nav-button-black {
-  color: rgb(128, 128, 128);
-  font-size: 15px;
-  font-weight: 700;
-  word-wrap: break-word;
-  background-color: #000000;
-  border: #ffffff00;
-  border-radius: 5px;
+    color: rgb(128, 128, 128);
+    font-size: 15px;
+    font-weight: 700;
+    word-wrap: break-word;
+    background-color: #000000;
+    border: #ffffff00;
+    border-radius: 5px;
 }
 
 .header-items {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
 }
 
 .header-left-stack {
-  display: flex;
-  align-items: center;
-  gap: 12px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
 }
 
 /* Add this to your styles.css file */
 .Home-Message {
-  font-size: 20px;
-  /* Adjust size as needed */
-  color: black;
-  text-align: center;
-  font-weight: 400;
+    font-size: 20px;
+    /* Adjust size as needed */
+    color: rgb(230, 230, 230);
+    text-align: center;
+    font-weight: 400;
 
-  /* Adjust margin as needed */
-  z-index: 1;
+    /* Adjust margin as needed */
+    z-index: 1;
 }
 
 .DSB-Home-Message {
-  font-size: 50px;
-  /* Adjust size as needed */
-  color: black;
-  text-align: center;
-  font-weight: 700;
-  /* Bold */
-  margin-top: 30px;
-  /* Adjust margin as needed */
-  z-index: 1;
+    font-size: 50px;
+    /* Adjust size as needed */
+    color: black;
+    text-align: center;
+    font-weight: 700;
+    /* Bold */
+    margin-top: 30px;
+    /* Adjust margin as needed */
+    z-index: 1;
 }
 
 .About-Message {
-  font-size: 50px;
-  /* Adjust size as needed */
-  color: black;
-  text-align: center;
-  font-weight: 700;
-  /* Bold */
-  margin-top: 100px;
-  /* Adjust margin as needed */
-  z-index: 1;
+    font-size: 50px;
+    /* Adjust size as needed */
+    color: black;
+    text-align: center;
+    font-weight: 700;
+    /* Bold */
+    margin-top: 100px;
+    /* Adjust margin as needed */
+    z-index: 1;
 }
 
 .Home-Message-Subtext {
-  font-size: 16px;
-  /* Adjust size as needed */
-  color: grey;
-  text-align: center;
-  /* Adjust margin as needed */
-  z-index: 1;
+    font-size: 16px;
+    /* Adjust size as needed */
+    color: grey;
+    text-align: center;
+    /* Adjust margin as needed */
+    z-index: 1;
 }
 
 .Home-Message-Subtext-nonItalic {
-  font-size: 20px;
-  /* Adjust size as needed */
-  color: grey;
-  text-align: center;
-  /* Adjust margin as needed */
-  z-index: 1;
+    font-size: 20px;
+    /* Adjust size as needed */
+    color: grey;
+    text-align: center;
+    /* Adjust margin as needed */
+    z-index: 1;
 }
 
 .Home-Message-SubtextAlbum {
-  font-size: 18px;
-  /* Adjust size as needed */
-  color: rgb(41, 41, 41);
-  text-align: center;
-  /* Adjust margin as needed */
-  z-index: 1;
+    font-size: 18px;
+    /* Adjust size as needed */
+    color: rgb(41, 41, 41);
+    text-align: center;
+    /* Adjust margin as needed */
+    z-index: 1;
 }
 
 .button-container {
-  display: flex;
-  justify-content: center;
-  margin: 20px 0;
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
 }
 
 .downloadButton {
-  padding: 10px 20px;
-  font-size: 20px;
-  color: white;
-  background-color: green;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
+    padding: 10px 20px;
+    font-size: 20px;
+    color: white;
+    background-color: green;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
 }
 
 .downloadButton:hover {
-  background-color: darkgreen;
+    background-color: darkgreen;
 }
 
 /* 1 — container defines the max height */
 .hero-banner {
-  width: 100%;
-  /* stays responsive but never exceeds 450 px */
-  height: clamp(200px, 50vh, 600px);
-  position: relative;
-  overflow: hidden;
-  /* hides cropped parts */
+    width: 100%;
+    /* stays responsive but never exceeds 450 px */
+    height: clamp(200px, 50vh, 600px);
+    position: relative;
+    overflow: hidden;
+    /* hides cropped parts */
 }
 
 /* 2 — image stretches & centres */
 .hero-img {
-  position: absolute;
-  /* lets it fill the banner */
-  inset: 0;
-  /* shorthand for top/right/bottom/left: 0 */
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  /* zoom / crop so no letter-boxing */
-  object-position: center;
-  display: block;
-  /* removes default inline-img gap */
+    position: absolute;
+    /* lets it fill the banner */
+    inset: 0;
+    /* shorthand for top/right/bottom/left: 0 */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* zoom / crop so no letter-boxing */
+    object-position: center;
+    display: block;
+    /* removes default inline-img gap */
 }
 
 .pageLinkButton {
-  padding: 10px 20px;
-  font-size: 16px;
-  color: white;
-  background-color: rgba(0, 0, 0, 0.726);
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-  transition: background-color 0.3s;
-  margin: 10px;
+    padding: 10px 20px;
+    font-size: 16px;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.726);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin: 10px;
 }
 
 .pageLinkButton:hover {
-  background-color: rgb(50, 55, 63);
+    background-color: rgb(50, 55, 63);
 }
 
 .package-details {
-  color: rgb(36, 36, 36);
+    color: rgb(36, 36, 36);
 }
 
 .Home-Projects {
-  font-size: 40px;
-  /* Adjust size as needed */
-  color: black;
-  text-align: left;
-  font-weight: 600;
-  z-index: 1;
+    font-size: 40px;
+    /* Adjust size as needed */
+    color: black;
+    text-align: left;
+    font-weight: 600;
+    z-index: 1;
 }
 
 .Home-Projects-Subtext {
-  font-size: 18px;
-  /* Adjust size as needed */
-  color: grey;
-  text-align: left;
-  margin-top: 0px;
-  /* Adjust margin as needed */
-  z-index: 1;
-}
-
-.background-gradient,
-.background-gradient-color {
-  position: absolute;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  min-height: 0;
-  pointer-events: none;
-}
-
-.background-gradient {
-  background: linear-gradient(180deg, rgba(46, 144, 177, 0.55) 0%, rgba(255, 255, 255, 0) 65%);
-  opacity: 0.85;
-}
-
-.background-gradient-color {
-  background: linear-gradient(to top, #ffffff 0%, #2e90b1 100%);
-  z-index: 0;
+    font-size: 18px;
+    /* Adjust size as needed */
+    color: grey;
+    text-align: left;
+    margin-top: 0px;
+    /* Adjust margin as needed */
+    z-index: 1;
 }
 
 .box-center-image {
-  position: relative;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: flex-end;
-  padding: 0 1.5rem;
-  z-index: 1;
+    position: relative;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: 0 1.5rem;
+    z-index: 1;
 }
 
 .background-center-image {
-  justify-content: center;
-  z-index: 1;
+    justify-content: center;
+    z-index: 1;
 }
 
 /* Adjusted .center-image class for the main image */
 .center-image {
-  /* If you need to adjust the position further, consider using margin or padding here. */
-  z-index: 1;
-  width: min(92vw, 960px);
-  margin: 0 auto;
+    /* If you need to adjust the position further, consider using margin or padding here. */
+    z-index: 1;
+    width: min(92vw, 960px);
+    margin: 0 auto;
 }
 
 .background-image {
-  max-width: 100%;
+    max-width: 100%;
 }
 
 .main-image {
-  max-width: 100%;
-  max-height: 45vh;
-  /* or any other value that suits your design */
-  min-height: 120px;
-  width: auto;
-  height: auto;
-  z-index: 1;
+    max-width: 100%;
+    max-height: 45vh;
+    /* or any other value that suits your design */
+    min-height: 120px;
+    width: auto;
+    height: auto;
+    z-index: 1;
 }
 
 /* New container wrapping projects and cards */
 .home-projects-and-cards {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  width: 100%;
-  z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    z-index: 1;
+    margin-bottom: 30px;
 }
 
 .Home-Projects-Div {
-  width: 80%;
-  /* Adjust this width to match the width of your cards container */
-  max-width: 1300px;
-  /* Prevents the container from getting too wide on large screens */
-  z-index: 1;
+    width: 80%;
+    /* Adjust this width to match the width of your cards container */
+    max-width: 1300px;
+    /* Prevents the container from getting too wide on large screens */
+    z-index: 1;
 }
 
 .home-cards {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  /* Allows cards to wrap on smaller screens */
-  gap: 10px;
-  /* Space between cards */
-  padding: 0px 10px;
-  /* Top and bottom padding without affecting the horizontal */
-  z-index: 1;
-}
-
-/* Individual card styling */
-.card-div {
-  border: 2px solid #ebebeb;
-  /* Solid outline with a blue color, adjust as needed */
-  border-radius: 8px;
-  /* Optional: adds rounded corners */
-  text-align: center;
-  margin: 0.5rem;
-  padding: 10px;
-  /* Padding inside each card */
-  background-color: #f9f9f9;
-  /* Light background color, adjust as needed */
-  width: 300px;
-  /* Optional: adds a subtle shadow */
-  font-size: 16px;
-  /* Adjust size as needed */
-  color: rgb(124, 124, 124);
-  text-align: left;
-  z-index: 1;
-}
-
-/* Adjusted card image styling */
-.card-image {
-  width: 100%;
-  /* Makes the image responsive within the card */
-  height: auto;
-  /* Maintains aspect ratio */
-  max-height: 350px;
-  /* Limits the image height, adjust as needed */
-  object-fit: cover;
-  /* Ensures the image covers the area, may crop */
-  border-bottom: 1px solid #ddd;
-  /* Adds a subtle line between the image and caption */
-  z-index: 1;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    /* Allows cards to wrap on smaller screens */
+    gap: 10px;
+    /* Space between cards */
+    padding: 0px 10px;
+    /* Top and bottom padding without affecting the horizontal */
+    z-index: 1;
 }
 
 .site-footer {
-  width: 100%;
-  background-color: #252525;
-  padding: 20px 0;
-  text-align: center;
-  z-index: 1;
-  font-size: 10px;
+    width: 100%;
+    background-color: #1f1f1f;
+    padding: 20px 0;
+    text-align: center;
+    z-index: 1;
+    font-size: 10px;
 }
 
 .footer-content p {
-  margin: 0;
-  color: #d3d3d3;
-  z-index: 1;
+    margin: 0;
+    color: #d3d3d3;
+    z-index: 1;
 }
 
 .social-links a {
-  margin: 0 10px;
-  color: #dbdbdb;
-  text-decoration: none;
-  z-index: 1;
+    margin: 0 10px;
+    color: #dbdbdb;
+    text-decoration: none;
+    z-index: 1;
 }
 
 .social-links a:hover {
-  text-decoration: underline;
-  z-index: 1;
+    text-decoration: underline;
+    z-index: 1;
 }
 
 .center-divider {
-  height: 0;
-  /* Ensure the divider is purely the border with no extra height */
-  border-top: 1px solid #ccc;
-  /* A thin grey line */
-  width: 100%;
-  /* 75% of its container's width */
-  margin: 0 auto;
-  /* Center the divider within its container */
+    height: 0;
+    /* Ensure the divider is purely the border with no extra height */
+    border-top: 1px solid #ccc;
+    /* A thin grey line */
+    width: 100%;
+    /* 75% of its container's width */
+    margin: 0 auto;
+    /* Center the divider within its container */
 }
 
 @media (max-width: 750px) {
-  .logo-image {
-    max-height: 50px;
-  }
+    .logo-image {
+        max-height: 50px;
+    }
 
-  .hero-section {
-    padding: clamp(5rem, 22vh, 7rem) 0 0;
-  }
+    .hero-section {
+        padding: clamp(5rem, 22vh, 7rem) 0 0;
+    }
 
-  .box-center-image {
-    padding: 0 1rem;
-  }
+    .box-center-image {
+        padding: 0 1rem;
+    }
 
-  .center-image {
-    width: min(96vw, 520px);
-  }
+    .center-image {
+        width: min(96vw, 520px);
+    }
 
-  .header-bar {
-    width: 90%;
-    max-width: 800px;
-    margin: auto;
-    height: 70px;
-    background: #f1f1f1;
-  }
+    .header-bar {
+        width: 90%;
+        max-width: 800px;
+        margin: auto;
+        height: 70px;
+    }
 
-  .header-items-bar {
-    display: flex;
-    gap: 15px;
-    align-items: center;
-  }
+    .header-items-bar {
+        display: flex;
+        gap: 15px;
+        align-items: center;
+    }
 
-  /* Styling for the GAMES part of the button */
-  .MayunsGames-games {
-    color: #2ea5c2;
-    font-size: 24px;
-    font-weight: 900;
-    line-height: 23.76px;
-    word-wrap: break-word;
-  }
+    /* Styling for the GAMES part of the button */
+    .MayunsGames-games {
+        color: #2ea5c2;
+        font-size: 24px;
+        font-weight: 900;
+        line-height: 23.76px;
+        word-wrap: break-word;
+    }
 
-  .header-bar-wrapper {
-    width: 100%;
-    height: 70px;
-    background: #f1f1f1;
-  }
+    .header-bar-wrapper {
+        width: 100%;
+        height: 70px;
+    }
 
-  .header-items {
-    width: 100%;
-    height: 100%;
-  }
+    .header-items {
+        width: 100%;
+        height: 100%;
+    }
 
-  .pageLinkButton {
-    padding: 10px 20px;
-    font-size: 12px;
-  }
+    .pageLinkButton {
+        padding: 10px 20px;
+        font-size: 12px;
+    }
 
-  .nav-button,
-  .nav-button-black {
-    font-size: 13px;
-    /* Smaller font size for mobile */
-  }
+    .nav-button,
+    .nav-button-black {
+        font-size: 13px;
+        /* Smaller font size for mobile */
+    }
 
-  .Home-Projects {
-    font-size: 30px;
-    /* Adjusted size for mobile */
-  }
+    .Home-Projects {
+        font-size: 30px;
+        /* Adjusted size for mobile */
+    }
 
-  .Home-Message-Subtext,
-  .Home-Projects-Subtext {
-    font-size: 10px;
-    /* Consistently adjusting subtexts and related headings */
-  }
+    .Home-Message-Subtext,
+    .Home-Projects-Subtext {
+        font-size: 10px;
+        /* Consistently adjusting subtexts and related headings */
+    }
 
-  .hero3d .frame {
-    max-height: min(55vh, 520px);
-  }
+    .hero3d .frame {
+        max-height: min(55vh, 520px);
+    }
 }
 
 @media (orientation: landscape) and (max-height: 700px) {
-  .header-bar {
-    width: 90%;
-    max-width: 800px;
-    margin: auto;
-    height: 70px;
-    background: #f1f1f1;
-  }
+    .header-bar {
+        width: 90%;
+        max-width: 800px;
+        margin: auto;
+        height: 70px;
+    }
 
-  .header-items-bar {
-    display: flex;
-    gap: 25px;
-    align-items: center;
-  }
+    .header-items-bar {
+        display: flex;
+        gap: 25px;
+        align-items: center;
+    }
 
-  /* Styling for the GAMES part of the button */
-  .MayunsGames-games {
-    color: #2ea5c2;
-    font-size: 24px;
-    font-weight: 900;
-    line-height: 23.76px;
-    word-wrap: break-word;
-  }
+    /* Styling for the GAMES part of the button */
+    .MayunsGames-games {
+        color: #2ea5c2;
+        font-size: 24px;
+        font-weight: 900;
+        line-height: 23.76px;
+        word-wrap: break-word;
+    }
 
-  .header-bar-wrapper {
-    width: 100%;
-    height: 70px;
-    background: #f1f1f1;
-  }
+    .header-bar-wrapper {
+        width: 100%;
+        height: 70px;
+    }
 
-  .header-items {
-    width: 100%;
-    height: 100%;
-  }
+    .header-items {
+        width: 100%;
+        height: 100%;
+    }
 
-  .Home-Projects {
-    font-size: 30px;
-    /* Adjusted size for mobile */
-  }
+    .Home-Projects {
+        font-size: 30px;
+        /* Adjusted size for mobile */
+    }
 
-  .Home-Message-Subtext,
-  .Home-Projects-Subtext {
-    font-size: 13px;
-    /* Consistently adjusting subtexts and related headings */
-  }
+    .Home-Message-Subtext,
+    .Home-Projects-Subtext {
+        font-size: 13px;
+        /* Consistently adjusting subtexts and related headings */
+    }
 
-  .hero-section {
-    padding: clamp(6rem, 18vh, 8rem) 0 0;
-  }
+    .hero-section {
+        padding: clamp(6rem, 18vh, 8rem) 0 0;
+    }
 
-  .box-center-image {
-    padding: 0 2rem;
-  }
+    .box-center-image {
+        padding: 0 2rem;
+    }
 
-  .center-image {
-    width: min(80vw, 820px);
-  }
+    .center-image {
+        width: min(80vw, 820px);
+    }
 
-  .hero3d .frame {
-    max-height: min(60vh, 540px);
-  }
+    .hero3d .frame {
+        max-height: min(60vh, 540px);
+    }
 }
 
 
 
 /* General Card Styling */
 .card-div {
-  display: flex;
-  flex-direction: column;
-  width: 300px;
-  /* You can adjust based on your design */
-  border: 1px solid #ccc;
-  border-radius: 8px;
-  overflow: hidden;
-  background-color: #f5f5f5;
-  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.63);
-  transition: box-shadow 0.3s ease-in-out;
-  margin: 20px;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    border-radius: 8px;
+    overflow: hidden;
+    background: linear-gradient(150deg, rgb(15, 18, 24), rgba(59, 63, 71, 0.26) 100%);
+    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.63);
+    transition: box-shadow 0.3s ease-in-out;
+    margin: 20px;
 }
 
 .card-div:hover {
-  box-shadow: 5px 5px 15px rgb(0, 0, 0);
+    box-shadow: 5px 5px 15px rgb(0, 0, 0);
 }
 
 /* Image Styling */
 .card-image {
-  width: 100%;
-  height: 180px;
-  /* Adjust this to fit your design */
-  object-fit: cover;
-  border-bottom: 1px solid #ccc;
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
 }
 
 /* Content Wrapper */
 .card-content {
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Caption Styling (Link/Button) */
 .nav-button-card {
-  background-color: #4a93e6;
-  border: none;
-  color: white;
-  padding: 10px 16px;
-  font-size: 16px;
-  text-align: center;
-  border-radius: 4px;
-  cursor: pointer;
-  text-decoration: none;
-  transition: background-color 0.3s ease;
+    background-color: #4a93e6;
+    border: none;
+    color: white;
+    padding: 10px 16px;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 4px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s ease;
 }
 
 .nav-button-card {
-  color: black;
-  font-size: 15px;
-  font-weight: 700;
-  word-wrap: break-word;
-  border: #ffffff00;
-  background: #f1f1f100;
-  text-decoration: none;
+    color: rgb(219, 219, 219);
+    font-size: 15px;
+    font-weight: 700;
+    word-wrap: break-word;
+    border: #ffffff00;
+    background: #f1f1f10e;
+    text-decoration: none;
 }
 
 .nav-button-card:hover {
-  background-color: #5d99da;
+    background-color: #5d99da;
 }
 
 .nav-button-card:focus {
-  outline: none;
+    outline: none;
 }
 
 /* External Link Specific Styling */
 .nav-button-card a {
-  color: white;
-  text-decoration: none;
+    color: white;
+    text-decoration: none;
 }
 
 /* Description Styling */
 .card-description {
-  margin-top: 12px;
-  color: #666;
-  font-size: 14px;
-  text-align: center;
+    margin-top: 12px;
+    color: #afafaf;
+    font-size: 14px;
+    text-align: center;
 }
 
 /* Responsive Design */
 @media (max-width: 600px) {
-  .card-div {
-    width: 100%;
-  }
+    .card-div {
+        width: 100%;
+    }
 
-  .card-content {
-    padding: 10px;
-  }
+    .card-content {
+        padding: 10px;
+    }
 
-  .card-description {
-    font-size: 12px;
-  }
+    .card-description {
+        font-size: 12px;
+    }
 }

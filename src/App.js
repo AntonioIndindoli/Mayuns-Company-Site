@@ -3,7 +3,6 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import LandingPage from "./LandingPage";
 import DestructibleStructureBuilder from "./DestructibleStructureBuilder";
 import { Col } from "react-bootstrap";
-import "./App.css";
 import ScrollToTop from "./components/ScrollToTop";
 
 
