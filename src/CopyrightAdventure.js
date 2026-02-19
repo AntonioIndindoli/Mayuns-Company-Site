@@ -1,6 +1,6 @@
 import React from "react";
 import ProductShowcasePage from "./ProductShowcasePage";
-import copyrightHero from "./images/LandingPageCard_copyright.png";
+import copyrightHero from "./images/CopyRightAdventureHero.png";
 
 const keyStats = [
     { label: "Platform", value: "Web Browser" },

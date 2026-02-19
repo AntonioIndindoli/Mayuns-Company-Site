@@ -1,7 +1,6 @@
 import React, { Suspense, useRef, useEffect } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
 import { Environment, PresentationControls, useGLTF, Bounds, Center, Html, useProgress } from "@react-three/drei";
-import { EffectComposer, Bloom, SSAO } from "@react-three/postprocessing";
 import * as THREE from "three";
 
 function Loader({ poster }) {

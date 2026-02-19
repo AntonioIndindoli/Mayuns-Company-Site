@@ -1,7 +1,10 @@
 import React from "react";
 import ProductShowcasePage from "./ProductShowcasePage";
-import backroomsHero from "./images/LandingPageCard_backrooms.png";
-import placeholderImage from "./images/PLACEHOLDER.png";
+import Survive from "./images/Survive.jpg";
+import Explore from "./images/Explore.jpg";
+import Manage from "./images/Manage.jpg";
+import Immersive from "./images/Immersive.jpg";
+import backroomsHero from "./images/BackroomsHero.jpg";
 
 const keyStats = [
     { label: "Platform", value: "PC (Steam)" },
@@ -11,23 +14,23 @@ const keyStats = [
 const featureGalleryItems = [
     {
         title: "Explore Endless Corridors",
-        description: "Navigate unsettling liminal environments where every hallway feels familiar and wrong.",
-        image: backroomsHero,
+        description: "Navigate shifting, hostile environments where visibility is low and danger is constant.",
+        image: Explore,
     },
     {
-        title: "Survive the Unknown",
-        description: "Keep moving, manage your fear, and evade threats lurking just beyond your flashlight.",
-        image: placeholderImage,
+        title: "Immersive Found Footage Horror",
+        description: "Experience the Back Rooms through a raw found-footage lens, with distorted visuals, analog artifacts, and spatial audio that keeps every sound close.",
+        image: Immersive,
     },
     {
-        title: "Atmospheric Storytelling",
-        description: "Unravel clues hidden across levels to learn what happened inside the Backrooms.",
-        image: backroomsHero,
+        title: "Manage Resources and Sanity",
+        description: "Manage your sanity and resources as the environment distorts around you.",
+        image: Manage,
     },
     {
-        title: "Immersive Horror Audio",
-        description: "Dynamic sound design builds constant tension and makes every step matter.",
-        image: placeholderImage,
+        title: "Stay Alive",
+        description: "Evade roaming entities by running, hiding, and staying silent. One mistake can mean being caught.",
+        image: Survive,
     },
 ];
 
