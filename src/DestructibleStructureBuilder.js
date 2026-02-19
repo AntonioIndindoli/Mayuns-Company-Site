@@ -1,14 +1,10 @@
-import React, { useEffect, useMemo, useState } from "react";
-import { Link } from "react-router-dom";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
+import React from "react";
+import ProductShowcasePage from "./ProductShowcasePage";
 import heroShot from "./images/DSB_Hero.png";
 import buildModesShot from "./images/DSB Gallery/Build Modes_DSB.png";
 import stressPropagationShot from "./images/DSB Gallery/Stress Propagation_DSB.png";
 import wallDesignShot from "./images/DSB Gallery/Wall Design System_DSB.png";
 import meshCacheShot from "./images/DSB Gallery/Mesh Cache Workflow_DSB.png";
-import "./DestructibleStructureBuilder.css";
-import { FiExternalLink, FiFileText, FiDownload, FiChevronLeft, FiChevronRight } from "react-icons/fi";
 
 const keyStats = [
     { label: "Unity (LTS)", value: "6, 2022, 2021" },
@@ -38,150 +34,21 @@ const featureGalleryItems = [
     },
 ];
 
-const DestructibleStructureBuilder = () => {
-    const [activeImageIndex, setActiveImageIndex] = useState(0);
-    const [isAutoScrollPaused, setIsAutoScrollPaused] = useState(false);
-
-    const activeFeature = useMemo(() => featureGalleryItems[activeImageIndex], [activeImageIndex]);
-
-    const showPreviousImage = () => {
-        setActiveImageIndex((previousIndex) => {
-            if (previousIndex === 0) {
-                return featureGalleryItems.length - 1;
-            }
-
-            return previousIndex - 1;
-        });
-    };
-
-    const showNextImage = () => {
-        setActiveImageIndex((previousIndex) => {
-            if (previousIndex === featureGalleryItems.length - 1) {
-                return 0;
-            }
-
-            return previousIndex + 1;
-        });
-    };
-
-    useEffect(() => {
-        if (isAutoScrollPaused) {
-            return undefined;
-        }
-
-        const autoScrollInterval = window.setInterval(() => {
-            setActiveImageIndex((previousIndex) => {
-                if (previousIndex === featureGalleryItems.length - 1) {
-                    return 0;
-                }
-
-                return previousIndex + 1;
-            });
-        }, 5000);
-
-        return () => {
-            window.clearInterval(autoScrollInterval);
-        };
-    }, [isAutoScrollPaused]);
-
-    const heroBackgroundStyle = {
-        backgroundImage: `linear-gradient(110deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, .85) 30%, rgba(0, 0, 0, 0.6) 70%, rgba(0, 0, 0, 0) 100%), url(${heroShot})`,
-    };
-
-    return (
-        <div className="LandingPage01 dsb-page">
-            <Header />
-
-            <main className="dsb-content">
-                <section className="dsb-hero" style={heroBackgroundStyle}>
-                    <div className="dsb-hero-copy">
-                        <p className="dsb-label">Unity Editor Toolkit</p>
-                        <h1>Destructible Structure Builder</h1>
-                        <div className="dsb-hero-actions">
-                            <Link className="dsb-button primary" to="/destructible-structure-builder">
-                                Asset Store  <FiExternalLink className="dsb-icon" />
-                            </Link>
-
-                            <a className="dsb-button secondary" href="/DSB_Demo.zip" target="_blank" rel="noreferrer">
-                                Demo  <FiDownload className="dsb-icon" />
-                            </a>
-
-                            <a className="dsb-button secondary" href="/Manual.pdf" target="_blank" rel="noreferrer">
-                                Manual  <FiFileText className="dsb-icon" />
-                            </a>
-                        </div>
-
-                        <ul className="dsb-key-stats">
-                            {keyStats.map((stat) => (
-                                <li key={stat.label}>
-                                    <span>{stat.label}</span>
-                                    <strong>{stat.value}</strong>
-                                </li>
-                            ))}
-                        </ul>
-
-                    </div>
-                </section>
-
-                <section className="dsb-description">
-                    <div className="dsb-description-area">
-                        <p className="dsb-description-label">BUILD & DESTROY</p>
-                        <p>
-                            DSB is a Unity Editor toolkit for creating structures which crumble and collapse believably at runtime. Use simple build modes to place beams, walls, and supports in editor-time scene view, then destroy during gameplay. Includes stress simulation, debris effects, and prefab support.
-                        </p>
-                    </div>
-                </section>
-
-                <section>
-                    <div className="dsb-container">
-                        <div
-                            className="dsb-store-gallery"
-                            aria-label="Feature image gallery"
-                            onMouseEnter={() => setIsAutoScrollPaused(true)}
-                            onMouseLeave={() => setIsAutoScrollPaused(false)}
-                        >
-                            <div className="dsb-store-main-preview">
-                                <button type="button" className="dsb-gallery-nav previous" onClick={showPreviousImage} aria-label="Show previous screenshot">
-                                    <FiChevronLeft />
-                                </button>
-
-                                <img src={activeFeature.image} alt={activeFeature.title} className="dsb-store-main-image" />
-
-                                <div className="dsb-store-feature-copy">
-                                    <h3>{activeFeature.title}</h3>
-                                    <p>{activeFeature.description}</p>
-                                </div>
-
-                                <button type="button" className="dsb-gallery-nav next" onClick={showNextImage} aria-label="Show next screenshot">
-                                    <FiChevronRight />
-                                </button>
-                            </div>
-
-
-                            <div className="dsb-store-thumbnail-row" role="tablist" aria-label="Feature thumbnails">
-                                {featureGalleryItems.map((feature, index) => (
-                                    <button
-                                        type="button"
-                                        key={feature.title}
-                                        className={`dsb-thumbnail-button ${index === activeImageIndex ? "is-active" : ""}`}
-                                        onClick={() => setActiveImageIndex(index)}
-                                        aria-label={`View ${feature.title}`}
-                                        aria-selected={index === activeImageIndex}
-                                        role="tab"
-                                    >
-                                        <img src={feature.image} alt={feature.title} />
-                                    </button>
-                                ))}
-                            </div>
-                        </div>
-                    </div>
-                </section>
-
-            </main>
-
-            <Footer />
-        </div>
-    );
-};
+const DestructibleStructureBuilder = () => (
+    <ProductShowcasePage
+        label="Unity Editor Toolkit"
+        title="Destructible Structure Builder"
+        descriptionLabel="BUILD & DESTROY"
+        description="DSB is a Unity Editor toolkit for creating structures which crumble and collapse believably at runtime. Use simple build modes to place beams, walls, and supports in editor-time scene view, then destroy during gameplay. Includes stress simulation, debris effects, and prefab support."
+        heroImage={heroShot}
+        keyStats={keyStats}
+        actions={[
+            { text: "Asset Store", href: "/destructible-structure-builder", variant: "primary", type: "link" },
+            { text: "Demo", href: "/DSB_Demo.zip", variant: "secondary", type: "anchor" },
+            { text: "Manual", href: "/Manual.pdf", variant: "secondary", type: "anchor" },
+        ]}
+        featureGalleryItems={featureGalleryItems}
+    />
+);
 
 export default DestructibleStructureBuilder;
