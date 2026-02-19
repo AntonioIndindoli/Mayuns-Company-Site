@@ -1,6 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { FiChevronLeft, FiChevronRight, FiExternalLink } from "react-icons/fi";
+import { FiChevronLeft, FiChevronRight, FiExternalLink, FiMaximize, FiMinimize } from "react-icons/fi";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import "./DestructibleStructureBuilder.css";
@@ -17,8 +17,10 @@ const ProductShowcasePage = ({
 }) => {
     const [activeImageIndex, setActiveImageIndex] = useState(0);
     const [isAutoScrollPaused, setIsAutoScrollPaused] = useState(false);
+    const [isFullscreen, setIsFullscreen] = useState(false);
     const thumbnailButtonRefs = useRef([]);
     const thumbnailRowRef = useRef(null);
+    const mainPreviewRef = useRef(null);
 
     const hasFeatureGallery = featureGalleryItems.length > 0;
 
@@ -89,6 +91,37 @@ const ProductShowcasePage = ({
         });
     }, [activeImageIndex]);
 
+    useEffect(() => {
+        const handleFullscreenChange = () => {
+            setIsFullscreen(document.fullscreenElement === mainPreviewRef.current);
+        };
+
+        document.addEventListener("fullscreenchange", handleFullscreenChange);
+
+        return () => {
+            document.removeEventListener("fullscreenchange", handleFullscreenChange);
+        };
+    }, []);
+
+    const toggleFullscreen = async () => {
+        const mainPreview = mainPreviewRef.current;
+
+        if (!mainPreview) {
+            return;
+        }
+
+        try {
+            if (document.fullscreenElement === mainPreview) {
+                await document.exitFullscreen();
+                return;
+            }
+
+            await mainPreview.requestFullscreen();
+        } catch (error) {
+            setIsFullscreen(false);
+        }
+    };
+
     const heroBackgroundStyle = {
         backgroundImage: `linear-gradient(110deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, .85) 30%, rgba(0, 0, 0, 0.6) 70%, rgba(0, 0, 0, 0) 100%), url(${heroImage})`,
     };
@@ -149,9 +182,18 @@ const ProductShowcasePage = ({
                                 onMouseEnter={() => setIsAutoScrollPaused(true)}
                                 onMouseLeave={() => setIsAutoScrollPaused(false)}
                             >
-                                <div className="showcase-store-main-preview">
+                                <div className="showcase-store-main-preview" ref={mainPreviewRef}>
                                     <button type="button" className="showcase-gallery-nav previous" onClick={showPreviousImage} aria-label="Show previous screenshot">
                                         <FiChevronLeft />
+                                    </button>
+
+                                    <button
+                                        type="button"
+                                        className="showcase-gallery-fullscreen"
+                                        onClick={toggleFullscreen}
+                                        aria-label={isFullscreen ? "Exit fullscreen" : "View fullscreen"}
+                                    >
+                                        {isFullscreen ? <FiMinimize /> : <FiMaximize />}
                                     </button>
 
                                     <img src={activeFeature.image} alt={activeFeature.title} className="showcase-store-main-image" />
