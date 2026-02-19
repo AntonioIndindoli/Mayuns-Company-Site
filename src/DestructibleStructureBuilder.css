@@ -186,12 +186,13 @@
     border-radius: 14px;
     overflow: hidden;
     background: #091421;
+    aspect-ratio: 16 / 9;
+    max-height: 680px;
 }
 
 .dsb-store-main-image {
     width: 100%;
-    height: min(56vw, 680px);
-    min-height: 300px;
+    height: 100%;
     object-fit: cover;
     display: block;
 }
@@ -278,6 +279,7 @@
     overflow: hidden;
     cursor: pointer;
     text-align: left;
+    aspect-ratio: 16 / 9;
     transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
@@ -288,7 +290,7 @@
 
 .dsb-thumbnail-button img {
     width: 100%;
-    height: 130px;
+    height: 100%;
     object-fit: cover;
     display: block;
 }
@@ -314,14 +316,19 @@
         height: 100%;
     }
 
+
     .dsb-gallery-nav {
         width: 2rem;
         height: 2rem;
     }
 
     .dsb-store-feature-copy {
-        padding: 1rem 1rem 1rem 1rem;
-        font-size: small;
+        padding: .5rem .5rem .5rem .5rem;
+        font-size: 11px;
+    }
+
+    .dsb-store-feature-copy h3 {
+        font-size: 12px;
     }
 
 }
@@ -462,7 +469,7 @@
     .dsb-content {
         padding: .5rem .5rem .5rem .5rem;
         margin: 0;
-gap: .5rem;
+        gap: .5rem;
     }
 
     .dsb-button {
