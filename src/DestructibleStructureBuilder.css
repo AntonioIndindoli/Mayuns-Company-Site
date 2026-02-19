@@ -265,10 +265,15 @@
 .dsb-store-thumbnail-row {
     background-color: #ffffff00;
     color: #ffffff00;
-    display: grid;
-    grid-template-columns: repeat(4, minmax(100px, 1fr));
+    display: flex;
+    align-items: stretch;
+    overflow-x: auto;
+    overflow-y: hidden;
+    scroll-behavior: smooth;
     gap: 0.25rem;
     margin-top: 1rem;
+    padding-bottom: 0.3rem;
+
 }
 
 .dsb-thumbnail-button {
@@ -280,11 +285,12 @@
     cursor: pointer;
     text-align: left;
     aspect-ratio: 16 / 9;
+    flex: 0 0 clamp(140px, 22vw, 240px);
     transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
 }
 
 .dsb-thumbnail-button:hover {
-    transform: translateY(-3px);
+    transform: translateY(-1px);
     border-color: #8fb2da;
 }
 
@@ -303,19 +309,23 @@
 
 .dsb-thumbnail-button.is-active {
     border-color: #0080ff;
-    box-shadow: 0 0 0 4px rgba(60, 136, 202, 0.5);
-    transform: translateY(-3px);
+    box-shadow: 0 0 0 1px rgba(60, 136, 202, 0.5);
+    transform: translateY(-1px);
 }
 
 @media (max-width: 760px) {
     .dsb-store-thumbnail-row {
-        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 0.2rem;
+        margin-right: 0.2rem;
+    }
+
+    .dsb-thumbnail-button {
+        flex-basis: clamp(110px, 35vw, 180px);
     }
 
     .dsb-thumbnail-button img {
         height: 100%;
     }
-
 
     .dsb-gallery-nav {
         width: 2rem;
@@ -331,6 +341,11 @@
         font-size: 12px;
     }
 
+    .dsb-thumbnail-button.is-active {
+        border-color: #0080ff;
+        box-shadow: 0 0 0 0px rgba(60, 136, 202, 0.5);
+        transform: translateY(-0px);
+    }
 }
 
 .dsb-summary-grid {
