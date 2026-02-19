@@ -1,4 +1,4 @@
-import React, { useEffect, useMemo, useState } from "react";
+import React, { useEffect, useMemo, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { FiChevronLeft, FiChevronRight, FiExternalLink } from "react-icons/fi";
 import Header from "./components/Header";
@@ -17,6 +17,7 @@ const ProductShowcasePage = ({
 }) => {
     const [activeImageIndex, setActiveImageIndex] = useState(0);
     const [isAutoScrollPaused, setIsAutoScrollPaused] = useState(false);
+    const thumbnailButtonRefs = useRef([]);
 
     const hasFeatureGallery = featureGalleryItems.length > 0;
 
@@ -67,6 +68,20 @@ const ProductShowcasePage = ({
             window.clearInterval(autoScrollInterval);
         };
     }, [featureGalleryItems, hasFeatureGallery, isAutoScrollPaused]);
+
+    useEffect(() => {
+        const activeThumbnailButton = thumbnailButtonRefs.current[activeImageIndex];
+
+        if (!activeThumbnailButton) {
+            return;
+        }
+
+        activeThumbnailButton.scrollIntoView({
+            behavior: "smooth",
+            block: "nearest",
+            inline: "center",
+        });
+    }, [activeImageIndex]);
 
     const heroBackgroundStyle = {
         backgroundImage: `linear-gradient(110deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, .85) 30%, rgba(0, 0, 0, 0.6) 70%, rgba(0, 0, 0, 0) 100%), url(${heroImage})`,
@@ -155,6 +170,9 @@ const ProductShowcasePage = ({
                                             aria-label={`View ${feature.title}`}
                                             aria-selected={index === activeImageIndex}
                                             role="tab"
+                                            ref={(element) => {
+                                                thumbnailButtonRefs.current[index] = element;
+                                            }}
                                         >
                                             <img src={feature.image} alt={feature.title} />
                                         </button>
