@@ -18,6 +18,7 @@ const ProductShowcasePage = ({
     const [activeImageIndex, setActiveImageIndex] = useState(0);
     const [isAutoScrollPaused, setIsAutoScrollPaused] = useState(false);
     const thumbnailButtonRefs = useRef([]);
+    const thumbnailRowRef = useRef(null);
 
     const hasFeatureGallery = featureGalleryItems.length > 0;
 
@@ -70,16 +71,21 @@ const ProductShowcasePage = ({
     }, [featureGalleryItems, hasFeatureGallery, isAutoScrollPaused]);
 
     useEffect(() => {
+        const thumbnailRow = thumbnailRowRef.current;
         const activeThumbnailButton = thumbnailButtonRefs.current[activeImageIndex];
 
-        if (!activeThumbnailButton) {
+        if (!thumbnailRow || !activeThumbnailButton) {
             return;
         }
 
-        activeThumbnailButton.scrollIntoView({
+        const rowBounds = thumbnailRow.getBoundingClientRect();
+        const thumbnailBounds = activeThumbnailButton.getBoundingClientRect();
+        const thumbnailLeft = thumbnailBounds.left - rowBounds.left + thumbnailRow.scrollLeft;
+        const centeredScrollLeft = thumbnailLeft - (thumbnailRow.clientWidth / 2) + (activeThumbnailButton.clientWidth / 2);
+
+        thumbnailRow.scrollTo({
+            left: Math.max(0, centeredScrollLeft),
             behavior: "smooth",
-            block: "nearest",
-            inline: "center",
         });
     }, [activeImageIndex]);
 
@@ -160,7 +166,7 @@ const ProductShowcasePage = ({
                                     </button>
                                 </div>
 
-                                <div className="dsb-store-thumbnail-row" role="tablist" aria-label="Feature thumbnails">
+                                <div className="dsb-store-thumbnail-row" role="tablist" aria-label="Feature thumbnails" ref={thumbnailRowRef}>
                                     {featureGalleryItems.map((feature, index) => (
                                         <button
                                             type="button"
