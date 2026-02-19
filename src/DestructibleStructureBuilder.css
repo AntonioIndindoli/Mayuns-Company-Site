@@ -1,5 +1,5 @@
 .dsb-page {
-    background: linear-gradient(180deg, #9ed5ff, #0c0f11);
+    background: linear-gradient(180deg, #545a5e, #0c0f11);
     color: #201c1c;
 }
 
@@ -73,7 +73,7 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    min-height: 520px;
+    min-height: 400px;
 }
 
 .dsb-hero-copy {
@@ -401,8 +401,6 @@
 }
 
 .dsb-gallery img {
-    width: 100%;
-    height: 300px;
     object-fit: cover;
 }
 
@@ -462,7 +460,8 @@
     }
 
     .dsb-content {
-        padding: 2rem 1rem 3rem;
+        padding: .5rem .5rem .5rem .5rem;
+        margin: 0;
     }
 
     .dsb-button {

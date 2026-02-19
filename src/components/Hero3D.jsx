@@ -65,8 +65,8 @@ function Model(props) {
 
         const t = state.clock.getElapsedTime()
 
-        const amplitude = 0.1
-        const speed = 0.4
+        const amplitude = 0.15
+        const speed = 0.5
         ref.current.rotation.y = Math.sin(t * speed) * amplitude
     });
     return <primitive ref={ref} object={scene} {...props} />;
