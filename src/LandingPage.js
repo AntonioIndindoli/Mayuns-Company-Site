@@ -42,7 +42,7 @@ const LandingPage = () => {
                     <Card
                         imageSrc={backrooms}
                         caption="Available on Steam"
-                        link="https://store.steampowered.com/app/2816710/The_Backrooms_Unseen_Tapes/"
+                        link="/backrooms-unseen-tapes"
                         description="A survival horror experience in the eerie, endless hallways of The Backrooms."
                     />
 
@@ -56,7 +56,7 @@ const LandingPage = () => {
                     <Card
                         imageSrc={copyright}
                         caption="Play Now"
-                        link="https://victorious-rock-0e8ecde10.3.azurestaticapps.net/"
+                        link="/copyright-adventure"
                         description="An in-browser RPG where you explore and meet pop culture icons, battling them in strategic showdowns with one another."
                     />
 
