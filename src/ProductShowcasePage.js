@@ -13,12 +13,20 @@ const ProductShowcasePage = ({
     heroImage,
     keyStats,
     actions,
-    featureGalleryItems,
+    featureGalleryItems = [],
 }) => {
     const [activeImageIndex, setActiveImageIndex] = useState(0);
     const [isAutoScrollPaused, setIsAutoScrollPaused] = useState(false);
 
-    const activeFeature = useMemo(() => featureGalleryItems[activeImageIndex], [activeImageIndex, featureGalleryItems]);
+    const hasFeatureGallery = featureGalleryItems.length > 0;
+
+    const activeFeature = useMemo(() => {
+        if (!hasFeatureGallery) {
+            return null;
+        }
+
+        return featureGalleryItems[activeImageIndex];
+    }, [activeImageIndex, featureGalleryItems, hasFeatureGallery]);
 
     const showPreviousImage = () => {
         setActiveImageIndex((previousIndex) => {
@@ -41,7 +49,7 @@ const ProductShowcasePage = ({
     };
 
     useEffect(() => {
-        if (isAutoScrollPaused) {
+        if (isAutoScrollPaused || !hasFeatureGallery) {
             return undefined;
         }
 
@@ -58,7 +66,7 @@ const ProductShowcasePage = ({
         return () => {
             window.clearInterval(autoScrollInterval);
         };
-    }, [featureGalleryItems, isAutoScrollPaused]);
+    }, [featureGalleryItems, hasFeatureGallery, isAutoScrollPaused]);
 
     const heroBackgroundStyle = {
         backgroundImage: `linear-gradient(110deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, .85) 30%, rgba(0, 0, 0, 0.6) 70%, rgba(0, 0, 0, 0) 100%), url(${heroImage})`,
@@ -111,49 +119,51 @@ const ProductShowcasePage = ({
                     </div>
                 </section>
 
-                <section>
-                    <div className="dsb-container">
-                        <div
-                            className="dsb-store-gallery"
-                            aria-label="Feature image gallery"
-                            onMouseEnter={() => setIsAutoScrollPaused(true)}
-                            onMouseLeave={() => setIsAutoScrollPaused(false)}
-                        >
-                            <div className="dsb-store-main-preview">
-                                <button type="button" className="dsb-gallery-nav previous" onClick={showPreviousImage} aria-label="Show previous screenshot">
-                                    <FiChevronLeft />
-                                </button>
+                {hasFeatureGallery && activeFeature && (
+                    <section>
+                        <div className="dsb-container">
+                            <div
+                                className="dsb-store-gallery"
+                                aria-label="Feature image gallery"
+                                onMouseEnter={() => setIsAutoScrollPaused(true)}
+                                onMouseLeave={() => setIsAutoScrollPaused(false)}
+                            >
+                                <div className="dsb-store-main-preview">
+                                    <button type="button" className="dsb-gallery-nav previous" onClick={showPreviousImage} aria-label="Show previous screenshot">
+                                        <FiChevronLeft />
+                                    </button>
 
-                                <img src={activeFeature.image} alt={activeFeature.title} className="dsb-store-main-image" />
+                                    <img src={activeFeature.image} alt={activeFeature.title} className="dsb-store-main-image" />
 
-                                <div className="dsb-store-feature-copy">
-                                    <h3>{activeFeature.title}</h3>
-                                    <p>{activeFeature.description}</p>
+                                    <div className="dsb-store-feature-copy">
+                                        <h3>{activeFeature.title}</h3>
+                                        <p>{activeFeature.description}</p>
+                                    </div>
+
+                                    <button type="button" className="dsb-gallery-nav next" onClick={showNextImage} aria-label="Show next screenshot">
+                                        <FiChevronRight />
+                                    </button>
                                 </div>
 
-                                <button type="button" className="dsb-gallery-nav next" onClick={showNextImage} aria-label="Show next screenshot">
-                                    <FiChevronRight />
-                                </button>
-                            </div>
-
-                            <div className="dsb-store-thumbnail-row" role="tablist" aria-label="Feature thumbnails">
-                                {featureGalleryItems.map((feature, index) => (
-                                    <button
-                                        type="button"
-                                        key={feature.title}
-                                        className={`dsb-thumbnail-button ${index === activeImageIndex ? "is-active" : ""}`}
-                                        onClick={() => setActiveImageIndex(index)}
-                                        aria-label={`View ${feature.title}`}
-                                        aria-selected={index === activeImageIndex}
-                                        role="tab"
-                                    >
-                                        <img src={feature.image} alt={feature.title} />
-                                    </button>
-                                ))}
+                                <div className="dsb-store-thumbnail-row" role="tablist" aria-label="Feature thumbnails">
+                                    {featureGalleryItems.map((feature, index) => (
+                                        <button
+                                            type="button"
+                                            key={feature.title}
+                                            className={`dsb-thumbnail-button ${index === activeImageIndex ? "is-active" : ""}`}
+                                            onClick={() => setActiveImageIndex(index)}
+                                            aria-label={`View ${feature.title}`}
+                                            aria-selected={index === activeImageIndex}
+                                            role="tab"
+                                        >
+                                            <img src={feature.image} alt={feature.title} />
+                                        </button>
+                                    ))}
+                                </div>
                             </div>
                         </div>
-                    </div>
-                </section>
+                    </section>
+                )}
             </main>
 
             <Footer />

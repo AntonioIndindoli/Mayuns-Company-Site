@@ -1,17 +1,10 @@
 import React from "react";
 import ProductShowcasePage from "./ProductShowcasePage";
 import copyrightHero from "./images/LandingPageCard_copyright.png";
-import placeholderImage from "./images/PLACEHOLDER.png";
 
 const keyStats = [
     { label: "Platform", value: "Web Browser" },
     { label: "Genre", value: "Adventure RPG" },
-];
-
-const featureGalleryItems = [
-    {
-
-    }
 ];
 
 const CopyrightAdventure = () => (
@@ -30,7 +23,6 @@ const CopyrightAdventure = () => (
                 type: "anchor",
             },
         ]}
-        featureGalleryItems={featureGalleryItems}
     />
 );
 
