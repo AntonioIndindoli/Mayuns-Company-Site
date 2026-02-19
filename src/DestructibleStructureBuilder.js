@@ -5,13 +5,26 @@ import buildModesShot from "./images/DSB Gallery/Build Modes_DSB.png";
 import stressPropagationShot from "./images/DSB Gallery/Stress Propagation_DSB.png";
 import wallDesignShot from "./images/DSB Gallery/Wall Design System_DSB.png";
 import meshCacheShot from "./images/DSB Gallery/Mesh Cache Workflow_DSB.png";
+import variety from "./images/DSB Gallery/Variety_DSB.png";
+import cascade from "./images/DSB Gallery/Cascade_DSB.png";
+import collapse from "./images/DSB Gallery/Collapse_DSB.png";
 
 const keyStats = [
     { label: "Unity (LTS)", value: "6, 2022, 2021" },
     { label: "Render Pipelines", value: "Built-in, URP, HDRP" },
 ];
 
-const featureGalleryItems = [
+const featureGalleryItems = [    
+{
+        title: "",
+        description: "",
+        image: collapse,
+    },
+    {
+        title: "",
+        description: "",
+        image: cascade,
+    },
     {
         title: "Build Modes",
         description: "Create structures using Grid, Free, Wall, Stair, and Slope build tools with live ghost previews and snapping.",
@@ -31,6 +44,11 @@ const featureGalleryItems = [
         title: "Mesh Cache Workflow",
         description: "Generated meshes are cached for fast prefab creation and reliable scene reopening.",
         image: meshCacheShot,
+    },
+    {
+        title: "Structural Variety",
+        description: "Supports diverse building types, from residential homes to multi-story urban structures, each responding uniquely to stress and damage.",
+        image: variety,
     },
 ];
 

@@ -50,7 +50,7 @@ const LandingPage = () => {
                         imageSrc={DSB_Screenshot}
                         caption="Available on Asset Store"
                         link="/destructible-structure-builder"
-                        description="Unity editor toolkit for building structures that can splinter, crumble and collapse believeable at run time."
+                        description="Unity editor toolkit for building structures that can splinter, crumble and collapse believable at run time."
                     />
 
                     <Card
