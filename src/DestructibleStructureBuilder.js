@@ -17,12 +17,12 @@ const keyStats = [
 const featureGalleryItems = [    
 {
         title: "Dynamic Collapse",
-        description: "Node-based structural simulation drives real-time collapse and procedural fracturing, breaking structures into progressively smaller debris with pooled performance handling.",
+        description: "Node-based simulation drives structural collapse and procedural fracturing, breaking structures into progressively smaller debris.",
         image: collapse,
     },
     {
         title: "Cinematic Destruction",
-        description: "Layered debris, dust, and impact effects create convincing collapses, with included audio and particle systems that can be easily swapped to match your project.",
+        description: "Layered debris, dust, and impact effects create convincing collapses, with included audio and particle systems that can be easily swapped.",
         image: cascade,
     },
     {

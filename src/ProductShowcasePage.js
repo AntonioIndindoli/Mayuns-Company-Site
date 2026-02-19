@@ -94,35 +94,35 @@ const ProductShowcasePage = ({
     };
 
     return (
-        <div className="LandingPage01 dsb-page">
+        <div className="LandingPage01 showcase-page">
             <Header />
 
-            <main className="dsb-content">
-                <section className="dsb-hero" style={heroBackgroundStyle}>
-                    <div className="dsb-hero-copy">
-                        <p className="dsb-label">{label}</p>
+            <main className="showcase-content">
+                <section className="showcase-hero" style={heroBackgroundStyle}>
+                    <div className="showcase-hero-copy">
+                        <p className="showcase-label">{label}</p>
                         <h1>{title}</h1>
-                        <div className="dsb-hero-actions">
+                        <div className="showcase-hero-actions">
                             {actions.map((action) => (
                                 action.type === "link" ? (
-                                    <Link key={action.text} className={`dsb-button ${action.variant}`} to={action.href}>
-                                        {action.text} <FiExternalLink className="dsb-icon" />
+                                    <Link key={action.text} className={`showcase-button ${action.variant}`} to={action.href}>
+                                        {action.text} <FiExternalLink className="showcase-icon" />
                                     </Link>
                                 ) : (
                                     <a
                                         key={action.text}
-                                        className={`dsb-button ${action.variant}`}
+                                        className={`showcase-button ${action.variant}`}
                                         href={action.href}
                                         target="_blank"
                                         rel="noreferrer"
                                     >
-                                        {action.text} <FiExternalLink className="dsb-icon" />
+                                        {action.text} <FiExternalLink className="showcase-icon" />
                                     </a>
                                 )
                             ))}
                         </div>
 
-                        <ul className="dsb-key-stats">
+                        <ul className="showcase-key-stats">
                             {keyStats.map((stat) => (
                                 <li key={stat.label}>
                                     <span>{stat.label}</span>
@@ -133,45 +133,45 @@ const ProductShowcasePage = ({
                     </div>
                 </section>
 
-                <section className="dsb-description">
-                    <div className="dsb-description-area">
-                        <p className="dsb-description-label">{descriptionLabel}</p>
+                <section className="showcase-description">
+                    <div className="showcase-description-area">
+                        <p className="showcase-description-label">{descriptionLabel}</p>
                         <p>{description}</p>
                     </div>
                 </section>
 
                 {hasFeatureGallery && activeFeature && (
                     <section>
-                        <div className="dsb-container">
+                        <div className="showcase-container">
                             <div
-                                className="dsb-store-gallery"
+                                className="showcase-store-gallery"
                                 aria-label="Feature image gallery"
                                 onMouseEnter={() => setIsAutoScrollPaused(true)}
                                 onMouseLeave={() => setIsAutoScrollPaused(false)}
                             >
-                                <div className="dsb-store-main-preview">
-                                    <button type="button" className="dsb-gallery-nav previous" onClick={showPreviousImage} aria-label="Show previous screenshot">
+                                <div className="showcase-store-main-preview">
+                                    <button type="button" className="showcase-gallery-nav previous" onClick={showPreviousImage} aria-label="Show previous screenshot">
                                         <FiChevronLeft />
                                     </button>
 
-                                    <img src={activeFeature.image} alt={activeFeature.title} className="dsb-store-main-image" />
+                                    <img src={activeFeature.image} alt={activeFeature.title} className="showcase-store-main-image" />
 
-                                    <div className="dsb-store-feature-copy">
+                                    <div className="showcase-store-feature-copy">
                                         <h3>{activeFeature.title}</h3>
                                         <p>{activeFeature.description}</p>
                                     </div>
 
-                                    <button type="button" className="dsb-gallery-nav next" onClick={showNextImage} aria-label="Show next screenshot">
+                                    <button type="button" className="showcase-gallery-nav next" onClick={showNextImage} aria-label="Show next screenshot">
                                         <FiChevronRight />
                                     </button>
                                 </div>
 
-                                <div className="dsb-store-thumbnail-row" role="tablist" aria-label="Feature thumbnails" ref={thumbnailRowRef}>
+                                <div className="showcase-store-thumbnail-row" role="tablist" aria-label="Feature thumbnails" ref={thumbnailRowRef}>
                                     {featureGalleryItems.map((feature, index) => (
                                         <button
                                             type="button"
                                             key={feature.title}
-                                            className={`dsb-thumbnail-button ${index === activeImageIndex ? "is-active" : ""}`}
+                                            className={`showcase-thumbnail-button ${index === activeImageIndex ? "is-active" : ""}`}
                                             onClick={() => setActiveImageIndex(index)}
                                             aria-label={`View ${feature.title}`}
                                             aria-selected={index === activeImageIndex}
