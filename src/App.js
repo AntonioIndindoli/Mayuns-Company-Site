@@ -5,8 +5,6 @@ import DestructibleStructureBuilder from "./DestructibleStructureBuilder";
 import BackroomsUnseenTapes from "./BackroomsUnseenTapes";
 import CopyrightAdventure from "./CopyrightAdventure";
 import { Col } from "react-bootstrap";
-import ScrollToTop from "./components/ScrollToTop";
-
 
 function App() {
     const location = useLocation();
@@ -16,7 +14,6 @@ function App() {
     }, [location.pathname]);
     return (
         <Col className="App">
-            <ScrollToTop />
             <Routes>
                 <Route path="/" element={<LandingPage />} />
                 <Route

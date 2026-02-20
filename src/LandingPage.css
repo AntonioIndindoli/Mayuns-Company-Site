@@ -3,7 +3,7 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background: linear-gradient(180deg, rgb(18, 48, 102), #0c0f11);
+    background: linear-gradient(180deg, rgb(18, 48, 102), #351b0a);
 }
 
 .logo-image {
@@ -34,7 +34,7 @@
     position: relative;
     width: 100%;
     overflow: hidden;
-    padding: clamp(7rem, 16vh, 11rem) 0 0;
+    padding: clamp(6rem, 16vh, 6rem) 0 0;
 }
 
 .hero-section>*:not(.background-gradient):not(.background-gradient-color) {
@@ -59,8 +59,8 @@
 /* inner box sets the height via aspect-ratio */
 .hero3d .frame {
     width: 100%;
-    max-height: min(70vh, 720px);
-    aspect-ratio: 4 / 3;
+    max-height: min(70vh, 600px);
+    aspect-ratio: 1 / 1;
     /* change to 21/9, 4/3, etc. if you like */
     background: transparent;
     touch-action: none;
@@ -383,6 +383,8 @@
     padding: 0px 10px;
     /* Top and bottom padding without affecting the horizontal */
     z-index: 1;
+    margin-top: 20px;
+    /* Add some space at the bottom */
 }
 
 .site-footer {
@@ -392,6 +394,7 @@
     text-align: center;
     z-index: 1;
     font-size: 10px;
+    box-shadow: 0 5px 20px rgb(0, 0, 0);
 }
 
 .LandingPage01 .site-footer {
@@ -576,7 +579,7 @@
     background: linear-gradient(150deg, rgb(15, 18, 24), rgba(59, 63, 71, 0.26) 100%);
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.63);
     transition: box-shadow 0.3s ease-in-out;
-    margin: 20px;
+    margin: 10px 20px 10px 20px;
 }
 
 .card-div:hover {

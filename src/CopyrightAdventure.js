@@ -12,7 +12,7 @@ const CopyrightAdventure = () => (
         label="Browser RPG"
         title="Copyright Adventure"
         descriptionLabel="EXPLORE & BATTLE"
-        description="An in-browser RPG adventure where you travel through creative worlds, encounter pop-culture-inspired characters, and battle your way through strategic encounters."
+        description="An in-browser RPG adventure where you battle your way through strategic encounters with pop-culture characters."
         heroImage={copyrightHero}
         keyStats={keyStats}
         actions={[
