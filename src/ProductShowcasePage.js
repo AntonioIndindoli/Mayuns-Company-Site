@@ -1,6 +1,14 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { Link } from "react-router-dom";
-import { FiChevronLeft, FiChevronRight, FiExternalLink, FiMaximize, FiMinimize } from "react-icons/fi";
+import {
+    FiChevronLeft,
+    FiChevronRight,
+    FiDownload,
+    FiExternalLink,
+    FiFileText,
+    FiMaximize,
+    FiMinimize,
+} from "react-icons/fi";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import "./DestructibleStructureBuilder.css";
@@ -126,6 +134,18 @@ const ProductShowcasePage = ({
         backgroundImage: `linear-gradient(110deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, .85) 30%, rgba(0, 0, 0, 0.6) 70%, rgba(0, 0, 0, 0) 100%), url(${heroImage})`,
     };
 
+    const getActionIcon = (iconName) => {
+        if (iconName === "download") {
+            return <FiDownload className="showcase-icon" />;
+        }
+
+        if (iconName === "file") {
+            return <FiFileText className="showcase-icon" />;
+        }
+
+        return <FiExternalLink className="showcase-icon" />;
+    };
+
     return (
         <div className="LandingPage01 showcase-page">
             <Header />
@@ -139,7 +159,7 @@ const ProductShowcasePage = ({
                             {actions.map((action) => (
                                 action.type === "link" ? (
                                     <Link key={action.text} className={`showcase-button ${action.variant}`} to={action.href}>
-                                        {action.text} <FiExternalLink className="showcase-icon" />
+                                        {action.text} {getActionIcon(action.icon)}
                                     </Link>
                                 ) : (
                                     <a
@@ -149,7 +169,7 @@ const ProductShowcasePage = ({
                                         target="_blank"
                                         rel="noreferrer"
                                     >
-                                        {action.text} <FiExternalLink className="showcase-icon" />
+                                        {action.text} {getActionIcon(action.icon)}
                                     </a>
                                 )
                             ))}

@@ -62,8 +62,8 @@ const DestructibleStructureBuilder = () => (
         keyStats={keyStats}
         actions={[
             { text: "Asset Store", href: "/destructible-structure-builder", variant: "primary", type: "link" },
-            { text: "Demo", href: "/DSB_Demo.zip", variant: "secondary", type: "anchor" },
-            { text: "Manual", href: "/Manual.pdf", variant: "secondary", type: "anchor" },
+            { text: "Demo", href: "/DSB_Demo.zip", variant: "secondary", type: "anchor", icon: "download" },
+            { text: "Manual", href: "/Manual.pdf", variant: "secondary", type: "anchor", icon: "file" },
         ]}
         featureGalleryItems={featureGalleryItems}
     />
