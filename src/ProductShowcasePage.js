@@ -11,7 +11,7 @@ import {
 } from "react-icons/fi";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
-import "./DestructibleStructureBuilder.css";
+import "./Showcase.css";
 
 const ProductShowcasePage = ({
     label,
@@ -131,7 +131,7 @@ const ProductShowcasePage = ({
     };
 
     const heroBackgroundStyle = {
-        backgroundImage: `linear-gradient(110deg, rgba(0, 0, 0, 0.95) 0%, rgba(0, 0, 0, .85) 30%, rgba(0, 0, 0, 0.6) 70%, rgba(0, 0, 0, 0) 100%), url(${heroImage})`,
+        backgroundImage: `linear-gradient(110deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, .85) 40%, rgba(0, 0, 0, 0.6) 80%, rgba(0, 0, 0, .3) 100%), url(${heroImage})`,
     };
 
     const getActionIcon = (iconName) => {
@@ -183,13 +183,11 @@ const ProductShowcasePage = ({
                                 </li>
                             ))}
                         </ul>
-                    </div>
-                </section>
 
-                <section className="showcase-description">
-                    <div className="showcase-description-area">
-                        <p className="showcase-description-label">{descriptionLabel}</p>
-                        <p>{description}</p>
+                        <div className="showcase-description-area">
+                            <p className="showcase-description-area">{description}</p>
+                        </div>
+
                     </div>
                 </section>
 
