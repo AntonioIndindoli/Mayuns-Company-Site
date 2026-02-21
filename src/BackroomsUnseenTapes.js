@@ -19,7 +19,7 @@ const featureGalleryItems = [
     },
     {
         title: "Immersive Found Footage Horror",
-        description: "Experience the Back Rooms through a raw found-footage lens, with distorted visuals, analog artifacts, and spatial audio that keeps every sound close.",
+        description: "Experience the Backrooms through a raw found-footage lens, with distorted visuals, analog artifacts, and spatial audio that keeps you on edge.",
         image: Immersive,
     },
     {
@@ -38,7 +38,7 @@ const BackroomsUnseenTapes = () => (
     <ProductShowcasePage
         label="Survival Horror"
         title="The Backrooms: Unseen Tapes"
-        descriptionLabel="DESCEND INTO THE UNKNOWN"
+        descriptionLabel="ESCAPE THE BACKROOMS"
         description="A first-person survival horror experience set in eerie, seemingly endless liminal spaces. Search for exits and evade what waits in the dark."
         heroImage={backroomsHero}
         keyStats={keyStats}

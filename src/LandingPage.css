@@ -3,7 +3,7 @@
     min-height: 100vh;
     display: flex;
     flex-direction: column;
-    background: linear-gradient(180deg, rgb(18, 48, 102), #351b0a);
+    background: radial-gradient(circle at 50% 0,rgb(255, 255, 255)  0, #693c00 100%);
 }
 
 .logo-image {
@@ -47,7 +47,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(180deg, rgb(32, 84, 179), #00000000);
+    background: linear-gradient(180deg, #0077ff, #1a206800);
 }
 
 .hero3d {
@@ -66,6 +66,21 @@
     touch-action: none;
     /* crucial for mobile! */
     overscroll-behavior: contain;
+    --hero3d-feather: clamp(35px, 25%, 85px);
+    -webkit-mask-image:
+        linear-gradient(to right,
+            transparent 0,
+            #000 var(--hero3d-feather),
+            #000 calc(100% - var(--hero3d-feather)),
+            transparent 100%);
+    -webkit-mask-composite: source-in;
+    mask-image:
+        linear-gradient(to right,
+            transparent 0,
+            #000 var(--hero3d-feather),
+            #000 calc(100% - var(--hero3d-feather)),
+            transparent 100%);
+    mask-composite: intersect;
 }
 
 /* ensure the canvas actually fills its box */
@@ -173,13 +188,11 @@
 /* Add this to your styles.css file */
 .Home-Message {
     font-size: 20px;
-    /* Adjust size as needed */
-    color: rgb(230, 230, 230);
+    color: #ffffff;
     text-align: center;
-    font-weight: 400;
+    font-weight: 600;
+    text-shadow: 4px 2px 4px black;
 
-    /* Adjust margin as needed */
-    z-index: 1;
 }
 
 .showcase-Home-Message {
@@ -574,12 +587,12 @@
     display: flex;
     flex-direction: column;
     width: 300px;
-    border-radius: 8px;
     overflow: hidden;
-    background: linear-gradient(150deg, rgb(15, 18, 24), rgba(59, 63, 71, 0.26) 100%);
+    background: linear-gradient(150deg, rgb(15, 18, 24), rgba(59, 63, 71, 0.719) 100%);
     box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.63);
     transition: box-shadow 0.3s ease-in-out;
     margin: 10px 20px 10px 20px;
+
 }
 
 .card-div:hover {
@@ -599,44 +612,36 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    border-bottom: 5px solid #e6e6e679;
+    height: stretch;
 }
 
 /* Caption Styling (Link/Button) */
 .nav-button-card {
-    background-color: #4a93e6;
-    border: none;
-    color: white;
-    padding: 10px 16px;
-    font-size: 16px;
-    text-align: center;
-    border-radius: 4px;
-    cursor: pointer;
-    text-decoration: none;
-    transition: background-color 0.3s ease;
-}
-
-.nav-button-card {
-    color: rgb(219, 219, 219);
-    font-size: 15px;
-    font-weight: 700;
-    word-wrap: break-word;
-    border: #ffffff00;
-    background: #f1f1f10e;
-    text-decoration: none;
+    margin: 2px;
+    border-radius: 0px;
+    padding: 0.75rem .75rem;
+    gap: 0.5rem;
+    font-weight: 600;
+    border-bottom: 2px solid transparent;
+    border-top: 0px solid transparent;
+    border-left: 0px solid transparent;
+    border-right: 0px solid transparent;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    background: linear-gradient(120deg, #75afce00, #5ca1d600);
+    border-color: #f1f1f173;
+    color: #ffffff;
 }
 
 .nav-button-card:hover {
-    background-color: #5d99da;
+    border-color: #5cc8ff;
 }
 
 .nav-button-card:focus {
     outline: none;
-}
-
-/* External Link Specific Styling */
-.nav-button-card a {
-    color: white;
-    text-decoration: none;
 }
 
 /* Description Styling */
