@@ -29,7 +29,7 @@ const LandingPage = () => {
                 <div className="hero-copy">
                     <div className="Home-Message">_____________________________________</div>
                     <div className="Home-Message">
-                        OUR PRODUCTS
+                        Our Products
                     </div>
                 </div>
             </section>
