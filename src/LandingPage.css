@@ -863,3 +863,50 @@
         font-size: 12px;
     }
 }
+.info-page-shell {
+    background: #f7f9fc;
+    color: #111;
+}
+
+.info-page-content {
+    width: min(92%, 900px);
+    margin: 0 auto;
+    padding: clamp(7rem, 12vh, 8rem) 0 4rem;
+    line-height: 1.65;
+}
+
+.info-page-title {
+    margin: 0;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    color: #0f1d3a;
+}
+
+.info-page-lead {
+    margin: 0.7rem 0 1.8rem;
+    color: #36415a;
+    font-size: 1.05rem;
+}
+
+.info-page-section {
+    margin-top: 1.2rem;
+    background: #fff;
+    padding: 1.1rem 1.2rem;
+    border: 1px solid #e8ebf1;
+    border-radius: 10px;
+}
+
+.info-page-section h2 {
+    margin: 0 0 0.45rem;
+    font-size: 1.2rem;
+    color: #1a2a4f;
+}
+
+.info-page-section p,
+.info-page-section ul {
+    margin: 0;
+    color: #26324b;
+}
+
+.info-page-section ul {
+    padding-left: 1.2rem;
+}
