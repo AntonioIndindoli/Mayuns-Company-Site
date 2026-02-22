@@ -26,7 +26,7 @@ const Footer = () => {
   ];
 
   const extras = [
-    { label: 'Mayunz Music', href: '/music' },
+    { label: 'Mayunz Music', href: '/mayunz-music' },
   ];
 
   const socialLinks = [

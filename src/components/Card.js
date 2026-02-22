@@ -16,24 +16,26 @@ const Card = ({ imageSrc, caption, link, description }) => {
         <div className="card-div">
             <img src={imageSrc} alt={`Image for ${caption}`} className="card-image" />
             <div className="card-content">
+
+                {description && <p className="card-description">{description}</p>}
                 {isExternalLink ? (
-                    <a 
-                        href={link} 
-                        target="_blank" 
-                        rel="noopener noreferrer" 
+                    <a
+                        href={link}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="card-caption"
                     >
                         <button className="nav-button-card">{caption}</button>
                     </a>
                 ) : (
-                    <button 
-                        className="nav-button-card" 
+                    <button
+                        className="nav-button-card"
                         onClick={handleClick}
                     >
                         {caption}
                     </button>
                 )}
-                {description && <p className="card-description">{description}</p>}
+
             </div>
         </div>
     );

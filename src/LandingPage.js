@@ -50,14 +50,14 @@ const LandingPage = () => {
                         imageSrc={DSB_Screenshot}
                         caption="Available on Asset Store"
                         link="/destructible-structure-builder"
-                        description="Unity editor toolkit for building structures that can splinter, crumble and collapse believable at run time."
+                        description="Unity editor toolkit for building structures that can crumble and collapse believably."
                     />
 
                     <Card
                         imageSrc={copyright}
                         caption="Play Now"
                         link="/copyright-adventure"
-                        description="An in-browser RPG where you explore and meet pop culture icons, battling them in strategic showdowns with one another."
+                        description="An in-browser RPG where you explore, battle, and recruit pop culture icons."
                     />
 
                 </div>
@@ -69,7 +69,7 @@ const LandingPage = () => {
                             imageSrc={mayunzMusic}
                             caption="Listen on Spotify"
                             link="/mayunz-music"
-                            description="Original music composed by Caleb Rodriguez under the artist name Mayunz."
+                            description="Original music composed by Caleb Rodriguez."
                         />
                     </div>
                 </div>

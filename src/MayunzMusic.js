@@ -9,8 +9,8 @@ const keyStats = [
 
 const MayunzMusic = () => (
     <ProductShowcasePage
-        label="Music"
-        title="Mayunz Music"
+        label="The Nutpack Album"
+        title="Mayunz"
         descriptionLabel="LISTEN NOW"
         description="Original music composed by Caleb Rodriguez and released under the artist name Mayunz."
         heroImage={albumArt}
@@ -18,7 +18,7 @@ const MayunzMusic = () => (
         actions={[
             {
                 text: "Spotify",
-                href: "https://open.spotify.com/search/mayunz",
+                href: "https://open.spotify.com/artist/6PQTHgm1vyLOmJPTwYzr4I?si=3G9UstlrTma1AxakT1nIKg",
                 variant: "primary",
                 type: "anchor",
             },
