@@ -7,6 +7,7 @@ import CopyrightAdventure from "./CopyrightAdventure";
 import About from "./About";
 import SupportCenter from "./SupportCenter";
 import Legal from "./Legal";
+import MayunzMusic from "./MayunzMusic";
 import { Col } from "react-bootstrap";
 
 function App() {
@@ -31,6 +32,7 @@ function App() {
                     path="/copyright-adventure"
                     element={<CopyrightAdventure />}
                 />
+                <Route path="/mayunz-music" element={<MayunzMusic />} />
                 <Route path="/about" element={<About />} />
                 <Route path="/about-us" element={<About />} />
                 <Route path="/support" element={<SupportCenter />} />

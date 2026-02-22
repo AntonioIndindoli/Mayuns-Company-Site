@@ -450,6 +450,11 @@
     /* Add some space at the bottom */
 }
 
+.home-extras-section {
+    width: 100%;
+    margin-top: 28px;
+}
+
 
 .site-footer {
     width: 100%;

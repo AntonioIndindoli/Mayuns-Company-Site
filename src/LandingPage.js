@@ -5,9 +5,9 @@ import Hero3D from "./components/Hero3D";
 import Footer from "./components/Footer";
 import backrooms from "./images/LandingPageCard_backrooms.png";
 import copyright from "./images/LandingPageCard_copyright.png";
-import soon from "./images/LandingPageCard_Comingsoon.png";
 import DSB_Screenshot from "./images/LandingPageCard_DSB.png";
 import placeholder from "./images/PLACEHOLDER.png";
+import mayunzMusic from "./images/nutpack.jpg";
 
 const LandingPage = () => {
     return (
@@ -60,6 +60,18 @@ const LandingPage = () => {
                         description="An in-browser RPG where you explore and meet pop culture icons, battling them in strategic showdowns with one another."
                     />
 
+                </div>
+
+                <div className="home-extras-section">
+                    <div className="Home-Message">Extras</div>
+                    <div className="home-cards">
+                        <Card
+                            imageSrc={mayunzMusic}
+                            caption="Listen on Spotify"
+                            link="/mayunz-music"
+                            description="Original music composed by Caleb Rodriguez under the artist name Mayunz."
+                        />
+                    </div>
                 </div>
             </div>
 
