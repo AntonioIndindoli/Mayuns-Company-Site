@@ -1,11 +1,8 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {
   FaDiscord,
-  FaFacebookF,
   FaRedditAlien,
-  FaInstagram,
-  FaLinkedinIn,
-  FaPaperPlane,
   FaYoutube
 } from 'react-icons/fa';
 import logo from '../images/logo.png';
@@ -33,17 +30,35 @@ const Footer = () => {
     { icon: <FaRedditAlien />, label: 'Reddit', href: 'https://www.reddit.com/r/Mayuns' },
   ];
 
+  const isExternalLink = (href) => /^([a-z][a-z\d+\-.]*:)?\/\//i.test(href) || href.startsWith('mailto:');
+
+  const FooterLink = ({ href, children, ...rest }) => {
+    if (isExternalLink(href)) {
+      return (
+        <a href={href} {...rest}>
+          {children}
+        </a>
+      );
+    }
+
+    return (
+      <Link to={href} {...rest}>
+        {children}
+      </Link>
+    );
+  };
+
   return (
     <footer className="site-footer">
       <div className="footer-content">
         <div className="footer-main-grid">
           <section className="footer-brand-column">
-            <a href="/" className="footer-brand" aria-label="MayunsGames home">
+            <FooterLink href="/" className="footer-brand" aria-label="MayunsGames home">
               <img src={logo} alt="MayunsGames logo" className="footer-logo" />
               <div className="footer-brand-text">
                 <h3>MayunsGames</h3>
               </div>
-            </a>
+            </FooterLink>
             <p className="footer-contact">
               Contact us: <a href="mailto:support@mayuns.com">support@mayuns.com</a>
             </p>
@@ -54,7 +69,7 @@ const Footer = () => {
             <ul>
               {products.map((product) => (
                 <li key={product.label}>
-                  <a href={product.href}>{product.label}</a>
+                  <FooterLink href={product.href}>{product.label}</FooterLink>
                 </li>
               ))}
             </ul>
@@ -65,7 +80,7 @@ const Footer = () => {
             <ul>
               {quickLinks.map((link) => (
                 <li key={link.label}>
-                  <a href={link.href}>{link.label}</a>
+                  <FooterLink href={link.href}>{link.label}</FooterLink>
                 </li>
               ))}
             </ul>
@@ -76,7 +91,7 @@ const Footer = () => {
             <ul>
               {resources.map((resource) => (
                 <li key={resource.label}>
-                  <a href={resource.href}>{resource.label}</a>
+                  <FooterLink href={resource.href}>{resource.label}</FooterLink>
                 </li>
               ))}
             </ul>
