@@ -31,7 +31,7 @@ const Footer = () => {
 
   const socialLinks = [
     { icon: <FaSpotify />, label: 'Spotify', href: 'https://open.spotify.com/artist/6PQTHgm1vyLOmJPTwYzr4I?si=3G9UstlrTma1AxakT1nIKg' },
-    { icon: <FaYoutube />, label: 'YouTube', href: 'https://www.youtube.com/@mayunsco' },
+    { icon: <FaYoutube />, label: 'YouTube', href: 'https://www.youtube.com/@mayuns_yt' },
     { icon: <FaRedditAlien />, label: 'Reddit', href: 'https://www.reddit.com/r/Mayuns' },
   ];
 

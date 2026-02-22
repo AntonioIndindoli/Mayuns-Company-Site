@@ -9,23 +9,14 @@ const About = () => {
 
       <main className="info-page-content">
         <h1 className="info-page-title">About Us</h1>
-        <p className="info-page-lead">Building games and production-grade tools for creators.</p>
+        <p className="info-page-lead">We are a small independent studio building games, creator tools, and original media.</p>
 
         <section className="info-page-section">
           <h2>Who We Are</h2>
           <p>
-            <strong>Mayuns Technologies</strong> is a focused game development studio and
-            software tools provider.
+            <strong>Mayuns Games/Studios</strong> is run by a small team of passionate artists and developers.
+            Our works spans various genres and domains, from games to music to developer tools.
           </p>
-        </section>
-
-        <section className="info-page-section">
-          <h2>What We Build</h2>
-          <ul>
-            <li>Interactive games and web experiences</li>
-            <li>Unity editor tools like Destructible Structure Builder</li>
-            <li>Open-source projects and learning resources</li>
-          </ul>
         </section>
 
         <section className="info-page-section">
