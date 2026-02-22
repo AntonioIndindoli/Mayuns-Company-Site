@@ -27,9 +27,9 @@ const LandingPage = () => {
                 </div>
 
                 <div className="hero-copy">
-                    <div className="Home-Message">_____________________________________</div>
+
                     <div className="Home-Message">
-                        Our Products
+                        Projects
                     </div>
                 </div>
             </section>
