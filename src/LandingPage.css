@@ -472,7 +472,7 @@
 
 .footer-main-grid {
     display: grid;
-    grid-template-columns: 1.35fr repeat(2, 1fr) 1.2fr;
+    grid-template-columns: 1.35fr repeat(3, 1fr) 1.2fr;
     align-items: start;
 }
 

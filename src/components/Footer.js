@@ -25,6 +25,10 @@ const Footer = () => {
     { label: 'Legal', href: '/legal' },
   ];
 
+  const extras = [
+    { label: 'Mayunz Music', href: '/music' },
+  ];
+
   const socialLinks = [
     { icon: <FaSpotify />, label: 'Spotify', href: 'https://open.spotify.com/artist/6PQTHgm1vyLOmJPTwYzr4I?si=3G9UstlrTma1AxakT1nIKg' },
     { icon: <FaYoutube />, label: 'YouTube', href: 'https://www.youtube.com/@mayunsco' },
@@ -93,6 +97,17 @@ const Footer = () => {
               {resources.map((resource) => (
                 <li key={resource.label}>
                   <FooterLink href={resource.href}>{resource.label}</FooterLink>
+                </li>
+              ))}
+            </ul>
+          </section>
+
+          <section className="footer-links-column" aria-label="Extras">
+            <h4>Extras</h4>
+            <ul>
+              {extras.map((extra) => (
+                <li key={extra.label}>
+                  <FooterLink href={extra.href}>{extra.label}</FooterLink>
                 </li>
               ))}
             </ul>
