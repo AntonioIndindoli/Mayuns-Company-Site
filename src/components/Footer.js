@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import {
   FaDiscord,
   FaRedditAlien,
+  FaSpotify,
   FaYoutube
 } from 'react-icons/fa';
 import logo from '../images/logo.png';
@@ -25,7 +26,7 @@ const Footer = () => {
   ];
 
   const socialLinks = [
-    { icon: <FaDiscord />, label: 'Discord', href: 'https://discord.com' },
+    { icon: <FaSpotify />, label: 'Spotify', href: 'https://open.spotify.com/artist/6PQTHgm1vyLOmJPTwYzr4I?si=3G9UstlrTma1AxakT1nIKg' },
     { icon: <FaYoutube />, label: 'YouTube', href: 'https://www.youtube.com/@mayunsco' },
     { icon: <FaRedditAlien />, label: 'Reddit', href: 'https://www.reddit.com/r/Mayuns' },
   ];

@@ -232,18 +232,15 @@
 .Home-Message {
     font-family: "Teko", sans-serif;
     font-size: 30px;
-    font-weight: 200;
+    font-weight: 400;
     letter-spacing: 0.07em;
     color: #ffffff;
     text-align: center;
     position: relative;
     padding-top: 10px;
-    text-shadow:
-        0 0 6px rgba(0, 0, 0, 0.219),
-        0 0 18px rgb(148, 148, 148);
 }
 
-.Home-Message::after {
+.Home-Message::before {
     content: "";
     display: block;
     width: 350px;
@@ -909,8 +906,10 @@
 }
 
 .info-page-shell {
-    background: #f7f9fc;
-    color: #111;
+    background:
+        radial-gradient(circle at 50% 0, rgba(129, 181, 194, 0.068) 0, rgba(22, 22, 22, 1) 68%),
+        #161616;
+    color: #e8edf7;
 }
 
 .info-page-content {
@@ -923,35 +922,45 @@
 .info-page-title {
     margin: 0;
     font-size: clamp(2rem, 4vw, 2.8rem);
-    color: #0f1d3a;
+    color: #f6fbff;
+    letter-spacing: 0.02em;
 }
 
 .info-page-lead {
     margin: 0.7rem 0 1.8rem;
-    color: #36415a;
+    color: #aec3db;
     font-size: 1.05rem;
 }
 
 .info-page-section {
     margin-top: 1.2rem;
-    background: #fff;
+    background: linear-gradient(170deg, rgba(24, 24, 24, 0.95), rgba(15, 15, 15, 0.95));
     padding: 1.1rem 1.2rem;
-    border: 1px solid #e8ebf1;
+    border: 1px solid #8eaedd31;
     border-radius: 10px;
+    box-shadow: 0 10px 28px rgba(0, 0, 0, 0.28);
 }
 
 .info-page-section h2 {
     margin: 0 0 0.45rem;
     font-size: 1.2rem;
-    color: #1a2a4f;
+    color: #d4d4d4;
 }
 
 .info-page-section p,
 .info-page-section ul {
     margin: 0;
-    color: #26324b;
+    color: #bebebe;
 }
 
 .info-page-section ul {
     padding-left: 1.2rem;
+}
+
+.info-page-content a {
+    color: #c0c0c0;
+}
+
+.info-page-content a:hover {
+    color: #e4e4e4;
 }
