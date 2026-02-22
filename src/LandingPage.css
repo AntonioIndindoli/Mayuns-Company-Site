@@ -247,12 +247,12 @@
 }
 
 /* Decorative underline */
-.Home-Message::after {
+.Home-Message::before {
     content: "";
     display: block;
-    width: 180px;
-    height: 4px;
-    margin: 8px auto 0;
+    width: 280px;
+    height: 1px;
+    margin: 8px auto 8px;
 
     background: linear-gradient(to right,
             transparent,
@@ -888,7 +888,7 @@
     gap: 0.5rem;
     font-size: 17px;
     font-weight: 600;
-    color: #9eb9e2;
+    color: #a8c7f5;
 
     text-decoration: underline;
     text-underline-offset: 6px;
@@ -906,6 +906,7 @@
     border-bottom: 0px;
     border-left: 0px;
     border-right: 0px;
+
 }
 
 /* Hover state */
