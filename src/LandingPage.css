@@ -100,6 +100,50 @@
     display: flex;
     gap: 30px;
     align-items: center;
+    position: relative;
+}
+
+.hamburger-button {
+    font-size: 28px;
+    line-height: 1;
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    cursor: pointer;
+    padding: 6px 10px;
+    border-radius: 6px;
+}
+
+.hamburger-button:hover {
+    background: rgba(255, 255, 255, 0.12);
+}
+
+.header-dropdown-menu {
+    position: absolute;
+    top: calc(100% + 8px);
+    right: 0;
+    min-width: 180px;
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    overflow: hidden;
+    background: #222222;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
+}
+
+.header-dropdown-item {
+    background: transparent;
+    border: none;
+    color: #ffffff;
+    text-align: left;
+    padding: 10px 14px;
+    cursor: pointer;
+    font-size: 14px;
+}
+
+.header-dropdown-item:hover {
+    background: rgba(255, 255, 255, 0.12);
 }
 
 .MayunsGames-button {
@@ -785,11 +829,12 @@
     flex-direction: column;
     width: 300px;
     overflow: hidden;
-    background: linear-gradient(150deg, rgb(15, 18, 24), rgba(59, 63, 71, 0.719) 100%);
-    box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.63);
+    border-radius: 10px;
+    background: linear-gradient(150deg, rgba(15, 18, 24, 0.726), rgba(59, 63, 71, 0.897) 100%);
+    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.63);
     transition: box-shadow 0.3s ease-in-out;
     margin: 10px 20px 10px 20px;
-
+    border: 5px solid #0716335d;
 }
 
 .card-div:hover {
@@ -805,32 +850,30 @@
 
 /* Content Wrapper */
 .card-content {
-    padding: 16px;
+    padding: 10px;
     display: flex;
     flex-direction: column;
     align-items: center;
-    border-bottom: 5px solid #e6e6e679;
     height: stretch;
 }
 
 /* Caption Styling (Link/Button) */
 .nav-button-card {
-    margin: 2px;
-    border-radius: 0px;
-    padding: 0.75rem .75rem;
+    padding: 0.75rem;
     gap: 0.5rem;
     font-weight: 600;
     border-bottom: 5px solid transparent;
-    border-top: 1px solid transparent;
-    border-left: 1px solid transparent;
-    border-right: 1px solid transparent;
+    border-top: 0px solid transparent;
+    border-left: 0px solid transparent;
+    border-right: 0px solid transparent;
     display: inline-flex;
     align-items: center;
     justify-content: center;
     font-size: 17px;
-    background: linear-gradient(120deg, #75afce00, #5ca1d600);
-    border-color: #0000005d;
+    background: linear-gradient(120deg, #8cb6cc18, #0091ff18);
+    border-color: #00000070;
     color: #ffffff;
+    width: 100%;
 }
 
 .nav-button-card:hover {
@@ -843,7 +886,7 @@
 
 /* Description Styling */
 .card-description {
-    margin-top: 12px;
+    padding: 15px;
     color: #d4d4d4;
     font-size: 14px;
     text-align: center;
@@ -853,6 +896,7 @@
 @media (max-width: 600px) {
     .card-div {
         width: 100%;
+        margin: 5px 10px 5px 10px;
     }
 
     .card-content {
@@ -863,6 +907,7 @@
         font-size: 12px;
     }
 }
+
 .info-page-shell {
     background: #f7f9fc;
     color: #111;
