@@ -23,7 +23,7 @@ const Footer = () => {
   ];
 
   const resources = [
-    { label: 'Support Center', href: '/support' },
+    { label: 'Support Center', href: '/support-center' },
     { label: 'Legal', href: '/legal' },
   ];
 

@@ -4,6 +4,9 @@ import LandingPage from "./LandingPage";
 import DestructibleStructureBuilder from "./DestructibleStructureBuilder";
 import BackroomsUnseenTapes from "./BackroomsUnseenTapes";
 import CopyrightAdventure from "./CopyrightAdventure";
+import About from "./About";
+import SupportCenter from "./SupportCenter";
+import Legal from "./Legal";
 import { Col } from "react-bootstrap";
 
 function App() {
@@ -28,6 +31,11 @@ function App() {
                     path="/copyright-adventure"
                     element={<CopyrightAdventure />}
                 />
+                <Route path="/about" element={<About />} />
+                <Route path="/about-us" element={<About />} />
+                <Route path="/support" element={<SupportCenter />} />
+                <Route path="/support-center" element={<SupportCenter />} />
+                <Route path="/legal" element={<Legal />} />
             </Routes>
         </Col>
     );
