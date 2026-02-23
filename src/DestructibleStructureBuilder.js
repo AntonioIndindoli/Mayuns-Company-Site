@@ -57,7 +57,7 @@ const DestructibleStructureBuilder = () => (
         label="Unity Editor Toolkit"
         title="Destructible Structure Builder"
         descriptionLabel="BUILD & DESTROY"
-        description="DSB is a Unity Editor toolkit for creating structures which crumble and collapse believably at runtime. Use simple build modes to place beams, walls, and supports in editor-time scene view, then destroy during gameplay. Includes stress simulation, debris effects, and prefab support."
+        description="DSB is a Unity Editor toolkit for creating structures which crumble and collapse believably at runtime. Use simple build modes to place beams, walls, and supports in editor-time scene view, then destroy during gameplay."
         heroImage={heroShot}
         keyStats={keyStats}
         actions={[
