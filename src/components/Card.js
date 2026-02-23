@@ -14,7 +14,9 @@ const Card = ({ imageSrc, caption, link, description }) => {
 
     return (
         <div className="card-div">
-            <img src={imageSrc} alt={`Image for ${caption}`} className="card-image" />
+            <div className="card-image-wrap">
+                <img src={imageSrc} alt={`${caption} preview`} className="card-image" />
+            </div>
             <div className="card-content">
 
                 {description && <p className="card-description">{description}</p>}
@@ -23,7 +25,7 @@ const Card = ({ imageSrc, caption, link, description }) => {
                         href={link}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="card-caption"
+                        className="card-caption-link"
                     >
                         <button className="nav-button-card">{caption}</button>
                     </a>
