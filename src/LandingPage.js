@@ -36,8 +36,6 @@ const LandingPage = () => {
 
 
             <div className="home-projects-and-cards">
-                <div className="Home-Projects-Div">
-                </div>
                 <div className="home-cards">
                     <Card
                         imageSrc={backrooms}
@@ -62,7 +60,7 @@ const LandingPage = () => {
 
                 </div>
 
-                <div className="home-extras-section">
+                <div className="home-extras-section"></div>
                     <div className="Home-Message">Extras</div>
                     <div className="home-cards">
                         <Card
@@ -72,7 +70,7 @@ const LandingPage = () => {
                             description="Original music composed by Caleb Rodriguez."
                         />
                     </div>
-                </div>
+                
             </div>
 
             <Footer />
