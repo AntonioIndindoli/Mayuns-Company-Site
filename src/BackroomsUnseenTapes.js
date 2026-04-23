@@ -1,7 +1,6 @@
 import React from "react";
 import ProductShowcasePage from "./ProductShowcasePage";
 import Survive from "./images/Survive.jpg";
-import Explore from "./images/Explore.jpg";
 import Manage from "./images/Manage.jpg";
 import Immersive from "./images/Immersive.jpg";
 import backroomsHero from "./images/BackroomsHero.jpg";
@@ -12,11 +11,6 @@ const keyStats = [
 ];
 
 const featureGalleryItems = [
-    {
-        title: "Explore Endless Corridors",
-        description: "Navigate shifting, hostile environments where visibility is low and danger is constant.",
-        image: Explore,
-    },
     {
         title: "Immersive Found Footage Horror",
         description: "Experience the Backrooms through a raw found-footage lens, with distorted visuals, analog artifacts, and spatial audio that keeps you on edge.",

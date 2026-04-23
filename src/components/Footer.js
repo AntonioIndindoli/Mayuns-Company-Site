@@ -118,7 +118,7 @@ const Footer = () => {
         <div className="footer-divider" />
 
         <div className="footer-bottom-bar">
-          <p>© {new Date().getFullYear()} MayunsGames. Website created by <a href="https://antonioindindoli.com" target="_blank" rel="noopener noreferrer">Antonio Indindoli</a>.</p>
+          <p>© {new Date().getFullYear()} MayunsGames. Website created by <a href="https://www.linkedin.com/in/indindoli/" target="_blank" rel="noopener noreferrer">Antonio Indindoli</a>.</p>
           <div className="social-links" aria-label="Social media links">
             {socialLinks.map((social) => (
               <a key={social.label} href={social.href} aria-label={social.label}>

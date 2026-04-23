@@ -61,7 +61,7 @@ const DestructibleStructureBuilder = () => (
         heroImage={heroShot}
         keyStats={keyStats}
         actions={[
-            { text: "Asset Store", href: "/destructible-structure-builder", variant: "primary", type: "link" },
+            { text: "Asset Store", href: "https://assetstore.unity.com/packages/slug/296695", variant: "primary", type: "link" },
             { text: "Demo", href: "/DSB_Demo.zip", variant: "secondary", type: "anchor", icon: "download" },
             { text: "Manual", href: "/Manual.pdf", variant: "secondary", type: "anchor", icon: "file" },
         ]}
