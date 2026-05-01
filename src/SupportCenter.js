@@ -9,9 +9,6 @@ const SupportCenter = () => {
 
       <main className="info-page-content">
         <h1 className="info-page-title">Support Center</h1>
-        <p className="info-page-lead">
-          Need help with our games or tools? We&apos;re here to assist you.
-        </p>
 
         <section className="info-page-section">
           <h2>Contact Support</h2>

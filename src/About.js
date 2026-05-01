@@ -9,7 +9,6 @@ const About = () => {
 
       <main className="info-page-content">
         <h1 className="info-page-title">About Us</h1>
-        <p className="info-page-lead">We are a small independent studio building games, creator tools, and original media.</p>
 
         <section className="info-page-section">
           <h2>Who We Are</h2>

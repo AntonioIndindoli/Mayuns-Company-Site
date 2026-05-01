@@ -42,12 +42,12 @@ const featureGalleryItems = [
     },
     {
         title: "Mesh Cache Workflow",
-        description: "Generated meshes are cached for fast prefab creation and reliable scene reopening.",
+        description: "Generated meshes are embedded into prefab assets for easy duplication and reuse.",
         image: meshCacheShot,
     },
     {
         title: "Structural Variety",
-        description: "Supports diverse building types, from residential homes to multi-story urban structures, each responding uniquely to stress and damage.",
+        description: "Supports diverse building types, from residential homes to multi-story urban structures.",
         image: variety,
     },
 ];
