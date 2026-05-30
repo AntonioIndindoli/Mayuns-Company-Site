@@ -89,7 +89,7 @@ const LandingPage = () => {
                                 className="project-primary-action"
                                 to="/destructible-structure-builder"
                             >
-                                Learn More
+                                Product Page
                                 <FiExternalLink aria-hidden="true" />
                             </Link>
                         </div>
@@ -139,7 +139,7 @@ const LandingPage = () => {
                                 </div>
 
                                 <Link className="project-text-action" to="/backrooms-unseen-tapes">
-                                    View on Steam
+                                    Product Page
                                     <FiArrowRight aria-hidden="true" />
                                 </Link>
                             </div>

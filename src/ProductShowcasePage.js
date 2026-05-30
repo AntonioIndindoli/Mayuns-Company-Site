@@ -131,7 +131,7 @@ const ProductShowcasePage = ({
     };
 
     const heroBackgroundStyle = {
-        backgroundImage: `linear-gradient(110deg, rgba(0, 0, 0, 1) 0%, rgba(0, 0, 0, 0.95) 30%, rgba(0, 0, 0, 0.9) 55%, rgba(0, 0, 0, 0.8) 85%, rgba(0, 0, 0, 0.7) 100%), url(${heroImage})`,
+        backgroundImage: `linear-gradient(110deg, #111f35 0%, #111f35ec 30%, #111f35da 55%, #000000c0 85%, rgba(0, 0, 0, 0.7) 100%), url(${heroImage})`,
     };
 
     const getActionIcon = (iconName) => {
