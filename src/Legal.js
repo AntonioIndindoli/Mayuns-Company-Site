@@ -9,9 +9,6 @@ const Legal = () => {
 
       <main className="info-page-content">
         <h1 className="info-page-title">Legal</h1>
-        <p className="info-page-lead">
-          This page outlines general legal information for Mayuns products and services.
-        </p>
 
         <section className="info-page-section">
           <h2>Intellectual Property</h2>

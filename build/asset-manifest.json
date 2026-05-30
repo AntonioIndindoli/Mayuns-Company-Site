@@ -1,25 +1,32 @@
 {
   "files": {
-    "main.css": "/static/css/main.e37ffd2b.css",
-    "main.js": "/static/js/main.72526a59.js",
-    "static/media/LandingPageCard_DSB.png": "/static/media/LandingPageCard_DSB.41db18c21d3d682c106d.png",
-    "static/media/DSB_Screenshot5.png": "/static/media/DSB_Screenshot5.fc81cf349378e41993b8.png",
-    "static/media/DSB_Screenshot4.png": "/static/media/DSB_Screenshot4.4826e8f9e1262011dc9f.png",
-    "static/media/DSB_Screenshot7.png": "/static/media/DSB_Screenshot7.21ff51c6afa3ef73267d.png",
-    "static/media/DSB_Screenshot6.png": "/static/media/DSB_Screenshot6.f5313960233d966eaa0b.png",
-    "static/media/DSB_Hero.png": "/static/media/DSB_Hero.8157bf4d82cabfb873d2.png",
-    "static/media/DSB_Screenshot3.png": "/static/media/DSB_Screenshot3.a2f693c13268699b20ad.png",
-    "static/media/backroomsGameImage.png": "/static/media/backroomsGameImage.15f08a8ab4b30d11c05f.png",
+    "main.css": "/static/css/main.c8f1cfe7.css",
+    "main.js": "/static/js/main.97707f92.js",
+    "static/media/CopyRightAdventureHero.png": "/static/media/CopyRightAdventureHero.c9f683d27457637ce281.png",
+    "static/media/DSB_Hero.png": "/static/media/DSB_Hero.b609d746c6b3a4e4af57.png",
+    "static/media/LandingPageCard_DSB.png": "/static/media/LandingPageCard_DSB.5c7ceaf382a92b06efe1.png",
+    "static/media/Collapse_DSB.png": "/static/media/Collapse_DSB.fc81cf349378e41993b8.png",
+    "static/media/nutpack.jpg": "/static/media/nutpack.edc3ce1e082ff316f8be.jpg",
+    "static/media/Cascade_DSB.png": "/static/media/Cascade_DSB.f5313960233d966eaa0b.png",
+    "static/media/Variety_DSB.png": "/static/media/Variety_DSB.7d212cad3a93f8524364.png",
+    "static/media/Build Modes_DSB.png": "/static/media/Build Modes_DSB.e898bc6693d54a6c4842.png",
+    "static/media/Wall Design System_DSB.png": "/static/media/Wall Design System_DSB.6e453833a5389978f124.png",
+    "static/media/Stress Propagation_DSB.png": "/static/media/Stress Propagation_DSB.a2f693c13268699b20ad.png",
+    "static/media/LandingPageCard_backrooms.png": "/static/media/LandingPageCard_backrooms.15f08a8ab4b30d11c05f.png",
+    "static/media/BackroomsHero.jpg": "/static/media/BackroomsHero.6441fd630c2687ffbe2a.jpg",
+    "static/media/Manage.jpg": "/static/media/Manage.2e7e06a78a8ea7c4c3a3.jpg",
     "static/media/PLACEHOLDER.png": "/static/media/PLACEHOLDER.a0ec4e55cd77ec9110dc.png",
-    "static/media/copyright.png": "/static/media/copyright.22674b119843afb82fd9.png",
-    "static/media/Comingsoon.png": "/static/media/Comingsoon.2a7af70433b9cf35ffe7.png",
-    "static/media/DSB_Screenshot1.png": "/static/media/DSB_Screenshot1.d95a1144bf92a58f6f00.png",
+    "static/media/LandingPageCard_copyright.png": "/static/media/LandingPageCard_copyright.22674b119843afb82fd9.png",
+    "static/media/Survive.jpg": "/static/media/Survive.ef0d7e3946966e17fa03.jpg",
+    "static/media/Immersive.jpg": "/static/media/Immersive.6b3191ee167f070837a4.jpg",
+    "static/media/Mesh Cache Workflow_DSB.png": "/static/media/Mesh Cache Workflow_DSB.6ec29d8fc3c51c5feaff.png",
+    "static/media/logo.png": "/static/media/logo.ca7dfc5cbc5143537bcf.png",
     "index.html": "/index.html",
-    "main.e37ffd2b.css.map": "/static/css/main.e37ffd2b.css.map",
-    "main.72526a59.js.map": "/static/js/main.72526a59.js.map"
+    "main.c8f1cfe7.css.map": "/static/css/main.c8f1cfe7.css.map",
+    "main.97707f92.js.map": "/static/js/main.97707f92.js.map"
   },
   "entrypoints": [
-    "static/css/main.e37ffd2b.css",
-    "static/js/main.72526a59.js"
+    "static/css/main.c8f1cfe7.css",
+    "static/js/main.97707f92.js"
   ]
 }
