@@ -67,6 +67,10 @@ const Footer = () => {
             <p className="footer-contact">
               Contact us: <a href="mailto:support@mayuns.com">support@mayuns.com</a>
             </p>
+            <p className="footer-location" aria-label="Location: California, USA">
+              <span className="footer-location-flag" aria-hidden="true" />
+              <span>California, USA</span>
+            </p>
           </section>
 
           <section className="footer-links-column" aria-label="Products">
@@ -118,7 +122,7 @@ const Footer = () => {
         <div className="footer-divider" />
 
         <div className="footer-bottom-bar">
-          <p>© {new Date().getFullYear()} MayunsGames. Website created by <a href="https://www.linkedin.com/in/indindoli/" target="_blank" rel="noopener noreferrer">Antonio Indindoli</a>.</p>
+          <p>&copy; {new Date().getFullYear()} MayunsGames. Website created by <a href="https://www.linkedin.com/in/indindoli/" target="_blank" rel="noopener noreferrer">Antonio Indindoli</a>.</p>
           <div className="social-links" aria-label="Social media links">
             {socialLinks.map((social) => (
               <a key={social.label} href={social.href} aria-label={social.label}>

@@ -10,7 +10,7 @@ import cascade from "./images/DSB Gallery/Cascade_DSB.png";
 import collapse from "./images/DSB Gallery/Collapse_DSB.png";
 
 const keyStats = [
-    { label: "Unity (LTS)", value: "6, 2022, 2021" },
+    { label: "Unity (LTS)", value: "6.3, 6.0, 2022.3" },
     { label: "Render Pipelines", value: "Built-in, URP, HDRP" },
 ];
 
