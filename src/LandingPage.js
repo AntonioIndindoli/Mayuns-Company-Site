@@ -76,6 +76,7 @@ const LandingPage = () => {
                                 <img src={dsbLogo} alt="DSB" className="featured-project-logo" />
                             </Link>
 
+                            <h3>Destructible Structure Builder</h3>
                             <p className="featured-project-description">
                                 Unity editor toolkit for building structures that can crumble and collapse believably.
                             </p>
