@@ -44,6 +44,17 @@
     position: relative;
 }
 
+.hero-content {
+    width: min(92vw, 1180px);
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+    align-items: center;
+    gap: clamp(2rem, 5vw, 5rem);
+    padding: 0 1.5rem;
+    z-index: 1;
+}
+
 
 .hero3d {
     width: 100%;
@@ -54,6 +65,7 @@
 /* inner box sets the height via aspect-ratio */
 .hero3d .frame {
     width: 100%;
+    height: clamp(280px, 42vw, 620px);
     max-height: min(70vh, 680px);
 
     /* change to 21/9, 4/3, etc. if you like */
@@ -87,16 +99,37 @@
 }
 
 .hero-copy {
-    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-self: start;
+    max-width: 460px;
+    text-align: left;
     z-index: 1;
+}
+
+.hero-pronunciation {
+    margin: 0;
+    color: #f6fbff;
+    font-size: clamp(2.3rem, 4.8vw, 5rem);
+    font-weight: 950;
+    line-height: 0.98;
+    text-shadow:
+        0 16px 40px rgba(0, 0, 0, 0.35),
+        0 0 30px rgba(102, 190, 255, 0.16);
+}
+
+.hero-pronunciation span {
+    color: #64c9ff;
+    white-space: nowrap;
 }
 
 .projects-scroll-cue {
     display: inline-flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
-    gap: 2px;
-    margin-top: -8px;
+    gap: 8px;
+    margin-top: 24px;
     color: #d7e8ff;
     font-size: 0.9rem;
     font-weight: 700;
@@ -429,9 +462,9 @@
     position: relative;
     width: 100%;
     display: flex;
-    justify-content: center;
-    align-items: flex-end;
-    padding: 0 1.5rem;
+    justify-content: flex-start;
+    align-items: center;
+    padding: 0;
     z-index: 1;
 }
 
@@ -444,8 +477,8 @@
 .center-image {
     /* If you need to adjust the position further, consider using margin or padding here. */
     z-index: 1;
-    width: min(92vw, 960px);
-    margin: 0 auto;
+    width: min(100%, 780px);
+    margin: 0;
 }
 
 .background-image {
@@ -926,6 +959,15 @@
 }
 
 @media (max-width: 1050px) {
+
+    .box-center-image {
+        display: none;
+    }
+
+    .hero-copy {
+        display: none;
+    }
+
     .featured-project-panel {
         grid-template-columns: 1fr;
         border-color: rgba(95, 157, 231, 0.25);
@@ -1153,13 +1195,11 @@
     flex: 0 0 18px;
     overflow: hidden;
     border-radius: 2px;
-    background: repeating-linear-gradient(
-        to bottom,
-        #b22234 0,
-        #b22234 1px,
-        #ffffff 1px,
-        #ffffff 2px
-    );
+    background: repeating-linear-gradient(to bottom,
+            #b22234 0,
+            #b22234 1px,
+            #ffffff 1px,
+            #ffffff 2px);
     box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.24);
 }
 

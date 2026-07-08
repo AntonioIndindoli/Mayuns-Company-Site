@@ -49,16 +49,22 @@ const LandingPage = () => {
                 <div className="background-gradient-color" aria-hidden="true"></div>
                 <div className="background-gradient" aria-hidden="true"></div>
 
-                <div className="box-center-image">
-                    <div className="center-image">
-                        <Hero3D fallbackImg={placeholder} className="hero3d" />
+                <div className="hero-content">
+                    <div className="box-center-image">
+                        <div className="center-image">
+                            <Hero3D fallbackImg={placeholder} className="hero3d" />
+                        </div>
                     </div>
-                </div>
 
-                <div className="hero-copy">
-                    <div className="projects-scroll-cue">
-                        <FiChevronDown aria-hidden="true" />
-                        <span>Explore our projects</span>
+                    <div className="hero-copy">
+                        <p className="hero-pronunciation">
+                            It's pronounced <span>MAY-unz</span>, not <span>MY-unz</span>.
+                        </p>
+
+                        <div className="projects-scroll-cue">
+                            <FiChevronDown aria-hidden="true" />
+                            <span>Explore our projects</span>
+                        </div>
                     </div>
                 </div>
             </section>
