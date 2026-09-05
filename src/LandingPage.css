@@ -45,12 +45,12 @@
 }
 
 .hero-content {
-    width: min(92vw, 1180px);
+    width: min(92vw, 1240px);
     margin: 0 auto;
     display: grid;
-    grid-template-columns: minmax(0, 1.15fr) minmax(280px, 0.85fr);
+    grid-template-columns: minmax(0, 1fr) minmax(460px, 1fr);
     align-items: center;
-    gap: clamp(2rem, 5vw, 5rem);
+    gap: clamp(2rem, 4vw, 4rem);
     padding: 0 1.5rem;
     z-index: 1;
 }
@@ -103,25 +103,45 @@
     flex-direction: column;
     align-items: flex-start;
     justify-self: start;
-    max-width: 460px;
+    max-width: 560px;
     text-align: left;
     z-index: 1;
 }
 
-.hero-pronunciation {
+.hero-title {
     margin: 0;
     color: #f6fbff;
-    font-size: clamp(2.3rem, 4.8vw, 5rem);
-    font-weight: 950;
-    line-height: 0.98;
+    font-size: clamp(3rem, 4.15vw, 4.1rem);
+    font-weight: 900;
+    line-height: 0.96;
+    letter-spacing: -0.045em;
     text-shadow:
-        0 16px 40px rgba(0, 0, 0, 0.35),
-        0 0 30px rgba(102, 190, 255, 0.16);
+        0 14px 34px rgba(0, 0, 0, 0.28),
+        0 0 28px rgba(102, 190, 255, 0.12);
 }
 
-.hero-pronunciation span {
-    color: #64c9ff;
+.hero-title-line {
+    display: block;
     white-space: nowrap;
+}
+
+.hero-title-accent {
+    margin-top: 0.12em;
+    color: #ffe36e;
+    text-shadow:
+        0 14px 34px rgba(0, 0, 0, 0.28),
+        0 0 24px rgba(255, 220, 82, 0.12);
+}
+
+.hero-subtitle {
+    max-width: 430px;
+    margin: 24px 0 0;
+    color: rgba(231, 241, 255, 0.88);
+    font-size: clamp(1rem, 1.25vw, 1.15rem);
+    font-weight: 450;
+    line-height: 1.55;
+    letter-spacing: 0.005em;
+    text-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
 }
 
 .projects-scroll-cue {
@@ -129,10 +149,10 @@
     flex-direction: row;
     align-items: center;
     gap: 8px;
-    margin-top: 24px;
-    color: #d7e8ff;
-    font-size: 0.9rem;
-    font-weight: 700;
+    margin-top: 30px;
+    color: rgba(215, 232, 255, 0.82);
+    font-size: 0.82rem;
+    font-weight: 650;
     letter-spacing: 0.01em;
     text-shadow: 0 2px 10px rgba(0, 0, 0, 0.45);
 }
@@ -965,7 +985,22 @@
     }
 
     .hero-copy {
-        display: none;
+        align-items: center;
+        justify-self: center;
+        max-width: 680px;
+        text-align: center;
+    }
+
+    .hero-content {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-title {
+        font-size: clamp(2.6rem, 7vw, 4.6rem);
+    }
+
+    .hero-subtitle {
+        max-width: 470px;
     }
 
     .featured-project-panel {

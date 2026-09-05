@@ -57,8 +57,12 @@ const LandingPage = () => {
                     </div>
 
                     <div className="hero-copy">
-                        <p className="hero-pronunciation">
-                            It's pronounced <span>MAY-unz</span>, not <span>MY-unz</span>.
+                        <h1 className="hero-title">
+                            <span className="hero-title-line">We make games.</span>
+                            <span className="hero-title-line hero-title-accent">Not mayonnaise.</span>
+                        </h1>
+                        <p className="hero-subtitle">
+                            Independent games and tools for game developers.
                         </p>
 
                         <div className="projects-scroll-cue">
