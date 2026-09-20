@@ -2,6 +2,7 @@ import React, { useEffect, useMemo, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import {
     FiArrowLeft,
+    FiBox,
     FiChevronLeft,
     FiChevronRight,
     FiDownload,
@@ -9,6 +10,9 @@ import {
     FiFileText,
     FiMaximize,
     FiMinimize,
+    FiMonitor,
+    FiSettings,
+    FiTag,
 } from "react-icons/fi";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
@@ -133,7 +137,7 @@ const ProductShowcasePage = ({
     };
 
     const heroBackgroundStyle = {
-        backgroundImage: `linear-gradient(90deg, #0b1c34fa 0%, #0b1c34ed 35%, #0b1c3499 65%, #0b1c3433 100%), url(${heroImage})`,
+        "--showcase-hero-image": `url(${heroImage})`,
     };
 
     const getActionIcon = (iconName) => {
@@ -182,8 +186,15 @@ const ProductShowcasePage = ({
                         <ul className="showcase-key-stats">
                             {keyStats.map((stat) => (
                                 <li key={stat.label}>
-                                    <span>{stat.label}</span>
-                                    <strong>{stat.value}</strong>
+                                    <span className="showcase-stat-icon" aria-hidden="true">
+                                        {stat.label === "Unity (LTS)" ? <FiBox /> :
+                                            stat.label === "Render Pipelines" ? <FiSettings /> :
+                                                stat.label === "Platform" ? <FiMonitor /> : <FiTag />}
+                                    </span>
+                                    <div className="showcase-stat-copy">
+                                        <span>{stat.label}</span>
+                                        <strong>{stat.value}</strong>
+                                    </div>
                                 </li>
                             ))}
                         </ul>
