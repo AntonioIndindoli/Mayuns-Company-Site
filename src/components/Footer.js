@@ -56,73 +56,8 @@ const Footer = () => {
   return (
     <footer className="site-footer">
       <div className="footer-content">
-        <div className="footer-main-grid">
-          <section className="footer-brand-column">
-            <FooterLink href="/" className="footer-brand" aria-label="MayunsGames home">
-              <img src={logo} alt="MayunsGames logo" className="footer-logo" />
-              <div className="footer-brand-text">
-                <h3>MayunsGames</h3>
-              </div>
-            </FooterLink>
-            <p className="footer-contact">
-              Contact us: <a href="mailto:support@mayuns.com">support@mayuns.com</a>
-            </p>
-            <p className="footer-location" aria-label="Location: California, USA">
-              <span className="footer-location-flag" aria-hidden="true" />
-              <span>California, USA</span>
-            </p>
-          </section>
-
-          <section className="footer-links-column" aria-label="Products">
-            <h4>Products</h4>
-            <ul>
-              {products.map((product) => (
-                <li key={product.label}>
-                  <FooterLink href={product.href}>{product.label}</FooterLink>
-                </li>
-              ))}
-            </ul>
-          </section>
-
-          <section className="footer-links-column" aria-label="Quick links">
-            <h4>Quick Links</h4>
-            <ul>
-              {quickLinks.map((link) => (
-                <li key={link.label}>
-                  <FooterLink href={link.href}>{link.label}</FooterLink>
-                </li>
-              ))}
-            </ul>
-          </section>
-
-          <section className="footer-links-column" aria-label="Resources">
-            <h4>Resources</h4>
-            <ul>
-              {resources.map((resource) => (
-                <li key={resource.label}>
-                  <FooterLink href={resource.href}>{resource.label}</FooterLink>
-                </li>
-              ))}
-            </ul>
-          </section>
-
-          <section className="footer-links-column" aria-label="Extras">
-            <h4>Extras</h4>
-            <ul>
-              {extras.map((extra) => (
-                <li key={extra.label}>
-                  <FooterLink href={extra.href}>{extra.label}</FooterLink>
-                </li>
-              ))}
-            </ul>
-          </section>
-
-        </div>
-
-        <div className="footer-divider" />
-
         <div className="footer-bottom-bar">
-          <p>&copy; {new Date().getFullYear()} MayunsGames. Website created by <a href="https://www.linkedin.com/in/indindoli/" target="_blank" rel="noopener noreferrer">Antonio Indindoli</a>.</p>
+          <p>&copy; {new Date().getFullYear()} MayunsGames.</p>
           <div className="social-links" aria-label="Social media links">
             {socialLinks.map((social) => (
               <a key={social.label} href={social.href} aria-label={social.label}>

@@ -1,6 +1,5 @@
 import React from "react";
 import ProductShowcasePage from "./ProductShowcasePage";
-import copyrightHero from "./images/CopyRightAdventureHero.png";
 
 const keyStats = [
     { label: "Platform", value: "Web Browser" },
@@ -13,7 +12,6 @@ const CopyrightAdventure = () => (
         title="Copyright Adventure"
         descriptionLabel="EXPLORE & BATTLE"
         description="An in-browser RPG adventure where you battle your way through strategic encounters with pop-culture characters."
-        heroImage={copyrightHero}
         keyStats={keyStats}
         actions={[
             {

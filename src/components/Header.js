@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import "../LandingPage.css";
+import "./Header.css";
 import { useNavigate } from "react-router-dom";
 
 const Header = ({ leftAddon = null }) => {
@@ -33,7 +34,7 @@ const Header = ({ leftAddon = null }) => {
   };
 
   return (
-    <div className="header-bar-wrapper">
+    <div className="header-bar-wrapper site-header">
       <div className="header-bar">
         <header className="header-items">
           <div className="header-left-stack">

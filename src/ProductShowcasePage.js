@@ -204,15 +204,6 @@ const ProductShowcasePage = ({
 
                 {hasFeatureGallery && activeFeature && (
                     <section className="showcase-feature-section" aria-labelledby="showcase-gallery-title">
-                        <div className="showcase-gallery-heading">
-                            <div>
-                                <p className="showcase-store-eyebrow">{descriptionLabel}</p>
-                                <h2 id="showcase-gallery-title">Features &amp; screenshots</h2>
-                            </div>
-                            <button type="button" className="showcase-slideshow-toggle" onClick={() => setIsSlideshowPlaying((playing) => !playing)} aria-pressed={isSlideshowPlaying}>
-                                {isSlideshowPlaying ? "Pause slideshow" : "Play slideshow"}
-                            </button>
-                        </div>
                         <div className="showcase-container">
                             <div
                                 className="showcase-store-gallery"
@@ -224,47 +215,30 @@ const ProductShowcasePage = ({
                             >
                                 <div className="showcase-store-main-preview" ref={mainPreviewRef}>
                                     <div className="showcase-gallery-stage">
-                                        <button type="button" className="showcase-gallery-nav previous" onClick={showPreviousImage} aria-label="Show previous screenshot">
-                                            <FiChevronLeft />
-                                        </button>
-
-                                        <button
-                                            type="button"
-                                            className="showcase-gallery-fullscreen"
-                                            onClick={toggleFullscreen}
-                                            aria-label={isFullscreen ? "Exit fullscreen" : "View fullscreen"}
-                                        >
-                                            {isFullscreen ? <FiMinimize /> : <FiMaximize />}
-                                        </button>
-
                                         <img src={activeFeature.image} alt={activeFeature.title} className="showcase-store-main-image" />
-
-                                        <button type="button" className="showcase-gallery-nav next" onClick={showNextImage} aria-label="Show next screenshot">
-                                            <FiChevronRight />
-                                        </button>
                                     </div>
-                                    <div className="showcase-store-feature-copy">
+
+                                    <div className="showcase-store-thumbnail-row" role="group" aria-label="Feature thumbnails" ref={thumbnailRowRef}>
+                                        {featureGalleryItems.map((feature, index) => (
+                                            <button
+                                                type="button"
+                                                key={feature.title}
+                                                className={`showcase-thumbnail-button ${index === activeImageIndex ? "is-active" : ""}`}
+                                                onClick={() => setActiveImageIndex(index)}
+                                                aria-label={`View ${feature.title}`}
+                                                aria-pressed={index === activeImageIndex}
+                                                ref={(element) => {
+                                                    thumbnailButtonRefs.current[index] = element;
+                                                }}
+                                            >
+                                                <img src={feature.image} alt={feature.title} />
+                                            </button>
+                                        ))}
+                                    </div>
+                                    <div className="showcase-store-feature-description">
                                         <span className="showcase-gallery-count">{String(activeImageIndex + 1).padStart(2, "0")} / {String(featureGalleryItems.length).padStart(2, "0")}</span>
                                         <div><h3>{activeFeature.title}</h3><p>{activeFeature.description}</p></div>
                                     </div>
-                                </div>
-
-                                <div className="showcase-store-thumbnail-row" role="group" aria-label="Feature thumbnails" ref={thumbnailRowRef}>
-                                    {featureGalleryItems.map((feature, index) => (
-                                        <button
-                                            type="button"
-                                            key={feature.title}
-                                            className={`showcase-thumbnail-button ${index === activeImageIndex ? "is-active" : ""}`}
-                                            onClick={() => setActiveImageIndex(index)}
-                                            aria-label={`View ${feature.title}`}
-                                            aria-pressed={index === activeImageIndex}
-                                            ref={(element) => {
-                                                thumbnailButtonRefs.current[index] = element;
-                                            }}
-                                        >
-                                            <img src={feature.image} alt={feature.title} />
-                                        </button>
-                                    ))}
                                 </div>
                             </div>
                         </div>

@@ -172,15 +172,10 @@ const LandingPage = () => {
                                     <span className="project-tag">RPG</span>
                                 </div>
 
-                                <a
-                                    className="project-text-action"
-                                    href="https://victorious-rock-0e8ecde10.3.azurestaticapps.net/"
-                                    target="_blank"
-                                    rel="noreferrer"
-                                >
-                                    Play Now
+                                <Link className="project-text-action" to="/copyright-adventure">
+                                    Product Page
                                     <FiArrowRight aria-hidden="true" />
-                                </a>
+                                </Link>
                             </div>
                         </article>
                     </div>

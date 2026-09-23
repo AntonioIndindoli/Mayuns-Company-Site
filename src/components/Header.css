@@ -1,0 +1,74 @@
+/* Keep navigation geometry consistent across every page and breakpoint. */
+.site-header.header-bar-wrapper {
+    inset: 0 0 auto;
+    width: 100%;
+    height: 70px;
+    background: rgba(8, 26, 46, .96);
+    border-bottom: 1px solid rgba(153, 190, 230, .14);
+    box-shadow: 0 8px 24px rgba(2, 10, 24, .16);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
+}
+
+.site-header .header-bar {
+  box-sizing: border-box;
+  width: min(90vw, 1320px);
+  height: 100%;
+  margin: 0 auto;
+  padding: 0;
+}
+
+.site-header .header-items {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.site-header .nav-button {
+    color: #f4f8ff;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: opacity .18s ease;
+}
+
+.site-header .nav-button:hover {
+    opacity: .82;
+}
+
+.site-header .nav-button-logo {
+    width: 32px;
+    height: 32px;
+}
+
+.site-header .hamburger-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    padding: 0;
+    border: 1px solid rgba(180, 207, 239, .2);
+    border-radius: 10px;
+    background: rgba(255, 255, 255, .04);
+    font-size: 25px;
+    transition: background-color .18s ease, border-color .18s ease;
+}
+
+.site-header .hamburger-button:hover {
+    border-color: rgba(180, 207, 239, .36);
+    background: rgba(255, 255, 255, .1);
+}
+
+.site-header :is(.nav-button, .hamburger-button):focus-visible {
+    outline: 2px solid #8bbff7;
+    outline-offset: 3px;
+}
+
+@media (max-width: 600px) {
+  .site-header .header-bar { width: calc(100% - 28px); }
+}
