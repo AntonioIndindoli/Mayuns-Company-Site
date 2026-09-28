@@ -19,7 +19,7 @@ function App() {
     return (
         <Col className="App">
             <Routes>
-                <Route path="/" element={<LandingPage />} />
+                <Route path="/" element={<LandingPage key={location.key} />} />
                 <Route
                     path="/destructible-structure-builder"
                     element={<DestructibleStructureBuilder />}

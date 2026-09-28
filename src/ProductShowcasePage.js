@@ -1,7 +1,6 @@
 import React, { useEffect, useMemo, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import {
-    FiArrowLeft,
     FiBox,
     FiChevronLeft,
     FiChevronRight,
@@ -157,7 +156,6 @@ const ProductShowcasePage = ({
             <Header />
 
             <main className="showcase-content">
-                <Link to="/" className="showcase-back-link"><FiArrowLeft aria-hidden="true" /> All projects</Link>
                 <section className="showcase-hero" style={heroBackgroundStyle}>
                     <div className="showcase-hero-copy">
                         <p className="showcase-label">{label}</p>

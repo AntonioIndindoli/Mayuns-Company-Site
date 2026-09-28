@@ -71,13 +71,15 @@ function Model(props) {
     return <primitive ref={ref} object={scene} {...props} />;
 }
 
-export default function Hero3D({ fallbackImg, className = "hero3d" }) {
+export default function Hero3D({ fallbackImg, className = "hero3d", groundShadow = true, modelScale = 0.7 }) {
     return (
         <div className={className}>
             <div className="frame">
                 <Suspense fallback={<Loader poster={fallbackImg} />}>
                     <Canvas
                         camera={{ fov: 40 }}
+                        // Measure the layout box, not its CSS-rotated bounding rectangle.
+                        resize={{ offsetSize: true }}
                         dpr={[1, 1.5]}
                         shadows
                         gl={{ alpha: true, antialias: true }}
@@ -100,10 +102,10 @@ export default function Hero3D({ fallbackImg, className = "hero3d" }) {
                             shadow-bias={-0.0001}
                         />
 
-                        <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -1.65, 0]} receiveShadow>
+                        {groundShadow && <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -1.65, 0]} receiveShadow>
                             <planeGeometry args={[100, 100]} />
                             <shadowMaterial opacity={0.1} />
-                        </mesh>
+                        </mesh>}
 
                         <PresentationControls
                             global
@@ -115,7 +117,7 @@ export default function Hero3D({ fallbackImg, className = "hero3d" }) {
                             azimuth={[-Math.PI, Math.PI]}
                         >
                             <Center>
-                                <group scale={[.7, .7, .7]}>   {/* bigger jar */}
+                                <group scale={modelScale}>
                                     <Model />
                                 </group>
                             </Center>

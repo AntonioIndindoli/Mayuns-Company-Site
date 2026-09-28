@@ -1,87 +1,41 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { FiArrowUpRight } from "react-icons/fi";
 import "../LandingPage.css";
 import "./Header.css";
-import { useNavigate } from "react-router-dom";
 
-const Header = ({ leftAddon = null }) => {
-  const navigate = useNavigate();
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const menuRef = useRef(null);
+function scrollToProjects() {
+    document.getElementById("home-projects")?.scrollIntoView({
+        behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
+    });
+}
 
-  useEffect(() => {
-    const handleOutsideClick = (event) => {
-      if (menuRef.current && !menuRef.current.contains(event.target)) {
-        setIsMenuOpen(false);
-      }
-    };
+export default function Header() {
+    const location = useLocation();
 
-    document.addEventListener("mousedown", handleOutsideClick);
+    useEffect(() => {
+        if (location.pathname !== "/" || location.hash !== "#home-projects") return;
+        const frame = window.requestAnimationFrame(scrollToProjects);
+        return () => window.cancelAnimationFrame(frame);
+    }, [location.pathname, location.hash, location.key]);
 
-    return () => {
-      document.removeEventListener("mousedown", handleOutsideClick);
-    };
-  }, []);
-
-  const menuLinks = [
-    { label: "About Us", path: "/about-us" },
-    { label: "Support Center", path: "/support-center" },
-    { label: "Legal", path: "/legal" },
-  ];
-
-  const handleMenuNavigation = (path) => {
-    navigate(path);
-    setIsMenuOpen(false);
-  };
-
-  return (
-    <div className="header-bar-wrapper site-header">
-      <div className="header-bar">
-        <header className="header-items">
-          <div className="header-left-stack">
-            {leftAddon}
-            <button
-              className="nav-button"
-              type="button"
-              onClick={() => navigate("/")}
-            >
-              <img
-                src="/logo512.png"
-                alt="Mayuns logo"
-                className="nav-button-logo"
-              />
-              Mayuns.com
-            </button>
-          </div>
-          <div className="header-items-bar" ref={menuRef}>
-            <button
-              type="button"
-              className="hamburger-button"
-              aria-label="Open navigation menu"
-              aria-expanded={isMenuOpen}
-              onClick={() => setIsMenuOpen((prev) => !prev)}
-            >
-              ☰
-            </button>
-
-            {isMenuOpen && (
-              <div className="header-dropdown-menu">
-                {menuLinks.map((item) => (
-                  <button
-                    key={item.path}
-                    type="button"
-                    className="header-dropdown-item"
-                    onClick={() => handleMenuNavigation(item.path)}
-                  >
-                    {item.label}
-                  </button>
-                ))}
-              </div>
-            )}
-          </div>
+    return (
+        <header className="mh-header">
+            <Link className="mh-brand" to="/" aria-label="Mayuns.com home">
+                <img src="/logo512.png" alt="" />Mayuns<span>.com</span>
+            </Link>
+            <nav aria-label="Main navigation">
+                <Link to="/#home-projects" onClick={(event) => {
+                    if (location.pathname === "/" && !event.ctrlKey && !event.metaKey && !event.shiftKey && !event.altKey) {
+                        event.preventDefault();
+                        scrollToProjects();
+                    }
+                }}>Projects</Link>
+                <Link to="/about-us">About us</Link>
+                <Link className="mh-nav-support" to="/support-center">
+                    Support <FiArrowUpRight aria-hidden="true" />
+                </Link>
+            </nav>
         </header>
-      </div>
-    </div>
-  );
-};
-
-export default Header;
+    );
+}
