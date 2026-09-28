@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { FiArrowDown, FiArrowUpRight, FiBox, FiTool, FiZap } from "react-icons/fi";
+import { FiArrowDown, FiArrowUpRight } from "react-icons/fi";
 import { FaSteam } from "react-icons/fa";
 import Hero3D from "./components/Hero3D";
 import Footer from "./components/Footer";
 import Header from "./components/Header";
-import dsbLogo from "./images/LandingPageCard_DSB.png";
 import backrooms from "./images/LandingPageCard_backrooms.png";
 import copyright from "./images/LandingPageCard_copyright.png";
+import dsbLogo from "./images/LandingPageCard_DSB.png";
 import dsbCollapse from "./images/DSB Gallery/Collapse_DSB.png";
 import placeholder from "./images/PLACEHOLDER.png";
 import "./LandingPageRedesign.css";
@@ -25,11 +25,6 @@ const slogans = [
     "Hold the mayo.",
 ];
 
-const benefits = [
-    { icon: FiBox, title: "Powerful Destruction", description: "Create realistic, believable destruction with ease." },
-    { icon: FiTool, title: "Easy to Integrate", description: "Designed for Unity. Simple workflow, powerful results." },
-    { icon: FiZap, title: "Optimized Performance", description: "Built with performance in mind for any project scale." },
-];
 const projects = [
     {
         title: "The Backrooms: Unseen Tapes",
@@ -84,31 +79,21 @@ export default function LandingPage() {
                         <h2 id="home-work-title">Featured Project</h2>
                         <span className="mh-heading-line" aria-hidden="true" />
                     </div>
-                    <article className="mh-feature">
-                        <Link className="mh-feature-media" to="/destructible-structure-builder" aria-label="View Destructible Structure Builder">
-                            <img src={dsbCollapse} alt="A brick structure crumbling into individual pieces in Destructible Structure Builder" loading="lazy" />
-                            <span className="mh-feature-arrow"><FiArrowUpRight aria-hidden="true" /></span>
-                        </Link>
+                    <Link className="mh-feature" to="/destructible-structure-builder" aria-label="View Destructible Structure Builder">
                         <div className="mh-feature-copy">
-                            <div className="mh-tags"><span>UNITY TOOLKIT</span><span>ASSET STORE</span></div>
+                            <img className="mh-dsb-logo" src={dsbLogo} alt="DSB" />
                             <div className="mh-project-identity">
-                                <img className="mh-dsb-logo" src={dsbLogo} alt="DSB" />
-                                <h3>Destructible<br />Structure Builder</h3>
+                                <h3>Destructible Structure Builder</h3>
+                                <p>Editor toolkit for creating breakable structures in Unity.</p>
                             </div>
-                            <p>Unity editor toolkit for building structures that can crumble and collapse believably.</p>
-                            <Link className="mh-button" to="/destructible-structure-builder">
-                                Product Page <FiArrowUpRight aria-hidden="true" />
-                            </Link>
+                            <span className="mh-feature-link" aria-hidden="true">
+                                View project <FiArrowUpRight aria-hidden="true" />
+                            </span>
                         </div>
-                    </article>
-                    <div className="mh-benefits">
-                        {benefits.map(({ icon: Icon, title, description }) => (
-                            <div className="mh-benefit" key={title}>
-                                <Icon aria-hidden="true" />
-                                <div><h3>{title}</h3><p>{description}</p></div>
-                            </div>
-                        ))}
-                    </div>
+                        <div className="mh-feature-media">
+                            <img src={dsbCollapse} alt="A brick structure crumbling into individual pieces in Destructible Structure Builder" loading="lazy" />
+                        </div>
+                    </Link>
                     <div className="mh-section-heading mh-games-heading">
                         <h2>More Projects</h2>
                         <span className="mh-heading-line" aria-hidden="true" />

@@ -33,7 +33,7 @@ export default function Header() {
                 }}>Projects</Link>
                 <Link to="/about-us">About us</Link>
                 <Link className="mh-nav-support" to="/support-center">
-                    Support <FiArrowUpRight aria-hidden="true" />
+                    Support
                 </Link>
             </nav>
         </header>
