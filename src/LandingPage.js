@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
 import { FiArrowDown, FiArrowUpRight } from "react-icons/fi";
 import { FaSteam } from "react-icons/fa";
@@ -11,19 +11,6 @@ import dsbLogo from "./images/LandingPageCard_DSB.png";
 import dsbCollapse from "./images/DSB Gallery/Collapse_DSB.png";
 import placeholder from "./images/PLACEHOLDER.png";
 import "./LandingPageRedesign.css";
-
-const slogans = [
-    "No preservatives.",
-    "Not actually mayonnaise.",
-    "Unreasonably spreadable.",
-    "Contains games.",
-    "Zero mayo.",
-    "Full-fat fun.",
-    "No refrigeration needed.",
-    "Do not refrigerate.",
-    "Legally not mayonnaise.",
-    "Hold the mayo.",
-];
 
 const projects = [
     {
@@ -45,7 +32,6 @@ const projects = [
 ];
 
 export default function LandingPage() {
-    const [slogan] = useState(() => slogans[Math.floor(Math.random() * slogans.length)]);
     const explore = () => {
         document.getElementById("home-projects").scrollIntoView({
             behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth",
@@ -66,8 +52,8 @@ export default function LandingPage() {
                             <Hero3D fallbackImg={placeholder} className="mh-jar" groundShadow={false} modelScale={0.58} />
                         </div>
                         <div className="mh-hero-copy">
-                            <h1 id="home-title">Mayuns Games.<span>{slogan}</span></h1>
-                            <p>Independent games and tools for game developers.</p>
+                            <h1 id="home-title">Mayuns Games</h1>
+                            <p>Games and tools, made independently.</p>
                             <button className="mh-explore" onClick={explore}>
                                 Explore our projects <FiArrowDown aria-hidden="true" />
                             </button>
@@ -83,7 +69,7 @@ export default function LandingPage() {
                         <div className="mh-feature-copy">
                             <img className="mh-dsb-logo" src={dsbLogo} alt="DSB" />
                             <div className="mh-project-identity">
-                                <h3>Destructible Structure Builder</h3>
+                                <h3>Destructible<br />Structure Builder</h3>
                                 <p>Editor toolkit for creating breakable structures in Unity.</p>
                             </div>
                             <span className="mh-feature-link" aria-hidden="true">
@@ -107,7 +93,6 @@ export default function LandingPage() {
                                     <span className="mh-round-arrow"><FiArrowUpRight aria-hidden="true" /></span>
                                 </Link>
                                 <div className="mh-game-copy">
-                                    <span className="mh-game-meta">{project.category}</span>
                                     <h3><Link to={project.path}>{project.title}</Link></h3>
                                     <p>{project.description}</p>
                                     <Link className="mh-text-link" to={project.path}>

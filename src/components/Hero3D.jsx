@@ -1,6 +1,6 @@
 import React, { Suspense, useRef, useEffect } from "react";
 import { Canvas, useFrame } from "@react-three/fiber";
-import { Environment, PresentationControls, useGLTF, Bounds, Center, Html, useProgress } from "@react-three/drei";
+import { Environment, PresentationControls, useGLTF, Center, useProgress } from "@react-three/drei";
 import * as THREE from "three";
 
 function Loader({ poster }) {
@@ -26,9 +26,13 @@ function Loader({ poster }) {
 
 function Model(props) {
     const ref = useRef();
+    const elapsed = useRef(0);
+    const reducedMotion = useRef(false);
+    const introDuration = 1.1;
     const { scene } = useGLTF("/models/home_logo.glb");
 
     const resetRotation = () => {
+        elapsed.current = introDuration;
         if (ref.current) {
             ref.current.rotation.set(0, 0, 0);
         }
@@ -42,7 +46,15 @@ function Model(props) {
             }
         });
 
-        resetRotation();
+        const motionPreference = window.matchMedia("(prefers-reduced-motion: reduce)");
+        const updateMotionPreference = () => {
+            reducedMotion.current = motionPreference.matches;
+            if (motionPreference.matches) resetRotation();
+        };
+        elapsed.current = 0;
+        ref.current?.rotation.set(0, 0, 0);
+        updateMotionPreference();
+        motionPreference.addEventListener("change", updateMotionPreference);
 
         const handleVisibilityChange = () => {
             if (!document.hidden) {
@@ -54,19 +66,26 @@ function Model(props) {
         document.addEventListener("visibilitychange", handleVisibilityChange);
 
         return () => {
+            motionPreference.removeEventListener("change", updateMotionPreference);
             window.removeEventListener("pageshow", resetRotation);
             document.removeEventListener("visibilitychange", handleVisibilityChange);
         };
     }, [scene]);
 
-    useFrame((state) => {
-        if (!ref.current) return
+    useFrame((_, delta) => {
+        if (!ref.current || reducedMotion.current) return;
 
-        const t = state.clock.getElapsedTime()
-
-        const amplitude = 0.15
-        const speed = 0.5
-        ref.current.rotation.y = Math.sin(t * speed) * amplitude
+        // Start when the loaded model mounts, rather than when the canvas starts.
+        elapsed.current += delta;
+        if (elapsed.current < introDuration) {
+            const progress = elapsed.current / introDuration;
+            const eased = 1 - Math.pow(1 - progress, 3);
+            ref.current.rotation.y = eased * Math.PI * 2;
+        } else {
+            // A full turn ends at the same pose where the gentle idle motion begins.
+            const idleTime = elapsed.current - introDuration;
+            ref.current.rotation.y = Math.sin(idleTime * 0.5) * 0.15;
+        }
     });
     return <primitive ref={ref} object={scene} {...props} />;
 }
