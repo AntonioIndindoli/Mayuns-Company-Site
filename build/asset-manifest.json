@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.11ae6e2c.css",
-    "main.js": "/static/js/main.6b0cdc99.js",
+    "main.css": "/static/css/main.dfb9ce01.css",
+    "main.js": "/static/js/main.a3242f4d.js",
     "static/media/Collapse_DSB.png": "/static/media/Collapse_DSB.928e54da450fc0a1222e.png",
     "static/media/Variety_DSB.png": "/static/media/Variety_DSB.edb11878690e31ece462.png",
     "static/media/Build Modes_DSB.png": "/static/media/Build Modes_DSB.148d4e57a7a1c4f52751.png",
@@ -16,16 +16,16 @@
     "static/media/Survive.jpg": "/static/media/Survive.ef0d7e3946966e17fa03.jpg",
     "static/media/LandingPageCard_copyright.png": "/static/media/LandingPageCard_copyright.9154e3a48b5291a4b3fd.png",
     "static/media/Immersive.jpg": "/static/media/Immersive.6b3191ee167f070837a4.jpg",
+    "static/media/logo.png": "/static/media/logo.73b401bc7b28c9b61d5f.png",
     "static/media/Mesh Cache Workflow_DSB.png": "/static/media/Mesh Cache Workflow_DSB.1345d536f907c62733c6.png",
-    "static/media/logo.png": "/static/media/logo.ca7dfc5cbc5143537bcf.png",
     "static/media/LandingPageCard_DSB.png": "/static/media/LandingPageCard_DSB.bcfb4e0e3dffca4ffc7f.png",
     "static/media/PLACEHOLDER.png": "/static/media/PLACEHOLDER.6eb9e60218b76284f40b.png",
     "index.html": "/index.html",
-    "main.11ae6e2c.css.map": "/static/css/main.11ae6e2c.css.map",
-    "main.6b0cdc99.js.map": "/static/js/main.6b0cdc99.js.map"
+    "main.dfb9ce01.css.map": "/static/css/main.dfb9ce01.css.map",
+    "main.a3242f4d.js.map": "/static/js/main.a3242f4d.js.map"
   },
   "entrypoints": [
-    "static/css/main.11ae6e2c.css",
-    "static/js/main.6b0cdc99.js"
+    "static/css/main.dfb9ce01.css",
+    "static/js/main.a3242f4d.js"
   ]
 }

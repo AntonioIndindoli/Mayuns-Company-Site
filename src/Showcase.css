@@ -91,6 +91,27 @@
     margin: 20px 0 22px;
 }
 
+.showcase-hero-actions.dsb-hero-actions {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.dsb-hero-actions > .showcase-button:first-child {
+    grid-column: 1 / -1;
+    justify-self: start;
+}
+
+.dsb-hero-actions > .showcase-button.secondary {
+    min-width: 0;
+    padding: 11px 8px;
+    gap: 8px;
+    font-size: .85rem;
+}
+
+.showcase-hero-actions.dsb-hero-actions::after {
+    content: none;
+}
+
 .showcase-button {
     min-height: 46px;
     padding: 11px 26px;
@@ -447,6 +468,15 @@ justify-content: center;
         padding: 11px 15px;
         font-size: .8rem;
         gap: 12px;
+    }
+
+    .dsb-hero-actions > .showcase-button.secondary {
+        padding: 11px 6px;
+        font-size: .8rem;
+    }
+
+    .dsb-hero-actions > .showcase-button.secondary .showcase-icon {
+        display: none;
     }
 
     .showcase-key-stats {

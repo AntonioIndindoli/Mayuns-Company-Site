@@ -60,10 +60,12 @@ const DestructibleStructureBuilder = () => (
         description="DSB is a Unity Editor toolkit for creating structures which crumble and collapse believably at runtime. Use simple build modes to place beams, walls, and supports in editor-time scene view, then destroy during gameplay."
         heroImage={heroShot}
         keyStats={keyStats}
+        actionsClassName="dsb-hero-actions"
         actions={[
             { text: "Asset Store", href: "https://assetstore.unity.com/packages/slug/296695", variant: "primary", type: "link" },
             { text: "Demo", href: "/DSB_Demo.zip", variant: "secondary", type: "anchor", icon: "download" },
             { text: "Manual", href: "/Manual.pdf", variant: "secondary", type: "anchor", icon: "file" },
+            { text: "DSB Discord", href: "https://discord.gg/73GaMeP6JF", variant: "secondary", type: "link" },
         ]}
         featureGalleryItems={featureGalleryItems}
     />

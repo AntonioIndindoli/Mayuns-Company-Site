@@ -25,6 +25,7 @@ const ProductShowcasePage = ({
     heroImage,
     keyStats,
     actions,
+    actionsClassName = "",
     featureGalleryItems = [],
 }) => {
     const [activeImageIndex, setActiveImageIndex] = useState(0);
@@ -161,7 +162,7 @@ const ProductShowcasePage = ({
                         <p className="showcase-label">{label}</p>
                         <h1>{title}</h1>
                         <p className="showcase-description-area">{description}</p>
-                        <div className="showcase-hero-actions">
+                        <div className={`showcase-hero-actions ${actionsClassName}`}>
                             {actions.map((action) => (
                                 action.type === "link" && !/^https?:\/\//i.test(action.href) ? (
                                     <Link key={action.text} className={`showcase-button ${action.variant}`} to={action.href}>

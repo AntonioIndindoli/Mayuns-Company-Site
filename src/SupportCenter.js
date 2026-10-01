@@ -19,6 +19,16 @@ const SupportCenter = () => {
         </section>
 
         <section className="info-page-section">
+          <h2>DSB Discord</h2>
+          <p>
+            For Destructible Structure Builder questions, join the{" "}
+            <a href="https://discord.gg/73GaMeP6JF" target="_blank" rel="noopener noreferrer">
+              DSB Discord
+            </a>.
+          </p>
+        </section>
+
+        <section className="info-page-section">
           <h2>Helpful Details to Include</h2>
           <ul>
             <li>Product name and version</li>
