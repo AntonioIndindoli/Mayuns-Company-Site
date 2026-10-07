@@ -124,7 +124,6 @@
     font-weight: 700;
     text-decoration: none;
     border: 1px solid transparent;
-    transition: background-color .2s, border-color .2s;
 }
 
 .showcase-button.primary {
@@ -315,7 +314,6 @@ justify-content: center;
     overflow: hidden;
     cursor: pointer;
     opacity: .65;
-    transition: opacity .2s, border-color .2s;
 }
 
 .showcase-thumbnail-button img {
