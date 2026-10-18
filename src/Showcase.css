@@ -140,7 +140,7 @@
 .showcase-button.secondary {
     color: #d7e6f8;
     background: rgba(13, 32, 59, .72);
-    border-color: rgba(155, 192, 237, .32);
+    border-color: rgba(155, 192, 237, 0.082);
 }
 
 .showcase-button.secondary:hover {
@@ -471,10 +471,6 @@ justify-content: center;
     .dsb-hero-actions > .showcase-button.secondary {
         padding: 11px 6px;
         font-size: .8rem;
-    }
-
-    .dsb-hero-actions > .showcase-button.secondary .showcase-icon {
-        display: none;
     }
 
     .showcase-key-stats {

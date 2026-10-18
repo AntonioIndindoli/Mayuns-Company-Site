@@ -65,7 +65,7 @@ const DestructibleStructureBuilder = () => (
             { text: "Asset Store", href: "https://assetstore.unity.com/packages/slug/296695", variant: "primary", type: "link" },
             { text: "Demo", href: "/DSB_Demo.zip", variant: "secondary", type: "anchor", icon: "download" },
             { text: "Manual", href: "/Manual.pdf", variant: "secondary", type: "anchor", icon: "file" },
-            { text: "DSB Discord", href: "https://discord.gg/73GaMeP6JF", variant: "secondary", type: "link" },
+            { text: "Discord", href: "https://discord.gg/73GaMeP6JF", variant: "secondary", type: "link" },
         ]}
         featureGalleryItems={featureGalleryItems}
     />

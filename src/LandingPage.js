@@ -53,7 +53,6 @@ export default function LandingPage() {
                         </div>
                         <div className="mh-hero-copy">
                             <h1 id="home-title">Mayuns Games</h1>
-                            <p>Games and tools, made independently.</p>
                             <button className="mh-explore" onClick={explore}>
                                 Explore our projects <FiArrowDown aria-hidden="true" />
                             </button>
