@@ -24,10 +24,6 @@
     margin-right: 9px;
     object-fit: contain;
 }
-.mh-brand>span {
-    font-weight: 400;
-    color: inherit;
-}
 .mh-header nav {
     display: flex;
     align-items: center;

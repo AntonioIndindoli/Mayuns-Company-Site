@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
-import { FiArrowUpRight } from "react-icons/fi";
 import "../LandingPage.css";
 import "./Header.css";
 
@@ -22,7 +21,7 @@ export default function Header() {
     return (
         <header className="mh-header">
             <Link className="mh-brand" to="/" aria-label="Mayuns.com home">
-                <img src="/logo512.png" alt="" />Mayuns<span>.com</span>
+                <img src="/logo512.png" alt="" />Mayuns.com
             </Link>
             <nav aria-label="Main navigation">
                 <Link to="/#home-projects" onClick={(event) => {

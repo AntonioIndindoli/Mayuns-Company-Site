@@ -5,20 +5,22 @@ import {
     FiChevronLeft,
     FiChevronRight,
     FiDownload,
-    FiExternalLink,
+    FiArrowRight,
+    FiShoppingBag,
     FiFileText,
     FiMaximize,
     FiMinimize,
     FiMonitor,
     FiSettings,
     FiTag,
+    FiPlayCircle,
 } from "react-icons/fi";
+import { FaDiscord } from "react-icons/fa";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import "./Showcase.css";
 
 const ProductShowcasePage = ({
-    label,
     title,
     descriptionLabel,
     description,
@@ -141,6 +143,18 @@ const ProductShowcasePage = ({
     };
 
     const getActionIcon = (iconName) => {
+        if (iconName === "video") {
+            return <FiPlayCircle className="showcase-icon" aria-hidden="true" />;
+        }
+
+        if (iconName === "store") {
+            return <FiShoppingBag className="showcase-icon" aria-hidden="true" />;
+        }
+
+        if (iconName === "discord") {
+            return <FaDiscord className="showcase-icon" aria-hidden="true" />;
+        }
+
         if (iconName === "download") {
             return <FiDownload className="showcase-icon" />;
         }
@@ -149,7 +163,7 @@ const ProductShowcasePage = ({
             return <FiFileText className="showcase-icon" />;
         }
 
-        return <FiExternalLink className="showcase-icon" />;
+        return <FiArrowRight className="showcase-icon" />;
     };
 
     return (
@@ -157,9 +171,8 @@ const ProductShowcasePage = ({
             <Header />
 
             <main className="showcase-content">
-                <section className="showcase-hero" style={heroBackgroundStyle}>
+                <section className={`showcase-hero${actionsClassName === "dsb-hero-actions" ? " dsb-hero" : ""}`} style={heroBackgroundStyle}>
                     <div className="showcase-hero-copy">
-                        <p className="showcase-label">{label}</p>
                         <h1>{title}</h1>
                         <p className="showcase-description-area">{description}</p>
                         <div className={`showcase-hero-actions ${actionsClassName}`}>
@@ -235,7 +248,6 @@ const ProductShowcasePage = ({
                                         ))}
                                     </div>
                                     <div className="showcase-store-feature-description">
-                                        <span className="showcase-gallery-count">{String(activeImageIndex + 1).padStart(2, "0")} / {String(featureGalleryItems.length).padStart(2, "0")}</span>
                                         <div><h3>{activeFeature.title}</h3><p>{activeFeature.description}</p></div>
                                     </div>
                                 </div>

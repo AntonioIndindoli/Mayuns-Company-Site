@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.f6bba38b.css",
-    "main.js": "/static/js/main.814634cb.js",
+    "main.css": "/static/css/main.6236efce.css",
+    "main.js": "/static/js/main.56cdbb4d.js",
     "static/media/Collapse_DSB.png": "/static/media/Collapse_DSB.928e54da450fc0a1222e.png",
     "static/media/Variety_DSB.png": "/static/media/Variety_DSB.edb11878690e31ece462.png",
     "static/media/Build Modes_DSB.png": "/static/media/Build Modes_DSB.148d4e57a7a1c4f52751.png",
@@ -17,15 +17,15 @@
     "static/media/LandingPageCard_copyright.png": "/static/media/LandingPageCard_copyright.9154e3a48b5291a4b3fd.png",
     "static/media/Immersive.jpg": "/static/media/Immersive.6b3191ee167f070837a4.jpg",
     "static/media/logo.png": "/static/media/logo.73b401bc7b28c9b61d5f.png",
+    "static/media/PLACEHOLDER.png": "/static/media/PLACEHOLDER.5fe0c0e522c4a614a36a.png",
     "static/media/Mesh Cache Workflow_DSB.png": "/static/media/Mesh Cache Workflow_DSB.1345d536f907c62733c6.png",
     "static/media/LandingPageCard_DSB.png": "/static/media/LandingPageCard_DSB.bcfb4e0e3dffca4ffc7f.png",
-    "static/media/PLACEHOLDER.png": "/static/media/PLACEHOLDER.00e68276249297345a6a.png",
     "index.html": "/index.html",
-    "main.f6bba38b.css.map": "/static/css/main.f6bba38b.css.map",
-    "main.814634cb.js.map": "/static/js/main.814634cb.js.map"
+    "main.6236efce.css.map": "/static/css/main.6236efce.css.map",
+    "main.56cdbb4d.js.map": "/static/js/main.56cdbb4d.js.map"
   },
   "entrypoints": [
-    "static/css/main.f6bba38b.css",
-    "static/js/main.814634cb.js"
+    "static/css/main.6236efce.css",
+    "static/js/main.56cdbb4d.js"
   ]
 }

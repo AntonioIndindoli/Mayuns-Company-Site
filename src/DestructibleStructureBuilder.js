@@ -54,18 +54,18 @@ const featureGalleryItems = [
 
 const DestructibleStructureBuilder = () => (
     <ProductShowcasePage
-        label="Unity Editor Toolkit"
         title="Destructible Structure Builder"
         descriptionLabel="BUILD & DESTROY"
-        description="DSB is a Unity Editor toolkit for creating structures which crumble and collapse believably at runtime. Use simple build modes to place beams, walls, and supports in editor-time scene view, then destroy during gameplay."
+        description="Create destructible structures in Unity with intuitive building tools and believable, physics-driven collapse."
         heroImage={heroShot}
         keyStats={keyStats}
         actionsClassName="dsb-hero-actions"
         actions={[
-            { text: "Asset Store", href: "https://assetstore.unity.com/packages/slug/296695", variant: "primary", type: "link" },
+            { text: "Asset Store", href: "https://assetstore.unity.com/packages/slug/296695", variant: "primary", type: "link", icon: "store" },
             { text: "Demo", href: "/DSB_Demo.zip", variant: "secondary", type: "anchor", icon: "download" },
             { text: "Manual", href: "/Manual.pdf", variant: "secondary", type: "anchor", icon: "file" },
-            { text: "Discord", href: "https://discord.gg/73GaMeP6JF", variant: "secondary", type: "link" },
+            { text: "Tutorial", href: "https://www.youtube.com/watch?v=hWnYS5C66r0", variant: "secondary", type: "anchor", icon: "video" },
+            { text: "Discord", href: "https://discord.gg/73GaMeP6JF", variant: "secondary", type: "link", icon: "discord" },
         ]}
         featureGalleryItems={featureGalleryItems}
     />

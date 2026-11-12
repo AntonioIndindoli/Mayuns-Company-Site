@@ -9,7 +9,6 @@ const keyStats = [
 
 const MayunzMusic = () => (
     <ProductShowcasePage
-        label="The Nutpack Album"
         title="Mayunz"
         descriptionLabel="LISTEN NOW"
         description="Original music composed by Caleb Rodriguez and released under the artist name Mayunz."

@@ -1,6 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FiArrowDown, FiArrowUpRight } from "react-icons/fi";
+import { FiArrowDown, FiArrowRight } from "react-icons/fi";
 import { FaSteam } from "react-icons/fa";
 import Hero3D from "./components/Hero3D";
 import Footer from "./components/Footer";
@@ -72,7 +72,7 @@ export default function LandingPage() {
                                 <p>Editor toolkit for creating breakable structures in Unity.</p>
                             </div>
                             <span className="mh-feature-link" aria-hidden="true">
-                                View project <FiArrowUpRight aria-hidden="true" />
+                                View project <FiArrowRight aria-hidden="true" />
                             </span>
                         </div>
                         <div className="mh-feature-media">
@@ -89,13 +89,13 @@ export default function LandingPage() {
                                 <Link className="mh-game-image" to={project.path} aria-label={`View ${project.title}`}>
                                     <img src={project.image} alt={`${project.title} cover`} loading="lazy" />
                                     <span className="mh-platform">{index === 0 && <FaSteam aria-hidden="true" />}{project.platform}</span>
-                                    <span className="mh-round-arrow"><FiArrowUpRight aria-hidden="true" /></span>
+                                    <span className="mh-round-arrow"><FiArrowRight aria-hidden="true" /></span>
                                 </Link>
                                 <div className="mh-game-copy">
                                     <h3><Link to={project.path}>{project.title}</Link></h3>
                                     <p>{project.description}</p>
                                     <Link className="mh-text-link" to={project.path}>
-                                        Product Page <FiArrowUpRight aria-hidden="true" />
+                                        Product Page <FiArrowRight aria-hidden="true" />
                                     </Link>
                                 </div>
                             </article>

@@ -30,7 +30,6 @@ const featureGalleryItems = [
 
 const BackroomsUnseenTapes = () => (
     <ProductShowcasePage
-        label="Survival Horror"
         title="The Backrooms: Unseen Tapes"
         descriptionLabel="ESCAPE THE BACKROOMS"
         description="A first-person survival horror experience set in eerie, seemingly endless liminal spaces. Search for exits and evade what waits in the dark."

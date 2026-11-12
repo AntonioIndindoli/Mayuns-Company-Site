@@ -8,7 +8,6 @@ const keyStats = [
 
 const CopyrightAdventure = () => (
     <ProductShowcasePage
-        label="Browser RPG"
         title="Copyright Adventure"
         descriptionLabel="EXPLORE & BATTLE"
         description="An in-browser RPG adventure where you battle your way through strategic encounters with pop-culture characters."
