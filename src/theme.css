@@ -1,0 +1,42 @@
+/* Mayuns palette: ink blue, cream, and the mayo label's buttery gold.
+   The blue surfaces echo the jar lid; gold is reserved for interactive emphasis. */
+:root {
+    color-scheme: dark;
+    --site-bg: #171e29;
+    --site-bg-rgb: 23, 30, 41;
+    --site-surface: #202a38;
+    --site-surface-rgb: 32, 42, 56;
+    --site-surface-raised: #2a3748;
+    --site-surface-deep: #111824;
+    --site-text: #f5f0e5;
+    --site-text-soft: #d5dce4;
+    --site-text-muted: #b2becd;
+    --site-accent: #e8ca83;
+    --site-accent-hover: #f2dca7;
+    --site-accent-ink: #202936;
+    --site-accent-rgb: 232, 202, 131;
+    --site-halo-rgb: 147, 181, 216;
+    --site-border: #3a495d;
+    --site-border-strong: #7e92ac;
+    --site-shadow: rgba(7, 12, 21, .24);
+    --site-gradient-top: #34465d;
+    --site-gradient-mid: #253348;
+    --site-page-background: radial-gradient(ellipse 85% 720px at 28% 0%, var(--site-gradient-top) 0%, var(--site-gradient-mid) 45%, transparent 100%), var(--site-bg);
+}
+
+html,
+body,
+#root {
+    background-color: var(--site-bg);
+    color: var(--site-text);
+}
+
+::selection {
+    background: var(--site-accent);
+    color: var(--site-accent-ink);
+}
+
+:is(a, button):focus-visible {
+    outline: 3px solid var(--site-accent);
+    outline-offset: 4px;
+}

@@ -1,9 +1,9 @@
-/* Landing-page styles are scoped so product pages remain independent. */
+/* Landing-page layout with the shared Mayuns color palette. */
 .mayuns-home {
-    --mh-ink: #f6f8ff;
-    --mh-muted: #b6cbe9;
-    --mh-line: #aacfff30;
-    background: radial-gradient(ellipse 85% 720px at 28% 9%, #5f98df 0%, #2b5eaa 43%, #153c79 74%, transparent 100%), #102f63;
+    --mh-ink: var(--site-text);
+    --mh-muted: var(--site-text-muted);
+    --mh-line: var(--site-border);
+    background: var(--site-page-background);
     color: var(--mh-ink);
     font-family: 'Segoe UI', Arial, sans-serif;
     overflow: clip;
@@ -26,7 +26,7 @@
 }
 
 .mayuns-home :is(a, button):focus-visible {
-    outline: 3px solid #ffe187;
+    outline: 3px solid var(--site-accent);
     outline-offset: 5px;
 }
 
@@ -40,7 +40,7 @@
     left: 20px;
     z-index: 100;
     padding: 12px 20px;
-    background: #153c79;
+    background: var(--site-surface);
 }
 
 .mh-skip:focus {
@@ -69,8 +69,10 @@
     position: absolute;
     inset: 8% 9%;
     border-radius: 50%;
-    background: #b2d5ff1a;
-    box-shadow: 0 0 85px 30px #b2d5ff14;
+    border: 1px solid rgba(var(--site-halo-rgb), .14);
+    background: radial-gradient(ellipse at 35% 30%, rgba(var(--site-halo-rgb), .09), rgba(var(--site-halo-rgb), .04));
+    box-shadow: 0 18px 60px rgba(var(--site-bg-rgb), .1), 0 0 55px rgba(var(--site-halo-rgb), .03);
+    pointer-events: none;
 }
 
 .mh-jar {
@@ -98,14 +100,14 @@
     font-weight: 850;
     line-height: 1.05;
     letter-spacing: -.055em;
-    text-shadow: 0 3px 24px #102f6330;
+    text-shadow: 0 3px 24px var(--site-shadow);
 }
 
 .mh-hero-copy>p {
     max-width: 400px;
     font-size: 18px;
     line-height: 1.65;
-    color: #e0edff;
+    color: var(--site-text-soft);
     margin-top: 18px;
 }
 
@@ -116,7 +118,7 @@
     align-items: center;
     gap: 8px;
     background: none;
-    color: #fff;
+    color: var(--site-text);
     border: 0;
     font-size: 13px !important;
     font-weight: 650 !important;
@@ -125,16 +127,16 @@
 .mh-explore svg {
     width: 35px;
     height: 35px;
-    border: 1px solid #d3e6ff66;
+    border: 1px solid var(--site-border-strong);
     border-radius: 50%;
     padding: 8px;
     transition: background .2s, transform .2s;
 }
 
 .mh-explore:hover svg {
-    background: #ffe187;
-    border-color: #ffe187;
-    color: #163669;
+    background: var(--site-accent);
+    border-color: var(--site-accent);
+    color: var(--site-accent-ink);
     transform: translateY(3px);
 }
 
@@ -177,15 +179,15 @@
 
 .mh-game {
     min-width: 0;
-    border: 1px solid #a4cbfa2b;
-    background: #0c2852;
+    border: 1px solid var(--site-border);
+    background: var(--site-surface);
     border-radius: 12px;
     overflow: hidden;
     transition: border-color .2s, transform .2s;
 }
 
 .mh-game:hover {
-    border-color: #a4cbfa80;
+    border-color: var(--site-border-strong);
     transform: translateY(-3px);
 }
 
@@ -215,11 +217,11 @@
     align-items: center;
     gap: 7px;
     padding: 6px 10px;
-    background: #071629df;
-    border: 1px solid #ffffff30;
+    background: rgba(var(--site-bg-rgb), .92);
+    border: 1px solid var(--site-border-strong);
     border-radius: 4px;
     font-size: 10px;
-    color: #fff;
+    color: var(--site-text);
 }
 
 .mh-round-arrow {
@@ -230,9 +232,9 @@
     place-items: center;
     width: 35px;
     height: 35px;
-    background: #eaf3ff;
+    background: var(--site-accent);
     border-radius: 50%;
-    color: #102d53;
+    color: var(--site-accent-ink);
     font-size: 20px;
 }
 
@@ -261,17 +263,17 @@
     gap: 8px;
     margin-top: 18px;
     font-size: 12px;
-    color: #d9e9ff !important;
+    color: var(--site-accent) !important;
 }
 
 .mh-text-link:hover {
-    color: #ffe187 !important;
+    color: var(--site-accent-hover) !important;
 }
 
 .mayuns-home .site-footer {
     margin: 0;
     padding: 0 40px;
-    background: #0a234a;
+    background: var(--site-surface-deep);
     border: 0;
 }
 
@@ -291,7 +293,7 @@
 
 .mayuns-home .footer-bottom-bar p {
     font-size: 11px;
-    color: #b6cbe9;
+    color: var(--site-text-muted);
 }
 
 .mayuns-home .social-links {
@@ -304,14 +306,16 @@
     place-items: center;
     width: 32px;
     height: 32px;
-    border: 1px solid #a9c8ee40;
+    border: 1px solid var(--site-border);
     border-radius: 50%;
     background: none;
-    color: #d0e4ff;
+    color: var(--site-text-soft);
 }
 
 .mayuns-home .social-links a:hover {
-    color: #ffe187;
+    color: var(--site-accent-ink);
+    background: var(--site-accent);
+    border-color: var(--site-accent);
 }
 
 @media (max-width: 900px) {
@@ -342,7 +346,7 @@
 
 @media (max-width: 620px) {
     .mayuns-home {
-        background: radial-gradient(ellipse 700px 700px at 25% 9%, #568bd1, #28589e 45%, #153c79 75%, transparent), #102f63;
+        background: radial-gradient(ellipse 700px 700px at 25% 0%, var(--site-gradient-top), var(--site-gradient-mid) 45%, transparent 100%), var(--site-bg);
     }
 
     .mh-hero-inner {
@@ -385,7 +389,7 @@
     .mh-explore {
         margin-top: 14px;
         font-size: 12px !important;
-        color: #d9e9ffe3 !important;
+        color: var(--site-text-soft) !important;
         font-weight: 550 !important;
     }
 
@@ -449,7 +453,7 @@
     overflow: hidden;
     border: 1px solid var(--mh-line);
     border-radius: 12px;
-    background: #0c2852;
+    background: var(--site-surface);
 }
 
 .mh-feature-copy {
@@ -459,7 +463,7 @@
     justify-content: center;
     gap: 0;
     padding: 40px;
-    background: #0c2852;
+    background: var(--site-surface);
 }
 
 .mh-dsb-logo {
@@ -482,7 +486,7 @@
 
 .mh-project-identity p {
     margin-top: 18px;
-    color: #c8daf1;
+    color: var(--site-text-muted);
     font-size: 13px;
     line-height: 1.8;
     white-space: nowrap;
@@ -496,21 +500,21 @@
     padding: 13px 18px;
     margin-top: 28px;
     border-radius: 5px;
-    border: 1px solid #aacfff55;
-    background: transparent;
+    border: 1px solid var(--site-accent);
+    background: var(--site-accent);
     font-size: 13px;
     font-weight: 650;
-    color: #f6f8ff;
+    color: var(--site-accent-ink);
     transition: background .2s, border-color .2s;
 }
 
 .mh-feature:is(:hover, :focus-visible) {
-    border-color: #a4cbfa80;
+    border-color: var(--site-border-strong);
 }
 
 .mh-feature:is(:hover, :focus-visible) .mh-feature-link {
-    background: #ffffff0d;
-    border-color: #aacfff99;
+    background: var(--site-accent-hover);
+    border-color: var(--site-accent-hover);
 }
 
 .mh-feature-link svg {
@@ -522,7 +526,7 @@
     min-width: 0;
     min-height: 420px;
     overflow: hidden;
-    background: #101f35;
+    background: var(--site-surface-deep);
 }
 
 .mh-feature-media>img {
