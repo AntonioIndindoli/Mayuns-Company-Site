@@ -2,11 +2,12 @@
    The blue surfaces echo the jar lid; gold is reserved for interactive emphasis. */
 :root {
     color-scheme: dark;
-    --site-bg: #171e29;
+    --site-bg: #151c27;
     --site-bg-rgb: 23, 30, 41;
-    --site-surface: #202a38;
+    --site-surface: #243041;
     --site-surface-rgb: 32, 42, 56;
-    --site-surface-raised: #2a3748;
+    --site-surface-raised: #2b3a4d;
+    --site-surface-raised-rgb: 43, 58, 77;
     --site-surface-deep: #111824;
     --site-text: #f5f0e5;
     --site-text-soft: #d5dce4;
@@ -19,9 +20,18 @@
     --site-border: #3a495d;
     --site-border-strong: #7e92ac;
     --site-shadow: rgba(7, 12, 21, .24);
-    --site-gradient-top: #34465d;
-    --site-gradient-mid: #253348;
-    --site-page-background: radial-gradient(ellipse 85% 720px at 28% 0%, var(--site-gradient-top) 0%, var(--site-gradient-mid) 45%, transparent 100%), var(--site-bg);
+    --site-gradient-top: #2a384b;
+    --site-gradient-mid: #222e3e;
+    /* A broad, gently eased fade avoids a visible edge below the hero. */
+    --site-page-background: radial-gradient(
+        ellipse 120% 1200px at 28% -120px,
+        var(--site-gradient-top) 0%,
+        #283547 20%,
+        var(--site-gradient-mid) 42%,
+        #1c2633 62%,
+        #18212d 82%,
+        var(--site-bg) 100%
+    ), var(--site-bg);
 }
 
 html,
